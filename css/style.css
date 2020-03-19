@@ -1,0 +1,301 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#ffffff;
+}
+
+a{
+	color:#000;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#e68166;
+	text-decoration:none;
+	font-weight:400;
+}
+.top-sub-menu {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.top-sub-menu ul {
+    margin: 0;
+    padding: 10px 0 0;
+    list-style: none;
+    text-align: center;
+}
+.top-sub-menu ul li {
+    float: left;
+    display: inline-block;
+}
+.top-sub-menu ul li a {
+    color: #000;
+    margin: 0 10px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+}
+.top-sub-menu ul li a:hover {
+    color: #e68166;
+}
+.highlight-color a {
+    color: #e68166 !important;
+}
+.bold {
+    font-weight: bold;
+}
+
+nav {
+    background: #003366;
+    color: #ffffff;
+    margin-top: 25px;
+    border-bottom: #e68166 5px solid;
+	 display: -ms-flexbox;
+    display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+nav a {
+    color: #ffffff;
+    padding-top: 20px;
+    min-height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+	
+.nav-link {
+  padding: 15px 20px 10px 20px !important;
+display: block;
+	border:0;
+
+}
+
+.navbar{
+	padding:0;
+}
+
+.nav-link .active,
+.nav-item.show .nav-link {
+ background-color: #e68166 !important;
+	color:#fff;
+	text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:focus .nav-link:active {
+	background-color: #e68166 !important;
+	color:#fff;
+	text-decoration: none;
+}
+
+.nav-link {
+  border-radius: 0;
+}
+
+.nav-item:active {
+  color: #fff;
+  background-color: #e68166 !important;
+}
+
+.nav-link {
+  border-radius: 0;
+}
+
+/*.nav-link .active,
+.show > .nav-link {
+  	color: #fff;
+	background-color: #e68166 !important;
+	}
+	*/
+/*a:hover{
+	color: #fff;
+	background-color: #e68166 !important;
+	}*/
+	
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.dropdown-toggle:empty::after {
+  margin-left: 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0;
+  margin: 0;
+ /* padding: 0.5rem 0;
+  margin: 0.125rem 0 0;*/
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #e68166;
+  background-clip: padding-box;
+  /*border: 3px solid #e68166;
+  border-radius: 0.25rem;*/
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #e68166;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #007bff;
+}
+
+.dropdown-header {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.dropdown-item-text {
+  display: block;
+  padding: 0.25rem 1.5rem;
+  color: #212529;
+}
+
+
+
+.searchbar-container
+	{
+		width:100%;
+		display:block;
+		margin:auto;
+		overflow:hidden;
+		border-top:#003366 solid 1px;
+		border-bottom:#003366 solid 1px;
+		margin-top:55px;
+	}	
+	
+.searchbar
+{
+	width:50%; 
+	padding:0;
+	border-right:1px solid #003366;
+	border-left:1px solid #003366;
+    margin-right: auto;
+    margin-left: auto;
+}
+	
+input{margin:0; padding: 20px 10px; line-height: 28px;}
+	
+.search-form {margin:0 auto; padding:0; height:50px;}
+.search-input {padding: 10px 10px; line-height: 28px; border:0;}
+.search-button {height:50px; width:50px; padding:0; margin:0;}
+	
+.btn {
+  color: #000;
+  background-color: #fff;
+  border-color: #003366;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #97b5d3;
+}
+
+
+.navbar-brand {
+    padding: 0px;
+    margin-top: -30px;
+	width:458px;
+   /* border-right: #003366 2px solid;
+    border-left: #003366 3px solid;*/
+}
+.navbar-brand > img {
+    height: 100%;
+    padding: 0;
+    width: auto;
+    background-color: #fff;
+}
+/*navbar-top {
+    color: #ffffff;
+    background-color: #003366;
+    border-bottom: #e68166 5px solid;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: block;
+    padding: 20px;
+    min-width: 100px;
+}*/
+
+/* EXAMPLE 9 - Center with Flexbox and Text*/
+.brand-centered {
+    display: flex;
+    position: absolute;
+    /*width: 100%;*/
+    left: 50%;
+	margin-left:-229px;
+    top: 0;
+}
+.brand-centered .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-toggle {
+    z-index: 1;
+}
+/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
+.navbar-alignit .navbar-header {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    height: 50px;
+}
+/*.navbar-alignit .navbar-brand {
+    top: 50%;
+    display: block;
+    position: relative;
+    height: auto;
+    transform: translate(0, -50%);
+    margin-right: 15px;
+    margin-left: 15px;
+}*/
+.navbar-nav > li > .dropdown-menu {
+    z-index: 9999;
+}
+
+#hamburgerMenu  {
+    z-index: 9999;
+}
+
+	
+	.jumbotron{
+		background-color:#e68166;
+		padding:20px 20px 10px 20px;
+	}	
+	

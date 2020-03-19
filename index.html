@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to Southwest Counseling Service</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+	
+<style>
+	.active{
+	background-color: #e68166 !important;
+	color:#fff;
+	text-decoration: none;
+	}
+	
+	#top-image{
+		margin-bottom:0px;
+	}
+	
+	#search{
+		background: url("images/search2.png") top left no-repeat;
+		margin:0;
+		padding:0;
+		height:50px;
+	}
+	
+	#search:hover{
+		background: url("images/search-hover2.png") top left no-repeat;
+		margin:0;
+		padding:0;
+	}
+	
+	.search-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 200px;
+  padding: 0;
+  margin: 0;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #e68166;
+  background-clip: padding-box;
+  border: 3px solid #e68166;
+}
+	
+	
+	#contact-flags{	
+	display: flex;
+    width: 93%;
+	color:#fff;
+	margin-bottom:20px;
+		margin-top:0px;
+		padding:0px;
+		
+	}
+	
+	.icon-square{
+		background-color:#003366;
+		padding:0;
+		margin:0;
+	}
+	.icon-square a{
+		padding: 0px 0 0 0;
+		margin:0;
+	}
+	.icon-square img{
+		padding:0;
+		margin:0;
+	}
+	
+	#phone-square{
+		background: url("images/phone-square.png") top center no-repeat;
+		padding:5px 0 0px 0;
+		margin:0;
+	}
+	#phone-square:hover{
+		background: url("images/phone-square-hover.png") top center no-repeat;
+		
+	}
+	
+	#map-square{
+		background: url("images/map-square.png") top center no-repeat;
+		padding:5px 0 0 0;
+		margin:0;
+	}
+	#map-square:hover{
+		background: url("images/map-square-hover.png") top center no-repeat;
+	}
+	#facebook-square{
+		background: url("images/facebook-square.png") top center no-repeat;
+		padding:5px 0 0 0;
+		margin:0;
+		
+	}
+	#facebook-square:hover{
+		background: url("images/facebook-square-hover.png") top center no-repeat;
+	}
+	
+	.survey-box{
+		background-color:#97b5d3;
+		margin: 0 10px 0 10px;
+	}
+	
+	.servicesSection{
+		background-color:#97b5d3;
+	   margin:auto;
+		text-align:center;
+		padding: 10px;
+	
+	}
+	/*.servicesSection img{
+		width:230px;
+	}
+	*/
+	.servicesProvided{
+		background-color:#97b5d3;
+		padding:0;
+	}
+	
+	.payment{
+		background-color:#97b5d3;
+		padding:0;
+		margin:0;
+	}
+	
+	.faq{
+		background-color:#e68166;
+		padding:0;
+	}
+		
+	.faq-text{
+		color:#000;
+		padding:10px 0 0px 0;
+	}
+	
+	.faq-a:hover{
+		color:fff !important;
+	}
+	.faq-text span{
+		padding-left:10px;
+	}
+	
+	
+		.faq-1{
+		background: url("images/arrow-down-circle.png") left top no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+		.faq-1:hover{
+		background: url("images/arrow-down-circle-white.png") left top no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+		color:#fff;
+	}
+	
+	.accordion a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+margin:0;
+  color: #000;
+  font-weight: 400;
+ /* border-bottom: 1px solid #e5e5e5;*/
+}
+.accordion a:hover,
+.accordion a:hover::after {
+  cursor: pointer;
+  color: #fff;
+}
+.accordion a:hover::after {
+  border: 1px solid blue; /*circle around dropdown*/
+}
+.accordion a.active {
+  color: #fff;
+/*  border-bottom: 1px solid red;*/
+}
+.accordion a::after {
+  /*font-family: 'Ionicons';
+  content: '\f218';*/
+  position: absolute;
+  float: right;
+  right: 15px;
+  font-size: 15px;
+  color: #000;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  /*border: 1px solid #7288a2;*/
+  text-align: center;
+}
+.accordion a.active::after {
+ /* font-family: 'Ionicons';
+  content: '\f209';*/
+  color: #fff;
+  border: 1px solid green; /*circle around dropdown*/
+}
+.accordion .faq-content {
+  opacity: 0;
+  padding: 0px 40px;
+	margin:0;
+  max-height: 0;
+  /*border-bottom: 1px solid #000;*/
+  overflow: hidden;
+  clear: both;
+  -webkit-transition: all 0.2s ease 0.15s;
+  -o-transition: all 0.2s ease 0.15s;
+  transition: all 0.2s ease 0.15s;
+}
+/*.accordion .faq-content p {
+  font-size: 15px;
+  font-weight: 300;
+}*/
+.accordion .faq-content.active {
+  opacity: 1;
+  padding: 15px;
+  max-height: 100%;
+  -webkit-transition: all 0.35s ease 0.15s;
+  -o-transition: all 0.35s ease 0.15s;
+  transition: all 0.35s ease 0.15s;
+}
+	
+	.orange-line{
+		background-color: #e68166;
+		width:100%;
+		margin:0;
+		padding:0;
+		height:7px;
+	}
+	.orange-line-thin{
+		background-color: #e68166;
+		padding:0;
+		margin:0;
+		height:3px; 
+		text-align:left;
+		width:145px; 
+		margin-top: -5px; 
+		margin-bottom:10px;
+	}
+	
+	.blue-title{
+		background-color: #003366;
+		width:100%;
+		margin-left:auto;
+		margin-right:auto;
+		padding:15px 0 5px 0px;
+		min-height:40px;
+		color: #fff;
+	}
+	
+	.button-orange{
+		background-color:#e68166;
+		width:200px;
+		color:#000;
+		margin:auto;
+	}
+	
+	.button-white{
+		background-color:#fff;
+		color:#000;
+ 		border-color: #003366;
+	}
+	
+	.button-white:hover{
+		background-color:#e68166;
+	}
+	
+	.waitSection{
+		background-color:#003366;
+		padding:0;
+		color:#fff;
+	}
+
+	.readMore{
+		color:#e68166; 
+		font-weight:600;
+	}
+	
+	.news{
+		 height:500px;
+  		overflow-y: scroll;
+	}
+	.border{
+		border:solid 3px #000;
+	}
+	
+	.footerSection{
+		background-color:#003366;
+		padding:0;
+		color:#fff;
+		font-size:14px;
+	}
+	
+	.footer-text{
+		padding:0; 
+		margin:-0; 
+		text-align: left; 
+		color:#fff;
+		font-size:13px;
+		line-height:10px;
+	}
+	
+	#slidingFee{
+		background: url("images/sliding-fee-scale.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+	#slidingFee:hover{
+		background: url("images/sliding-fee-scale-hover.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+		#insurance{
+		background: url("images/medicalInsurance.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+	#insurance:hover{
+		background: url("images/medicalInsurance-hover.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+		#medicare{
+		background: url("images/medicare.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+	#medicare:hover{
+		background: url("images/medicare-hover.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+		#medicaid{
+		background: url("images/medicaid.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+	#medicaid:hover{
+		background: url("images/medicaid-hover.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+		#eap{
+		background: url("images/employee-assistance-program.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+	#eap:hover{
+		background: url("images/employee-assistance-program-hover.png") center center no-repeat;
+		padding:0px 0 0px 0;
+		margin:0;
+	}
+	
+</style>
+</head>
+
+<body>
+<div class="navbar top-sub-menu">
+  <ul>
+    <li><a href="#">Future Link</a></li>
+    <li><a href="">|</a></li>
+    <li><a href="#">Future Link</a></li>
+    <li><a href="">|</a></li>
+    <li><a class="bold highlight-color" href="#">Suicide Helpline 1-800-273-8255</a></li>
+  </ul>
+</div>
+<nav class="navbar navbar-expand-lg" >
+  <div class="brand-centered"> <a class="navbar-brand" href="#"> <img src="images/SWCounselingLogo458x125.jpg" width="458px" height="125px" alt=""/> </a> </div>
+  <button class="navbar-toggler" id="hamburgerMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-top">
+      <li class="nav-item "> <a class="nav-link active" style="margin-left:20px;" href="index.html">Home</a> </li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Get Started </a>
+        <div class="dropdown-menu" style="width:700px; border:solid #e68166 3px; padding:0; margin:0;" aria-labelledby="navbarDropdown">
+			<div class="row d-flex" style="border:solid #fff 3px; border-top:0px; padding:8px; margin: 6px -6px -3px -6px;" >
+				<div class="col text-center" >
+				<div class="" ><img alt="" width="175px" src="images/stock-photo-laughing-mature-mother-embracing-happy-millennial-daughter-spending-time-together-caring-smiling-1444021535.jpg" data-holder-rendered="true">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+				 </div>
+				</div>
+			<div class="col-8" style="background-color:#fff;  margin-right:2px;">
+			<a class="dropdown-item" href="#">How to Get Started</a>  
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Get Help for Myself</a> 
+			<a class="dropdown-item" href="#">Get Help for a Family Member</a>
+          	<a class="dropdown-item" href="#">Get Help for a Friend</a> 
+		  	<div class="dropdown-divider"></div>
+		  	<a class="dropdown-item" href="#">Payment Information</a>
+			</div>
+		</div>
+		  </div>
+      </li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Services </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" > 
+			<div style="background-color:#fff; margin:5px;"><a class="dropdown-item" href="#">Evaluation &amp; Assessments</a> 
+			<a class="dropdown-item" href="#">Mental Health</a>
+          <a class="dropdown-item" href="#">Children &amp; Adolescents</a>
+			<a class="dropdown-item" href="#">Psychosocial</a>
+          <a class="dropdown-item" href="#">Prevention</a>
+			<a class="dropdown-item" href="#">Medical Services</a>
+          <a class="dropdown-item" href="#">Employment</a>
+			 <a class="dropdown-item" href="#">Community Involvement</a>
+			<a class="dropdown-item" href="#">SCS Employee Center</a>
+			<div class="dropdown-divider"></div>
+		  </div>
+		  </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+      <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact Us</a></li>
+      <li class="nav-item"><a class="nav-link"  style="margin-right:20px;" href="aboutUs.html">About Us</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+	<div class="searchbar-container">
+		<div class="searchbar align-items-center ">
+	  	<form class="search-forsearch-input d-flex">
+			  <input class="search-input flex-grow-1" type="text" placeholder="What can we help you find?" aria-label="Search" >
+             <button class="search-button" type="submit"><div id="search"  alt=""></div></button>
+          </form>
+			<!--<div class="search-menu row d-flex dropdown" id="search-dropdown" style="border:solid #000 3px; padding:8px; margin: 0px 0px 0px 0px; " >
+				<div class="col text-center" style="minwidth: 200px;" >
+				<div >
+					<h6>TRENDING</h6>
+					<hr style="background-color:#fff; margin:0 0 10px 0;">
+					<a href="#"><p>Alcoholism</p></a>
+					<a href="#"><p>Depression</p></a>
+					<a href="#"><p>Suicide</p></a>
+				 </div>
+				</div>
+			<div class="col-8" style="background-color:#fff; margin-right:2px; min-width:300px;">
+			<a class="dropdown-item" href="#">How to Get Started</a>  
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Get Help for Myself</a> 
+		  	<div class="dropdown-divider"></div>
+		  	<a class="dropdown-item" href="#">Payment Information</a>
+			</div>-->
+		</div>
+			
+	  </div>
+	</div>
+  <div class="jumbotron" id="top-image">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h4 class="text-left">ENRICHING LIVES <br>
+THROUGH WELLNESS, <br>
+RECOVERY AND HOPE.</h4>
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+          <p>&nbsp;</p>
+          <p class="text-center"><a class="btn btn-primary" href="#" role="button">Learn more</a> </p>
+        </div>
+		  <div class="col-8">
+			  <img class="text-center" src="images/top-image-lady.png" width="684" height="300" alt=""/>
+			 
+		  </div>
+      </div>
+    </div>
+  </div>
+	
+		<div class="row justify-content-end" id="contact-flags">
+			<div class="icon-square"><a id="phone-square" href="#"><img src="images/spacer.png"  alt=""/></a></div>
+			<div class="icon-square"><a id="map-square" href="#"><img src="images/spacer.png"  alt=""/></a></div>
+			<div class="icon-square"><a id="facebook-square" href="#"><img src="images/spacer.png" alt=""/></a></div>
+		</div>
+	
+</header>
+<section>
+  <div class="container">
+    <div class="row row-cols-3">
+      <div class=".col text-center"> <a href="#" ><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/help-myslelf-icon.png" data-holder-rendered="true"> <h4 style="margin-top:10px;">Help For Myself</h4></a>
+         </div>
+      <div class="col text-center"> <a href="#" > <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/help-family-icon.png" data-holder-rendered="true">
+		  <h4 style="margin-top:10px;">Help For My Family</h4></a>
+		</div>
+          <div class="col text-center"> <a href="#" ><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/help-friend-icon.png" data-holder-rendered="true"> 
+			  <h4 style="margin-top:10px;">Help For a Friend</h4></a>
+		</div>
+		</div>
+	</div>
+	  </section>
+	
+	<section>
+	  <div class="container">
+        <div class="row">
+          <div >
+            <p>&nbsp;</p>
+          </div>
+        </div>
+        <div class="row no-gutters" style="margin-bottom:20px" >
+          <div class="col d-flex survey-box">
+			  <div class="col" style="padding:0;">
+			  <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-sad-young-man-in-white-t-shirt-is-looking-at-glass-of-beer-while-sitting-at-bar-counter-in-pub-in-386500174.jpg"  data-holder-rendered="true">
+			    </div>
+           <div class="col align-self-center"> 
+			   <p class="text-center" style="font-size: 18px;">Has your drinking <br>become a problem?</p>
+           <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
+			  </div>
+			
+          </div>
+			
+         <div class="col d-flex survey-box" >
+			  <div class="col" style="padding:0;">
+			  <img alt="" style="width: 300px; " src="images/stock-photo-a-woman-sitting-alone-and-depressed-345397208.jpg" data-holder-rendered="true">
+			    </div>
+           <div class="col align-self-center" > 
+			   <p class="text-center" style="font-size: 18px;">Is your sadness normal?</p>
+           <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
+			  </div>
+			
+          </div>
+		     
+        </div>
+		     <div class="row no-gutters" style="margin-bottom:20px" >
+          <div class="col d-flex survey-box">
+			  <div class="col" style="padding:0;">
+			  <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-a-young-sales-person-in-elegant-suit-sitting-with-paper-on-top-of-a-stone-in-the-clouds-concept-496908091.jpg" data-holder-rendered="true">
+			    </div>
+           <div class="col align-self-center"> 
+			   <p class="text-center" style="font-size: 18px;">Do you isolate <br>yourself too much?</p>
+           <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
+			  </div>
+			
+          </div>
+			
+         <div class="col d-flex survey-box">
+			  <div class="col" style="padding:0;">
+			  <img alt="" style="width: 300px;" src="images/stock-photo-man-comforting-his-depressed-friend-in-bar-388576783.jpg" data-holder-rendered="true">
+			    </div>
+           <div class="col align-self-center" > 
+			   <p class="text-center" style="font-size: 18px;">Why can't you <br>shake this feeling?</p>
+           <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
+			  </div>
+			
+          </div>
+		     
+        </div>
+	  </div>
+	</section>
+	
+	
+	<section>
+	<div class="jumbotron waitSection">
+        <div class="container">
+          <div class="flex-column">
+		    <p>&nbsp;</p>
+            <div class="text-center mx-auto">
+              <p class="lead">Do You Need Help Now?</p>
+            </div>
+			  <div class="text-center mx-auto">
+              <p class="lead">Immediate Assistance&nbsp; &amp;&nbsp; 24 / 7 Emergency</p>
+            </div>
+			  <div class="col-sm-4 text-center mx-auto"> <a class="btn btn-block btn-success button-orange" href="#" title="">
+				  <img src="images/phone.svg" alt=""/>&nbsp; &nbsp;307.352.6677</a> </div>
+			  <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+	</section>
+	
+	<section>
+	  <div class="container">
+        <div class="row">
+          <div >
+            <h5>SERVICES</h5>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:20px" >
+          <div class="col">
+				 <a href="#" > <div class="servicesSection"><img alt="" src="images/evaluations-blue.png"  data-holder-rendered="true">
+					<p>EVALUATIONS &amp; ASSESSMENTS</p>
+				 </div></a>
+          </div>
+		  <div class="col">
+				  <a href="#" > <div class="servicesSection"><img alt="" src="images/mentalHealth-blue.png" data-holder-rendered="true">
+					  <p>MENTAL HEALTH</p></div></a>
+          </div>
+			 <div class="col">
+				 <a href="#" > <div class="servicesSection"><img alt="" src="images/substanceAbuse-blue.png"  data-holder-rendered="true">
+					 <p>SUBSTANCE ABUSE</p></div></a>
+          </div>
+		  <div class="col">
+				<a href="#" > <div class="servicesSection"> <img alt="" src="images/children-blue.png" data-holder-rendered="true">
+					 <p>CHILDREN &amp; ADOLESCENTS</p>
+				 </div></a>
+          </div>
+          </div>
+		  
+		   <div class="row" style="margin-bottom:20px" >
+          <div class="col">
+				 <a href="#" > <div class="servicesSection"><img alt="" src="images/psychosocial-blue.png"  data-holder-rendered="true">
+					<p>PSYCHOSOCIAL</p></div></a>
+          </div>
+		  <div class="col">
+				  <a href="#" > <div class="servicesSection"><img alt="" src="images/prevention-blue.png" data-holder-rendered="true">
+					  <p>PREVENTION</p></div></a>
+          </div>
+			 <div class="col">
+				 <a href="#" > <div class="servicesSection"><img alt="" src="images/medicalServices-blue.png"  data-holder-rendered="true">
+					 <p>MEDICAL SERVICES</p></div></a>
+          </div>
+		  <div class="col">
+				<a href="#" > <div class="servicesSection"> <img alt="" src="images/employment-blue.png" data-holder-rendered="true">
+					 <p>EMPLOYMENT</p>
+				 </div></a>
+          </div>
+          </div>
+	  </div>
+	</section>
+	
+	<section>
+	<div class="jumbotron faq" id="faq1">
+		<hr class="orange-line">
+		<div class="blue-title">
+			<div class="container">
+			<h5>Frequently Asked Questions</h5></div>
+		</div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+             <div class="faq-text accordion" >
+					 <a class="faq-a" href="#faq1" title=""><div class="faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/><span>What is mental health?</span></div></a> 
+				 <div class="faq-content">
+       			 <p>A person who is mentally healthy can generally manage stress, respond appropriately to problems in life, and express emotions in a healthy, productive way. If a person runs into trouble with these sorts of tasks, or has a problem that just can’t be solved, therapy may be a good option to improve mental health.</p>
+      			</div>
+			</div>
+				 <div class="faq-text accordion">
+				 <a class="faq-a"  href="#faq1"  title=""><div class="faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/><span >What can I expect at my first appointment?</span></div></a> 
+					  <div class="faq-content">
+       			 <p>Plan on spending about two hours at your first appointment. You will be asked to fill out some forms for our agency, including your consent to have treatment at Southwest Counseling Service.</p><p>
+You will meet with a mental health clinician who will complete an assessment with you on the computer. This person will ask you questions about your history and your reasons for coming in for counseling. At the end of the session, you and your clinician will talk about options for treatment and your treatment plan.</p>
+      			</div>
+				</div>
+				 <div class="faq-text accordion">
+				 <a class="faq-a"   href="#faq1"  title=""><div  class="faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/><span >What is a sliding fee scale?</span></div></a> 
+					  <div class="faq-content">
+       			 <p>This is a subsidized fee scale based on gross household income and the number of people in the household. This is offered because we are partially funded by the state.</p>
+      			</div>
+				</div>
+				 <div class="faq-text accordion">
+				 <a class="faq-a"  href="#faq1" title=""><div class="faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/><span >What about confidentiality?</span></div></a>  
+					 <div class="faq-content">
+       			 <p>Southwest Counseling Service takes your privacy very seriously, and we work hard to protect your confidentiality. Your information is kept in secure files, and is not shared with anyone without your consent.</p><p>
+
+There are some exceptions to that, which are legal reasons that your clinician would have to share information about you without your consent. Those include, but are not limited to, a serious medical emergency or threat to life, legally reportable information about child or adult neglect, or if there is a valid court order requiring information.</p><p>
+
+Sometimes people come to Southwest Counseling Service as a result of a court order or because of legal problems. If that is the case, we will usually have you sign a release of information form allowing us to contact your referral source about your therapy. This is often necessary to let the referral source know that you are attending therapy and how you are progressing.</p><p>
+
+For more information about all of the limits to confidentiality, as well as information about the employee code of ethics, please view the client information guide.</p>
+      			</div>
+				</div>
+          </div>
+          <div class="col">
+             <div class="faq-text accordion">
+				 <a class="faq-a"   href="#faq1"  title=""><div class="faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/><span >How do I make an appointment?</span></div></a> 
+				 <div class="faq-content">
+       			 <p>You can make an appointment by calling any of our offices directly.</p>
+      			</div>
+				</div>
+				<div class="faq-text accordion">
+				 <a class="faq-a"   href="#faq1"  title=""><div class="faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/><span>How much does a drug and alcohol evaluation cost?</span></div></a> 
+					 <div class="faq-content">
+       			 <p>The total cost for this evaluation is $240. You may make payment arrangements with the clerical staff if you will not be able to pay in full. Also, please be aware that we will notify referral resources, such as probation, courts, etc., of payment and non-payment.</p><p>
+
+Finally, if you have had an evaluation or addiction severity index (ASI) assessment completed in the past three months, SCS will require a copy and there will be no additional charge for this portion of the assessment. The cost with a previous ASI included is based on our sliding fee scale.</p>
+      			</div>
+				</div>
+				 <div class="faq-text accordion">
+				 <a class="faq-a" href="#faq1"  title=""><div class="faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/><span >What is residential treatment?</span></div></a> 
+					  <div class="faq-content">
+       			 <p>Rosen Recovery, Therapeutic Community, and Women’s Addiction Program are all residential treatment programs where individuals reside in Southwest Counseling Service housing during the substance abuse treatment program. Each program has various lengths of stay ranging from four months to more than one year.</p>
+      			</div>
+				</div>
+          </div>
+        </div>
+			<div class="row">
+          <div >
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+		</div>
+	</section>
+	
+	<section>
+      <div class="row">
+          <div class="col-sm-6 col-lg-6">
+        <img src="images/stock-photo-psychological-guidance-521585995.jpg" width="100%"  alt=""/> </div>
+          <div class="col-sm-6 col-lg-6 news"> 
+            <h5>LATEST NEWS</h5>
+			  <hr class="orange-line-thin" style="">
+			  <h7><strong>March 1, 2020</strong></h7>
+			  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+			  <a href="#" class="readMore" >Read More...</a>
+			   <p>&nbsp;</p>
+			  <h7><strong>February 14, 2020</strong></h7>
+			  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+			  <a href="#" class="readMore" >Read More...</a>
+               <p>&nbsp;</p>
+               <h7><strong>February 1, 2020</strong></h7>
+			  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+			  <a href="#" class="readMore" >Read More...</a>
+               <p>&nbsp;</p>
+          </div>
+		  
+      </div>
+	</section>
+	
+	
+	<section>
+		<div>
+          <div >
+            <p>&nbsp;</p>
+          </div>
+        </div>
+	<div class="jumbotron payment">
+		<hr class="orange-line">
+		<div class="blue-title">
+			<div class="container">
+			<h5>PAYMENT INFORMATION</h5></div>
+		</div>
+        <div class="container">
+          <div class="row text-center mx-auto" style="padding:25px;">
+            
+				<div class="col" id="slidingFee" style="height:150px; "><a href="#" ></a></div>
+				<div class="col" id="insurance" style="height:150px;"><a href="#" ></a></div>
+				<div class="col" id="medicare" style="height:150px; margin-left:10px;"><a href="#" ></a></div>
+				<div class="col" id="medicaid" style="height:150px; margin-left:15px;"><a href="#" ></a></div>
+				<div class="col" id="eap" style="height:150px;"><a href="#" ></a></div>
+				<!--<a href="#"><img src="images/sliding-fee-scale.png" height="150" alt=""/></a>
+				<a href="#"><img src="images/medicalInsurance.png" height="155" alt=""/></a>
+				<a href="#"><img src="images/medicaid.png" height="150" style=" margin-left:10px;"  alt=""/></a> 
+				<a href="#"><img src="images/medicare.png" height="150" style="margin-left:15px;""  alt=""/></a> 
+				<a href="#"><img src="images/employee-assistance-program.png" height="150" alt=""/></a>  -->
+			
+        </div>
+      </div>
+		</div>
+	</section>
+	  
+	
+	<section>
+		<div class="container" > 
+			<div class="row">
+          <div >
+            <p>&nbsp;</p>
+          </div>
+        </div>
+			<div >
+            <h5>SCS LOCATIONS</h5>
+				<hr class="orange-line-thin" style="width:170px;">
+          </div>
+      <div class="row row-cols-3">
+          <div class="col"> 
+		    <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7> <br>
+		    <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7><br>
+			  <h7>307.352.6677</h7>
+			  <div>&nbsp;</div>
+	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+		    <div class="col">
+       <h7>Southwest Counseling Services - <strong>Mental Health</strong></h7> 
+			  <h7>1124 College Dr. Rock Springs, WY 82901</h7> 
+				 <h7>307.352.6680</h7>
+				  <div>&nbsp;</div>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.30783232254!2d-109.23738235111409!3d41.584222805473736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61189a7b7009%3A0x6547fdf9c6cbc427!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149630327!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		  </div>
+		   <div class="col">
+       <h7 >Southwest Counseling Services - <strong>Green River</strong></h7> <br>
+			  <h7>115 E. Flaming Gorge Way Green River, WY 82935</h7>
+			    <h7>307.872.3205</h7>
+			     <div>&nbsp;</div>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.8781971093235!2d-109.4683197841813!3d41.52857897925135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a7dde55555555%3A0x3fae44f210f3efad!2sSouthwest%20Counseling%20Service!5e0!3m2!1sen!2sus!4v1584150269094!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		  </div>
+      </div>
+			<div class="row">
+          <div >
+            <p>&nbsp;</p>
+          </div>
+        </div>
+		</div>
+	</section>
+	
+    <footer class="text-center">
+		<div class="jumbotron footerSection">
+      <div class="container">
+        <div class="row" style="border-bottom:solid 1px; padding-top:20px; padding-bottom:10px; margin-top:5px; margin-bottom:5px; ">
+		  <div class="col" style="border-right:solid 1px; padding-top:10px; ">
+			<p>SCS Main Office - Recovery Services</p>
+			</div>
+		  <div class="col-6" style="border-right:solid 1px; padding-top:10px; ">
+			<p>2300 Foothill Blvd. &nbsp;Rock Springs, WY 82901</p>
+			</div>
+			<div class="col" style="padding-top:10px; ">
+			<p style="color:#e68166;"><strong>307-352-6677</strong></p>
+			</div>
+        </div>
+        <div class="row" style="border-bottom:solid 1px; padding-top:10px; padding-bottom:10px; margin-top:5px; margin-bottom:5px; ">
+	  	  <div class="col" style="border-right:solid 1px; padding-top:10px; ">
+			<p>SCS Mental Health Services</p>
+			</div>
+			<div class="col-6" style="border-right:solid 1px; padding-top:10px;  ">
+			<p>1124 College Dr. &nbsp;Rock Springs, WY 82901</p>
+			</div>
+			<div class="col" style="padding-top:10px;" >
+			<p >307-352-6680</p>
+		  </div>
+       	</div>
+	    <div class="row" style="border-bottom:solid 1px; padding-top:10px; padding-bottom:10px; margin-top:5px; margin-bottom:5px;">
+		  <div class="col" style="border-right:solid 1px; padding-top:10px; ">
+			<p>SCS Green River - Mental Health</p>
+		  </div>
+			<div class="col-6" style="border-right:solid 1px; padding-top:10px; ">
+			<p>115 E. Flaming Gorge Way&nbsp; Green River, WY 82935 </p>
+			</div>
+			<div class="col" style="padding-top:10px; ">
+			<p>307-872-3205</p>
+			</div>
+        </div>
+		  <div >
+            <p>&nbsp;</p>
+          </div>
+		  <div class="row">
+		  <div class="col">
+	      <a href=""><img src="images/scs-logo-white.png" width="216" height="75" alt=""/> </a>
+		  </div>
+	      <div class="col" >
+			  <p style="text-align: left; text-decoration: underline;">Services</p>
+			  <a href="#" class="footer-text"><p  >Evaluations &amp; Assessments</p></a>
+		      <a href="#" class="footer-text"><p >Mental Health</p></a>
+			  <a href="#" class="footer-text"><p >Substance Abuse</p></a>
+			  <a href="#" class="footer-text"><p >Psychosocial</p></a>
+			  <a href="#" class="footer-text"><p >Prevention</p></a>
+			  <a href="#" class="footer-text"><p >Children &amp; Adolescents</p>
+			  </a>
+			  <a href="#" class="footer-text"><p >Medical Services</p></a>
+		  </div> 
+			   <div class="col" >
+			  <p style="text-align: left; text-decoration: underline;">Other Services</p>
+			  <a href="#" class="footer-text"><p >Employment</p></a>
+			  <a href="#" class="footer-text"><p >Community Involvement</p></a>
+			  <a href="#" class="footer-text"><p >About Us</p></a>
+			  <a href="#" class="footer-text"><p >Contact Us</p></a>
+			 
+		  </div> 
+		  <div class="col" >
+			  <p style="text-align: left; text-decoration: underline;">Quick Links</p>
+			  <a href="#" class="footer-text"><p >Payment Information</p></a>
+			  <a href="#" class="footer-text"><p >SCS Employee Center</p></a>
+			  <a href="#" class="footer-text"><p >Client Suggestions</p></a>
+			  <a href="#" class="footer-text"><p>FAQ</p></a>
+		  </div>
+		   <div class="col">
+			   <p style="text-align: left; text-decoration: underline;">About Us</p>
+		     <a href="#" class="footer-text"><p >Board of Directors</p></a>
+			  <a href="#" class="footer-text"><p >Mission &amp; Vision</p></a>
+		     <a href="#" class="footer-text"><p >Career Opportunities</p></a>
+			   <a href="#" class="footer-text"><p >Employees</p></a>
+			  <a href="#" class="footer-text"><p >History</p></a>
+			  <a href="#" class="footer-text"><p >Accreditations</p></a>
+		  </div>
+		 </div> 
+		   <div >
+            <p>&nbsp;</p>
+          </div>
+		  <h5>EMERGENCIES: Please call 911 in a life-threatening emergency</h5>
+		    <div >
+            <p>&nbsp;</p>
+          </div>
+		  <div class="col-12" style="border-top:solid 1px; padding-bottom:10px; padding-top:20px;">
+            <p style="font-size:12px;">Copyright 2020 © Southwest Counseling Services. All rights reserved.</p>
+          </div>
+      </div>
+		</div>
+		
+		
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.4.1.js"></script>
+	<script src="js/function.js"></script>
+</body>
+</html>
