@@ -1,7 +1,12 @@
 function searching() {
-    document.getElementById("dropdownList").style.visibility = "visible";
+	var dropdown = document.getElementById("dropdownList");
+	var dropdownContainer = document.getElementById("dropdown-container");
+	dropdown.style.visibility = "visible";
+	dropdown.style.display = "";
+	dropdownContainer.style.display = "";
     var input = document.getElementById("text_box");
-    var searchResults = document.getElementsByTagName("li");
+	var myUL = document.getElementById("myUL");
+    var searchResults = myUL.getElementsByTagName("li");
 
     // OTHER SEARCH FUNCTIONALITY HERE...
     // For each possible search result in searchResults...
@@ -26,6 +31,7 @@ function searching() {
 function hide() {
     if (document.getElementById("text_box").value == "") {
         document.getElementById("dropdownList").style.visibility = "hidden"; // Hide the search box results.
+		document.getElementById("dropdown-container").style.display = "none";
     }
 }
 
