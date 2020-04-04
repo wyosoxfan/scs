@@ -178,8 +178,67 @@ display: block;
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: #003366;
 }
+.dropdown-innerText {
+    background-color: #fff;
+    margin-right: 2px;
+}
+.dropdown-border {
+    width: 700px;
+    border: solid #e68166 3px;
+    padding: 0;
+    margin: 0;
+}
+.dropdown-area {
+    border: solid #fff 3px;
+    border-top: 0px;
+    padding: 8px;
+    margin: 6px -6px -3px -6px;
+	 box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.5);
+}
+.search-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #e68166;
+    background-clip: padding-box;
+    border: 3px solid #e68166;
+}
+.top-padding {
+    padding-top: 10px;
+}
+	
+	.search-dropmenu{
+		min-width: 120px;  
+		padding: 5px; 
+		background-color:#003366; 
+		color:#fff;
+	}
+	.search-dropmenu a{
+		color:#fff;
+	}
+	.search-dropmenu a:hover{
+		color:#e68166;
+		background-color:transparent;
+	}
+	
+	.dropdown-item-hover{
+		color:#fff;
+	}
+	
+	.dropdown-item-hover:hover{
+		color:#e68166;
+	}
 
 .dropdown-header {
   display: block;
@@ -193,7 +252,7 @@ display: block;
 .dropdown-item-text {
   display: block;
   padding: 0.25rem 1.5rem;
-  color: #212529;
+  color: #000;
 }
 
 .header-title{
@@ -221,8 +280,8 @@ display: block;
     margin-left: auto;
 }
 	
-input{margin:0; padding: 20px 10px; line-height: 28px;}
-input:checked{border-color:red;}
+input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
+
 	
 .search-form {margin:0 auto; padding:0; height:50px;}
 .search-input {padding: 10px 10px; line-height: 28px; border:0;}
@@ -231,10 +290,10 @@ input:checked{border-color:red;}
 .btn {
   color: #000;
   background-color: #fff;
-  border-color: #003366;
+  border-color: #003366; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.5);
 }
 
-.btn {
+/*.btn {
   display: inline-block;
   font-weight: 400;
   color: #fff;
@@ -252,7 +311,7 @@ input:checked{border-color:red;}
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+}*/
 
 .btn:hover {
   color: #000;
@@ -527,7 +586,7 @@ input:checked{border-color:red;}
 	display: flex;
     /*width: 93%;*/
 	color:#fff;
-	margin-bottom:20px;
+	/*margin-bottom:20px;*/
 		margin-top:0px;
 		padding:0px 0 0 0;
 		margin-right:10%;

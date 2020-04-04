@@ -9,49 +9,6 @@
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <style>
-.dropdown-innerText {
-    background-color: #fff;
-    margin-right: 2px;
-}
-.dropdown-border {
-    width: 700px;
-    border: solid #e68166 3px;
-    padding: 0;
-    margin: 0;
-}
-.dropdown-area {
-    border: solid #fff 3px;
-    border-top: 0px;
-    padding: 8px;
-    margin: 6px -6px -3px -6px;
-}
-.search-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 200px;
-    padding: 0;
-    margin: 0;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #e68166;
-    background-clip: padding-box;
-    border: 3px solid #e68166;
-}
-#calendar-icon {
-    background-image: url("images/calendar-white.png") center center no-repeat !important;
-    padding: 0;
-    margin: 0;
-    width: 350px;
-    height: 200px;
-}
-#calendar-icon:hover {
-    background-image: url("images/calendar-hover.png") center center no-repeat !important;
-}
 </style>
 </head>
 
@@ -126,31 +83,87 @@
   </div>
 </nav>
 <header>
-  <div class="searchbar-container">
-    <div class="searchbar align-items-center ">
-      <form class="search-form search-input d-flex">
-        <input class="search-input flex-grow-1" type="text" placeholder="What can we help you find?" aria-label="Search" >
-        <button class="search-button" type="submit">
-        <div id="search"  alt="Search"></div>
-        </button>
-      </form>
-      <!--<div class="search-menu row d-flex dropdown" id="search-dropdown" style="border:solid #000 3px; padding:8px; margin: 0px 0px 0px 0px; " >
-				<div class="col text-center" style="minwidth: 200px;" >
-				<div >
-					<h6>TRENDING</h6>
-					<hr style="background-color:#fff; margin:0 0 10px 0;">
-					<a href="#"><p>Alcoholism</p></a>
-					<a href="#"><p>Depression</p></a>
-					<a href="#"><p>Suicide</p></a>
-				 </div>
-				</div>
-			<div class="col-8" style="background-color:#fff; margin-right:2px; min-width:300px;">
-			<a class="dropdown-item" href="#">How to Get Started</a>  
-			<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href="#">Get Help for Myself</a> 
-		  	<div class="dropdown-divider"></div>
-		  	<a class="dropdown-item" href="#">Payment Information</a>
-			</div>--> 
+   <div class="container-fluid searchbar-container" style="position: relative;  display: inline-block;">
+    <div class="row align-items-center ">
+      <div class="col">&nbsp;
+      </div>
+      <div class="col-8 searchbar">
+        <div class=" search-form d-flex mb-0" >
+			<input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
+			<div class="input-group-prepend">
+            <button class="search-button" type="button" id="button-addon1" ><div id="search"  alt="Search"></div></button>
+			</div>
+		  </div>
+		</div>
+      <div class="col">&nbsp;
+      </div>
+    </div>
+    <div class="row d-flex" id="dropdown-container" style="">
+      <div class="col">
+      </div>
+      <div id="dropdownList" class="col-8" style="width: {define width}
+position: absolute;
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000; "  >
+        <div class="container-fluid">
+          <div class="row" style="">
+            <div class="col-4 text-center search-dropmenu" >
+              <div>
+                <h6 style="color: #e68166;">TRENDING</h6>
+                <hr style="background-color:#fff; margin:0 0 10px 0;">
+                <a href="#"><p>Alcoholism</p></a>
+                <a href="#"><p>Depression</p></a>
+                <a href="#"><p>Suicide</p></a>
+              </div>
+              <h6 style="color: #e68166;">LINKS</h6>
+              <hr style="background-color:#fff; margin:0 0 10px 0;">
+              <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a>
+            </div>
+            <div class="col">
+              <ul id="myUL" class="list-group">
+                <li class="list-group-item active" style="display: none;">
+                  <h3>Test 1</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 2</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 3</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 4</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 5</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 6</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+      </div>
     </div>
   </div>
   <div class="jumbotron" id="top-image">
@@ -855,5 +868,6 @@ RECOVERY, AND HOPE.</h4>-->
 <script src="js/bootstrap-4.4.1.js"></script> 
 <!--<script src="js/function.js"></script>--> 
 <script src="js/function.js"></script>
+<script src="js/test.js"></script>
 </body>
 </html>

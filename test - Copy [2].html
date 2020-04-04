@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to Southwest Counseling Service</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+	<style>
+
+ /*The container <div> - needed to position the dropdown content */
+.dropdown-div {
+  position: relative;
+  display: inline-block;
+	margin-bottom:20px;
+}
+		
+		/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* Dropdown Content (Hidden by Default) 
+.dropdown-content {
+  display:none; 
+	background-color:#003366; 
+	padding:10px 10px 5px 5px; 
+	color:#fff; 
+	width: {define width}
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+	position:absolute;  
+	box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.5);  
+	z-index: 9999; 
+}*/
+		
+/* Dropdown Content (Hidden by Default)*/ 
+.dropdown-content {
+ /* display:none; */
+	background-color:#003366; 
+	padding:10px 10px 5px 5px; 
+	color:#fff; 
+	right: 12%;  
+	position:absolute;  
+	box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.5);  
+	z-index: 9999; 
+}
+
+/* Links inside the dropdown */
+.dropdown-content a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover }*/
+.dropdown-content a:hover {background-color: red;
+
+/* Show the dropdown menu on hover 
+.dropdown:hover .dropdown-content {display: block;}*/
+
+/* Change the background color of the dropdown button when the dropdown content is shown
+.dropdown:hover .dropbtn {background-color: #3e8e41;} */
+	
+.show {display:block;}
+</style>
+</head>
+<body>
+	<div class="container-fluid dropdown-div" style="margin-bottom:20px; position: relative;  display: inline-block;">
+	 <div class="row justify-content-end" id="contact-flags" >
+    <div class="icon-square"><a id="phone-square" href="#"><img src="images/spacer.png"  alt=""/></a></div>
+	<div class="icon-square " ><a class="dropbtn" onclick="myFunction()" id="map-square" href="#map-square-map"><img src="images/spacer.png"  alt=""/></a></div>
+	  <div class="icon-square"><a id="facebook-square" href="#"><img src="images/spacer.png" alt=""/></a></div>
+	</div> 
+	<div class="row d-flex">
+      <div class="col">
+      </div>
+	 <div class="row justify-content-end dropdown-content"  id="myDropdown">
+		 <div class="col">
+		    <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7> <br>
+		    <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7><br>
+			  <h7>307.352.6677</h7>
+			  <div>&nbsp;</div>
+	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		  </div>
+			</div> 
+		</div>
+	</div>
+	
+	
+	
+	
+  <div class="container-fluid" >
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-8">
+        <div class="input-group mb-3" style="padding:0; margin:0px 0px 0px 0px !important;">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" style="border: black solid thin;">Search</button>
+          </div>
+          <input id="text_box" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+      </div>
+      <div id="dropdownList" class="col-8" style="visibility: hidden;">
+        <div class="container-fluid">
+          <div class="row" style="border: black solid thin;">
+            <div class="col-4 text-center" style="min-width: 200px; padding: 8px;">
+              <div>
+                <h6>TRENDING</h6>
+                <hr style="background-color:#fff; margin:0 0 10px 0;">
+                <a href="#"><p>Alcoholism</p></a>
+                <a href="#"><p>Depression</p></a>
+                <a href="#"><p>Suicide</p></a>
+              </div>
+              <h6>LINKS</h6>
+              <hr style="background-color:#fff; margin:0 0 10px 0;">
+              <a class="dropdown-item" href="#">How to Get Started</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Get Help for Myself</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Payment Information</a>
+            </div>
+            <div class="col">
+              <ul id="myUL" class="list-group">
+                <li class="list-group-item active" style="display: none;">
+                  <h3>Test 1</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button>Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 2</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button>Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 3</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button>Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 4</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button>Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 5</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button>Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 6</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button>Find out more!</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+</body>
+</html>
