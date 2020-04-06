@@ -35,12 +35,26 @@ function hide() {
     }
 }
 
+function enableMapView() {
+    var mapView = document.getElementById("mapView");
+    if (mapView.style.visibility != "visible") {
+        mapView.style.visibility = "visible";
+        mapView.style.display = "";
+    } else {
+        mapView.style.visibility = "hidden";
+        mapView.style.display = "none";
+    }
+    document.getElementById("map-square").removeEventListener("click", enableMapView);
+}
+
 var searchBar = document.getElementById("text_box");
 var dropdownList = document.getElementById("dropdownList");
+var mapButton = document.getElementById("map-square");
 searchBar.addEventListener("input", searching);
 searchBar.addEventListener("focusin", searching);
 searchBar.addEventListener("focusout", hide);
 dropdownList.addEventListener("focusin", searching);
+mapButton.addEventListener("click", enableMapView);
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
