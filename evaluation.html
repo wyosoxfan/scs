@@ -9,54 +9,12 @@
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <style>
-.dropdown-innerText {
-    background-color: #fff;
-    margin-right: 2px;
-}
-.dropdown-border {
-    width: 700px;
-    border: solid #e68166 3px;
-    padding: 0;
-    margin: 0;
-}
-.dropdown-area {
-    border: solid #fff 3px;
-    border-top: 0px;
-    padding: 8px;
-    margin: 6px -6px -3px -6px;
-}
-.search-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 200px;
-    padding: 0;
-    margin: 0;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #e68166;
-    background-clip: padding-box;
-    border: 3px solid #e68166;
-}
-#calendar-icon {
-    background-image: url("images/calendar-white.png") center center no-repeat !important;
-    padding: 0;
-    margin: 0;
-    width: 350px;
-    height: 200px;
-}
-#calendar-icon:hover {
-    background-image: url("images/calendar-hover.png") center center no-repeat !important;
-}
+
 </style>
 </head>
 
-<body>
-<div class="d-flex">
+<body>	
+	<div class="d-flex">
 <div class="navbar top-sub-menu col justify-content-start">
   <ul>
     <li><a href="#">Future Link</a></li>
@@ -78,7 +36,7 @@
       <li class="nav-item "> <a class="nav-link active" style="margin-left:20px;" href="index.html">Home</a> </li>
       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="get-started.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Get Started </a>
         <div class="dropdown-menu dropdown-border" style="" aria-labelledby="navbarDropdown">
-          <div class="row d-flex dropdown-area" style="" >
+          <div class="row d-flex dropdown-area " style="" >
             <div class="col text-center" >
               <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-laughing-mature-mother-embracing-happy-millennial-daughter-spending-time-together-caring-smiling-1444021535.jpg" data-holder-rendered="true">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
@@ -126,56 +84,115 @@
   </div>
 </nav>
 <header>
-  <div class="searchbar-container">
-    <div class="searchbar align-items-center ">
-      <form class="search-forsearch-input d-flex">
-        <input class="search-input flex-grow-1" type="text" placeholder="What can we help you find?" aria-label="Search" >
-        <button class="search-button" type="submit">
-        <div id="search"  alt="Search"></div>
-        </button>
-      </form>
-      <!--<div class="search-menu row d-flex dropdown" id="search-dropdown" style="border:solid #000 3px; padding:8px; margin: 0px 0px 0px 0px; " >
-				<div class="col text-center" style="minwidth: 200px;" >
-				<div >
-					<h6>TRENDING</h6>
-					<hr style="background-color:#fff; margin:0 0 10px 0;">
-					<a href="#"><p>Alcoholism</p></a>
-					<a href="#"><p>Depression</p></a>
-					<a href="#"><p>Suicide</p></a>
-				 </div>
-				</div>
-			<div class="col-8" style="background-color:#fff; margin-right:2px; min-width:300px;">
-			<a class="dropdown-item" href="#">How to Get Started</a>  
-			<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href="#">Get Help for Myself</a> 
-		  	<div class="dropdown-divider"></div>
-		  	<a class="dropdown-item" href="#">Payment Information</a>
-			</div>--> 
+   <div class="container-fluid searchbar-container" style="position: relative;  display: inline-block;">
+    <div class="row align-items-center ">
+      <div class="col">&nbsp;
+      </div>
+      <div class="col-8 searchbar">
+        <div class=" search-form d-flex mb-0" >
+			<input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
+			<div class="input-group-prepend">
+            <button class="search-button" type="button" id="button-addon1" ><div id="search"  alt="Search"></div></button>
+			</div>
+		  </div>
+		</div>
+      <div class="col">&nbsp;
+      </div>
+    </div>
+    <div class="row d-flex" id="dropdown-container" style="">
+      <div class="col">
+      </div>
+      <div id="dropdownList" class="col-8" style="width: {define width}
+position: absolute;
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000; "  >
+        <div class="container-fluid">
+          <div class="row" style="">
+            <div class="col-4 text-center search-dropmenu" >
+              <div>
+                <h6 style="color: #e68166;">TRENDING</h6>
+                <hr style="background-color:#fff; margin:0 0 10px 0;">
+                <a href="#"><p>Alcoholism</p></a>
+                <a href="#"><p>Depression</p></a>
+                <a href="#"><p>Suicide</p></a>
+              </div>
+              <h6 style="color: #e68166;">LINKS</h6>
+              <hr style="background-color:#fff; margin:0 0 10px 0;">
+              <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a>
+            </div>
+            <div class="col">
+              <ul id="myUL" class="list-group">
+                <li class="list-group-item active" style="display: none;">
+                  <h3>Test 1</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 2</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 3</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 4</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 5</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 6</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+      </div>
     </div>
   </div>
-  <div class="jumbotron" id="top-image">
+	
+	<div class="jumbotron" id="top-image">
     <div class="container">
       <div class="row">
         <div class="col"> 
-          <h4 class="text-left">You are a great friend.</h4>
-          <p class="text-left">You might not know who to turn to, but there are many places and people around you who are interested and want to help - even if you want anonymous advice. Addressing the problem on your own is more stressful and more difficult than getting assistance.</p>
+          <!--<h4 class="text-left">ENRICHING LIVES <br>
+THROUGH WELLNESS, <br>
+RECOVERY, AND HOPE.</h4>-->
+          <p class="text-left">Evaluations...<br> <br>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. </p>
           <p>&nbsp;</p>
           <p class="text-center"><a class="btn btn-secondary" href="#" role="button"> <img src="images/phone.svg" alt=""/>&nbsp; &nbsp;Contact Us</a> </p>
         </div>
-        <div class="col-lg-8"> <img class="img-fluid" src="images/stock-photo-two-sad-men-sit-on-the-log-at-the-beach-1176737653.jpg" alt="Enriching lives through wellness, recover, and hope."/><!--width="684" height="300"--> 
+        <div class="col-lg-8"> <img class="img-fluid" src="images/stock-photo-female-psychologist-consulting-pensive-man-during-psychological-therapy-session-164331545.jpg" alt="Enriching lives through wellness, recover, and hope."/><!--width="684" height="300"--> 
           
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
+ <div class="row">
     <div class="col justify-content-start breadcrumb-menu">
       <ul >
         <li><a href="#">Home</a></li>
         <li><a >&gt;</a></li>
-        <li><a href="#">Get Started</a></li>
+        <li><a href="#">SERVICES</a></li>
         <li><a >&gt;</a></li>
-        <li><a href="#">Help for a Friend</a></li>
+        <li><a href="#">Evaluations & Assessments</a></li>
       </ul>
     </div>
     <div class="col justify-content-end" id="contact-flags">
@@ -183,25 +200,17 @@
       <div class="icon-square"><a id="map-square" href="#map-square-map"><img src="images/spacer.png"  alt=""/></a></div>
       <div class="icon-square"><a id="facebook-square" href="#"><img src="images/spacer.png" alt=""/></a></div>
     </div>
-    <!-- <div id="map-square-map" style="background-color:#003366; padding:10px 10px 5px 5px; color:#fff;">
-		 <div class="col">
-		    <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7> <br>
-		    <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7><br>
-			  <h7>307.352.6677</h7>
-			  <div>&nbsp;</div>
-	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-		  </div>
-		</div>--> 
   </div>
-</header>
-<section class="header-title">
+	</header>
+	
+	<section class="header-title">
   <div class="container">
     <div class="row">
       <div class="col">
         <hr class="black-line-thin">
       </div>
       <div class="col-6 align-content-center" >
-        <h3 class="text-center">HELP FOR A FRIEND</h3>
+        <h3 class="text-center">EVALUATIONS & ASSESSMENTS</h3>
       </div>
       <div class="col">
         <hr class="black-line-thin">
@@ -215,193 +224,185 @@
       </div>
     </div>
     <div class="row">
-      <div class="col d-flex flex-column " style="min-width:200px">
-		  <div class="p-2"><h6><strong>You can make a difference...</strong></h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
-		  
-		  </div>
-		 <div class="p-2  mt-auto" style="min-width:200px">
-          <p class="text-center "><a class="btn btn-primary" href="#" role="button">Resources</a> </p>
-		 </div>
-		</div>
-		
-         <div class="col d-flex flex-column" >
-     <div class="p-2">  
-		 <h6><strong>EMERGENCY SERVICES</strong></h6>
-      
-      <p class="mb-0">A crisis can happen at any time of the day. Southwest Counseling Service provides emergency services 24 hours a day, seven days a week. Contact our on-call clinician by calling (307) 352-6680 or (307) 875-5515. <br>
-        <br>
-       <!-- A crisis can be caused by things that are unexpected or sudden. Emergency services typically include walk-in services, phone intervention, hospital consultations, and brief crisis counseling.--> </p>
-	</div>
-		 
-		 <div class="p-2  mt-auto">
-          <p class="text-center "><a class="btn btn-primary" href="#" role="button"><img src="images/phone.svg" alt="" />&nbsp; &nbsp;Call Us</a> </p>
-		 </div> 
+      <div class="col" style="min-width:250px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel </p>
       </div>
-    </div>
-  </div>
-</section>
-<section class="survey-section">
-  <div class="container">
-	  <div class="row">
-		<p>&nbsp; </p>
-	</div>
-    <div class="row no-gutters"  >
-      <div class="col d-flex survey-box" >
-        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-sad-young-man-in-white-t-shirt-is-looking-at-glass-of-beer-while-sitting-at-bar-counter-in-pub-in-386500174.jpg"  data-holder-rendered="true"> </div>
-        <div class="col align-self-center d-flex flex-column ">
-			 <div  class="p-2">
-				 <p class="text-center" style="font-size: 18px;">Has your drinking <br>
-            become a problem?</p>
-			 </div>
-          <div  class="p-2 mt-auto">
-			  <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
-			 </div>
-		</div>
+      <div class="col" style="min-width:250px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel </p>
       </div>
-      <div class="col d-flex survey-box" >
-        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; " src="images/stock-photo-a-woman-sitting-alone-and-depressed-345397208.jpg" data-holder-rendered="true"> </div>
-        <div class="col align-self-center d-flex flex-column ">
-			 <div  class="p-2"><p class="text-center" style="font-size: 18px;">Is your sadness normal?</p>
-			 </div>
-          <div class="p-2 mt-auto">
-			  <p class="text-center "><a class="btn button-white" href="#" role="button">Find Out</a> </p>
-			 </div>
-		</div>
+      <div class="col" style="min-width:250px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel </p>
       </div>
-    </div>
-    <div class="row no-gutters" >
-      <div class="col d-flex survey-box">
-        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-a-young-sales-person-in-elegant-suit-sitting-with-paper-on-top-of-a-stone-in-the-clouds-concept-496908091.jpg" data-holder-rendered="true"> </div>
-       <div class="col align-self-center d-flex flex-column ">
-			 <div  class="p-2">
-				 <p class="text-center" style="font-size: 18px;">Do you isolate <br>
-            yourself too much?</p>
-			 </div>
-          <div class="p-2 mt-auto">
-          <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
-        </div>
-		</div> 
-      </div>
-		
-      <div class="col d-flex survey-box">
-        <div class="col" style="padding:0;"> <img alt="" style="width: 300px;" src="images/stock-photo-man-comforting-his-depressed-friend-in-bar-388576783.jpg" data-holder-rendered="true"> </div>
-        <div class="col align-self-center d-flex flex-column ">
-			 <div class="p-2">
-			<p class="text-center" style="font-size: 18px;">Do you feel like people would be happier without you?</p>
-			</div>
-          <div  class="p-2 mt-auto">
-			  <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
-			 </div>
-		</div>
-      </div>
-		
     </div>
   </div>
 </section>
 	
-<section  class="conditions-treat">
+<section class="services-provided">
   <div class="jumbotron payment">
     <hr class="orange-line">
     <div class="blue-title">
       <div class="container">
-        <h5>SERVICES PROVIDED</h5>
+        <h5>GROUPS PROVIDED</h5>
       </div>
     </div>
     <div class="container">
       <div class="row text-center mr-auto justify-content-center blue-background" style="padding:15px 0 15px 0;">
         <div class="col">
-          <div class="services-text" > <a class="services-a" href="#drug-assessment" title="">
+          <div class="services-text" > 
+			  <a class="services-a" href="case-management.html" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span >Mental Health</span></div>
-</div>
-            </a> </div>
-          <div class="services-text" > <a class="services-a" href="#emergency-services" title="">
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span>Substance Abuse</span></div>
+              <div class="col-11 align-middle"><span >Mental Health Assessments</span></div>
             </div>
             </a> </div>
           <div class="services-text" > <a class="services-a" href="#" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"> <span >Suicide Prevention</span></div>
+              <div class="col-11 align-middle"><span>Drug &amp; Alcohol Assessments</span></div>
             </div>
             </a> </div>
-          <div class="services-text" > <a class="services-a" href="#residential-treatment" title="">
+			 <div class="services-text" > 
+			  <a class="services-a" href="psychiatric-services.html" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span>New Client Paperwork</span></div>
-            </div>
-            </a> </div>
-			<div class="services-text" > <a class="services-a" href="#" title="">
+              <div class="col-11 align-middle"><span >Psychological Assessments</span></div>
+            </div></a> </div>
+        </div>
+        <div class="col">
+          <div class="services-text" > 
+			  <a class="services-a" href="#" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span >Domestic Violence</span></div>
+              <div class="col-11 align-middle"><span>Domestic Violence Assessments </span></div>
             </div>
             </a> </div>
+			<div class="services-text" > 
+			  <a class="services-a" href="#" title="">
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >SO</span></div>
+            </div></a> </div>
+          <div class="services-text" > <a class="services-a" href="employee-assistance-programs.html" title="">
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"> <span >Employee Assistance Programs</span></div>
+            </div>
+            </a> 
+			</div>
         </div>
         <div class="col">
           <div class="services-text" > <a class="services-a" href="#" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span>Sex Offenders</span></div>
-            </div>
-            </a> </div>  
-			<div class="services-text" > <a class="services-a" href="#emergency-services" title="">
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span>Psychological Evalutation</span></div>
+              <div class="col-11 align-middle"><span>Resources &amp; Links</span></div>
             </div>
             </a> </div>
           <div class="services-text" > <a class="services-a" href="#" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"> <span >Drug &amp; Alcohol Assessment</span></div>
+              <div class="col-11 align-middle"><span>Open Access </span></div>
             </div>
-            </a> 
-			</div> 
-			<div class="services-text" > <a class="services-a" href="#" title="">
+            </a> </div>
+          <div class="services-text" > 
+			  <a class="services-a" href="#emergency-services" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"> <span >Mental Health Asssessment</span></div>
-            </div>
-            </a> 
-			</div>
-			<div class="services-text" > <a class="services-a" href="#" title="">
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span >Emergency Services</span></div>
+              <div class="col-11 align-middle"> <span >Emergency Services</span></div>
             </div>
             </a> </div>
         </div>
-		  <div class="col">
-          <div class="services-text" > <a class="services-a" href="#" title="">
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span>Mental Health Resources</span></div>
-            </div>
-            </a> </div>  <div class="services-text" > <a class="services-a" href="#emergency-services" title="">
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"><span>Substance Abuse Resources</span></div>
-            </div>
-            </a> </div>
-          <div class="services-text" > <a class="services-a" href="#" title="">
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"> <span >Detox</span></div>
-            </div>
-            </a> 
-			</div> 
-			<div class="services-text" > <a class="services-a" href="#" title="">
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle"> <span >Crisis Stabilization</span></div>
-            </div>
-            </a> 
-			</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="conditions-treat">
+  <div class="row top-bottom-border" >
+    <div class="col-sm-6 col-lg-6"> <img src="images/stock-photo-man-with-psychologist-theraphy-social-problems-concept-drug-addiction-1063660433.jpg" width="100%"  alt=""/> </div>
+    <div class="col-sm-6 col-lg-6" style="padding:0 30px">
+      <p>&nbsp; </p>
+      <h5>CONDITIONS WE TREAT</h5>
+      <hr class="orange-line-thin" style="width:240px">
+      <p><strong>Our Mental Health Services focus on everyday issues such as:</strong></p>
+      
+      <div class="d-flex">
+        <div class="col-7" style="padding-left:0px;">
+          <ul>
+            <li>Abuse/Neglect</li>
+            <li>Adjustment Disorders</li>
+            <li>Anger Management</li>
+            <li>Attention Deficit &amp;Disruptive </li>
+            <li>Disorders (Adults &amp;Children)</li>
+            <li>Anxiety</li>
+            <li>Bipolar Disorder</li>
+            <li>Childhood Mental Issues</li>
+            <li>Death, Dying &amp; Grieving</li>
+            <li>Depression</li>
+            <li>Domestic Violence</li>
+            <li>Obsessive Compulsive Disorder (OCD)</li>
+            <li>Personality Disorders</li>
+            <li>Post Traumatic Stress Disorder (PTSD)</li>
+			<li>Seasonal Affective Disorder (SAD)</li>
+          </ul>
+        </div>
+        <div class="col" style="padding-left:0px;">
+          <ul>
+            <li>Eating Disorders</li>
+            <li>Family &amp; Relationship Issues</li>
+            <li>Life Issues</li>
+            <li>Mind-Body Connection</li>
+            <li>Self-Esteem</li>
+            <li>Sexual Assault</li>
+            <li>Schizophrenia</li>
+            <li>Stress</li>
+			  <li>Substance Abuse</li>
+			  <li>Suicidal Thoughts</li>
+			  <li>Veteran Issues</li>
+			  <li>Workplace Issues</li>
+          </ul>
+         <!-- <div class="text-center"> <a class="btn btn-primary btn-block button-orange-sm" href="#" title=""> <img src="images/phone.svg" alt=""/>&nbsp; &nbsp;Call Now</a> </div>-->
+          <div class="text-center"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div> 
+        </div>
+      </div>
+		<p>&nbsp; </p>
+    </div>
+  </div>
+</section>
+<section id="survey-section">
+  <div class="container">
+	  	<div class="row">
+		<p>&nbsp; </p>
+	</div>
+    <div class="row no-gutters"  >
+      <div class="col d-flex survey-box" >
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-ptsd-mental-health-concept-post-traumatic-stress-disorder-the-depressed-woman-sitting-alone-on-1179632617.jpg"  data-holder-rendered="true"> </div>
+        <div class="col align-self-center">
+          <p class="text-center" style="font-size: 18px;">Do you feel like people would be happier without you?</p>
+          <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
+        </div>
+      </div>
+      <div class="col d-flex survey-box" >
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; " src="images/stock-photo-a-woman-sitting-alone-and-depressed-345397208.jpg" data-holder-rendered="true"> </div>
+        <div class="col align-self-center" >
+          <p class="text-center" style="font-size: 18px;">Is your sadness normal?</p>
+          <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters" >
+      <div class="col d-flex survey-box">
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-a-young-sales-person-in-elegant-suit-sitting-with-paper-on-top-of-a-stone-in-the-clouds-concept-496908091.jpg" data-holder-rendered="true"> </div>
+        <div class="col align-self-center">
+          <p class="text-center" style="font-size: 18px;">Do you isolate <br>
+            yourself too much?</p>
+          <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
+        </div>
+      </div>
+      <div class="col d-flex survey-box">
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px;" src="images/stock-photo-man-comforting-his-depressed-friend-in-bar-388576783.jpg" data-holder-rendered="true"> </div>
+        <div class="col align-self-center" >
+          <p class="text-center" style="font-size: 18px;">Why can't you <br>
+            shake this feeling?</p>
+          <p class="text-center"><a class="btn button-white" href="#" role="button">Find Out</a> </p>
         </div>
       </div>
     </div>
@@ -417,16 +418,15 @@
           <h3 >Getting Started is Easy.</h3>
         </div>
         <div class="text-center mx-auto">
-          <p class="lead">Call us today!</p>
+          <p class="lead">Call us today.</p>
         </div>
-        <div class="col-sm-4 text-center mx-auto"> <a class="btn btn-primary btn-block button-orange-sm" href="#" title=""> <img src="images/phone.svg" alt=""/>&nbsp; &nbsp;307.352.6677</a> </div>
+        <div class="col-sm-4 text-center mx-auto"> <a class="btn btn-primary btn-block button-orange-sm" href="#" title=""> <img src="images/phone.svg" alt=""/>&nbsp; &nbsp;307-352-6677</a> </div>
         <p>&nbsp;</p>
       </div>
     </div>
-	  
   </div>
 </section>
-<section  class="faq-section">
+<section class="faq-section">
   <div class="jumbotron faq" id="faq1">
     <hr class="orange-line">
     <div class="blue-title">
@@ -516,13 +516,13 @@
           </div>
         </div>
       </div>
-		<div class="row">
+      <div class="row">
           <p>&nbsp;</p>
       </div>
     </div>
   </div>
 </section>
-<section class="quote-section">
+	<section class="quote-section">
   <div class="jumbotron payment">
     <div class="container left-right-padding" >
       <div class="row text-left mr-auto blue-background" style="padding:20px 0 20px 0; color:#000;">
@@ -533,8 +533,46 @@
     </div>
   </div>
 </section>
-<section  class="service-icons">
-  <div class="container">
+
+<section id="emergency-services">
+  <div class="row top-bottom-border" >
+    <div class="col-sm-6 col-lg-6 left-right-padding" style="padding-top:20px;">
+      <h5>EMERGENCY SERVICES</h5>
+      <hr class="orange-line-thin" style="width:240px;">
+      <p class="mb-0">A crisis can happen at any time of the day. Southwest Counseling Service provides emergency services 24 hours a day, seven days a week. Contact our on-call clinician by calling (307) 352-6680 or (307) 875-5515. <br>
+        <br>
+        A crisis can be caused by things that are unexpected or sudden. Emergency services typically include walk-in services, phone intervention, hospital consultations, and brief crisis counseling. Our emergency services can help with the following: </p>
+      <p></p>
+      <div class="d-flex">
+        <div class="col" style="padding-left:0px;">
+          <ul>
+            <li>Anxiety attacks</li>
+            <li>Chronic mental illness </li>
+            <li>Crisis intervention</li>
+            <li>Depression </li>
+            <li>Divorce stress </li>
+            <li>Family crisis </li>
+          </ul>
+        </div>
+        <div class="col" style="padding-left:0px;">
+          <ul>
+            <li>Substance abuse</li>
+            <li>Suicidal thoughts</li>
+            <li>Trauma </li>
+            <li>Unemployment stress </li>
+            <li>Workplace crisis </li>
+            <li> Youth / adolescent issues</li>
+          </ul>
+         <p>&nbsp; </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-6"> <img src="images/stock-photo-depressed-and-sad-woman-alone-in-the-mountain-with-a-gray-cloudy-background-192263282.jpg" width="100%"  alt=""/> </div>
+  </div>
+</section>
+
+<section class="service-icons">
+  <div class="container">   
     <div class="row">
       <div >
         <h5>SERVICES</h5>
@@ -696,5 +734,6 @@
 <script src="js/bootstrap-4.4.1.js"></script> 
 <!--<script src="js/function.js"></script>--> 
 <script src="js/function.js"></script>
+	<script src="js/test.js"></script>
 </body>
 </html>
