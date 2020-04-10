@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Southwest Counseling Service | Rock Springs Wyoming</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/testAnimation.css" rel="stylesheet">
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/vue-router.js"></script>
+    </head>
+    <body>
+        <div id="vue_index">
+            <div class="d-flex">
+                <div class="navbar top-sub-menu col justify-content-start">
+                  <ul>
+                    <li><a href="#">Future Link</a></li>
+                    <li><a href="">|</a></li>
+                    <li><a href="#">Future Link</a></li>
+                    <li><a href="">|</a></li>
+                    <li><a class="bold highlight-color" href="#">Suicide Helpline 1-800-273-8255</a></li>
+                  </ul>
+                </div>
+                <div class="navbar top-sub-menu col justify-content-end " style="margin-top:5px; margin-right:20px;"> <a class="orange-color bold" style="font-size:15px;" href="#" title=""> <img src="images/phone.svg" alt="" />&nbsp; &nbsp;307.352.6677</a> </div>
+            </div>
+            <nav class="navbar navbar-expand-lg" >
+                <router-link to="/"><div class="brand-centered " ><a class="navbar-brand logo-xs logo-sm logo-md logo-lg logo-xl"> <img id="southwest-counseling-logo" class="img-fluid"  src="images/SWCounselingLogo414-web.png" width="414px" height="125px" alt="Southwest Couseling Service - Enriching live through wellness, recovery, and hope."/> </a></div></router-link>
+                <button class="navbar-toggler" id="hamburgerMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto navbar-top">
+                    <li class="nav-item "> <a class="nav-link active" style="margin-left:20px;" href="index.html">Home</a> </li>
+                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="get-started.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Get Started </a>
+                      <div class="dropdown-menu dropdown-border" style="" aria-labelledby="navbarDropdown">
+                        <div class="row d-flex dropdown-area" style="" >
+                          <div class="col text-center">
+                            <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-laughing-mature-mother-embracing-happy-millennial-daughter-spending-time-together-caring-smiling-1444021535.jpg" data-holder-rendered="true">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+                            </div>
+                          </div>
+                          <div class="col-8 dropdown-innerText" > <a class="dropdown-item" href="get-started.html">How to Get Started</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="help-myself.html">Get Help for Myself</a> <a class="dropdown-item" href="help-family.html">Get Help for a Family Member</a> <a class="dropdown-item" href="help-friend.html">Get Help for a Friend</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="payment-info.html">Payment Information</a> </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Services </a>
+                      <div class="dropdown-menu dropdown-border" aria-labelledby="navbarDropdown" >
+                        <div class="row d-flex dropdown-area" style="" >
+                          <div class="col text-center" >
+                            <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-psychological-guidance-521585995.jpg" data-holder-rendered="true">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+                            </div>
+                          </div>
+                          <div class="col-8 dropdown-innerText" style=""> <a class="dropdown-item" href="evaluation.html">Evaluation &amp; Assessments</a> <a class="dropdown-item" href="mental-health.html">Mental Health</a> <router-link to="/substance-abuse"><a class="dropdown-item" href="substance-abuse.html">Substance Abuse</a></router-link><a class="dropdown-item" href="child-adolescents.html">Children &amp; Adolescents</a> <a class="dropdown-item" href="psychosocial.html">Psychosocial</a> <a class="dropdown-item" href="prevention.html">Prevention</a> <a class="dropdown-item" href="medical-services">Medical Services</a> <a class="dropdown-item" href="employment.html">Employment</a> <a class="dropdown-item" href="community-involvement.html">Community Involvement</a> <a class="dropdown-item" href="employee-center.html">SCS Employee Center</a>
+                            <div class="dropdown-divider"></div>
+                          </div>
+                        </div>
+                        <!--<div style="background-color:#fff; margin:5px;"><a class="dropdown-item" href="evaluation.html">Evaluation &amp; Assessments</a> 
+                          <a class="dropdown-item" href="mental-health.html">Mental Health</a>
+                        <a class="dropdown-item" href="child-adolescents.html">Children &amp; Adolescents</a>
+                          <a class="dropdown-item" href="psychosocial.html">Psychosocial</a>
+                        <a class="dropdown-item" href="prevention.html">Prevention</a>
+                          <a class="dropdown-item" href="medical-services">Medical Services</a>
+                        <a class="dropdown-item" href="employment.html">Employment</a>
+                           <a class="dropdown-item" href="community-involvement.html">Community Involvement</a>
+                          <a class="dropdown-item" href="employee-center.html">SCS Employee Center</a>
+                          <div class="dropdown-divider"></div>
+                        </div>--> 
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="navbar-nav navbar-right">
+                    <li class="nav-item"><a class="nav-link" href="calendar-mental-health.html">Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link"  style="margin-right:20px;" href="about-us.html">About Us</a></li>
+                  </ul>
+                </div>
+            </nav>
+            <div class="container-fluid searchbar-container" style="position: relative;  display: inline-block;">
+              <div class="row align-items-center ">
+                <div class="col">&nbsp;
+                </div>
+                <div class="col-8 searchbar">
+                  <div class=" search-form d-flex mb-0">
+                <input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
+                <div class="input-group-prepend">
+                      <button class="search-button" type="button" id="button-addon1" ><div id="search"  alt="Search"></div></button>
+                </div>
+                </div>
+              </div>
+                <div class="col">&nbsp;
+                </div>
+              </div>
+              <div class="row d-flex" id="dropdown-container" style="">
+                <div class="col">
+                </div>
+                <div id="dropdownList" class="col-8" style="width: {define width}
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000; "  >
+                  <div class="container-fluid">
+                    <div class="row" style="">
+                      <div class="col-4 text-center search-dropmenu" >
+                        <div>
+                          <h6 style="color: #e68166;">TRENDING</h6>
+                          <hr style="background-color:#fff; margin:0 0 10px 0;">
+                          <a href="#"><p>Alcoholism</p></a>
+                          <a href="#"><p>Depression</p></a>
+                          <a href="#"><p>Suicide</p></a>
+                        </div>
+                        <h6 style="color: #e68166;">LINKS</h6>
+                        <hr style="background-color:#fff; margin:0 0 10px 0;">
+                        <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a>
+                      </div>
+                      <div class="col">
+                        <ul id="myUL" class="list-group">
+                          <li class="list-group-item active" style="display: none;">
+                            <h3>Test 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <button class="btn btn-secondary">Find out more!</button>
+                          </li>
+                          <li class="list-group-item" style="display: none;">
+                            <h3>Test 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <button  class="btn btn-secondary">Find out more!</button>
+                          </li>
+                          <li class="list-group-item" style="display: none;">
+                            <h3>Test 3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <button  class="btn btn-secondary">Find out more!</button>
+                          </li>
+                          <li class="list-group-item" style="display: none;">
+                            <h3>Test 4</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <button  class="btn btn-secondary">Find out more!</button>
+                          </li>
+                          <li class="list-group-item" style="display: none;">
+                            <h3>Test 5</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <button  class="btn btn-secondary">Find out more!</button>
+                          </li>
+                          <li class="list-group-item" style="display: none;">
+                            <h3>Test 6</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <button  class="btn btn-secondary">Find out more!</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                </div>
+              </div>
+            </div>
+            <transition name="fade">
+              <router-view></router-view>
+            </transition>
+            <footer class="text-center">
+                <div class="jumbotron footerSection">
+                  <div class="container">
+                    <div class="row footer-box-top" >
+                      <div class="col footer-box2" >
+                        <p>SCS Main Office - Recovery Services</p>
+                      </div>
+                      <div class="col-5 footer-box2" >
+                        <p>2300 Foothill Blvd. &nbsp;Rock Springs, WY 82901</p>
+                      </div>
+                      <div class="col top-padding"  > <a href="#" style="color:#e68166;"><strong>307-352-6677</strong></a> </div>
+                    </div>
+                    <div class="row footer-box-middle" >
+                      <div class="col  footer-box2" >
+                        <p>SCS Mental Health Services</p>
+                      </div>
+                      <div class="col-5 footer-box2" >
+                        <p>1124 College Dr. &nbsp;Rock Springs, WY 82901</p>
+                      </div>
+                      <div class="col top-padding"  > <a href="#" style="color:#fff;">307-352-6680</a> </div>
+                    </div>
+                    <div class="row footer-box-middle" >
+                      <div class="col footer-box2" >
+                        <p>SCS Green River - Mental Health</p>
+                      </div>
+                      <div class="col-5 footer-box2" >
+                        <p>115 E. Flaming Gorge Way&nbsp; Green River, WY 82935 </p>
+                      </div>
+                      <div class="col top-padding" > <a href="#" style="color:#fff;">307-872-3205</a> </div>
+                    </div>
+                    <div >
+                      <p>&nbsp;</p>
+                    </div>
+                    <div class="row">
+                      <div class="col"> <a href=""><img src="images/scs-logo-white.png" width="216" height="75" alt=""/> </a> </div>
+                      <div class="col" >
+                        <p style="text-align: left; text-decoration: underline;">Services</p>
+                        <a href="#" class="footer-text">
+                        <p>Evaluations &amp; Assessments</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Mental Health</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Substance Abuse</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Psychosocial</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Prevention</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Children &amp; Adolescents</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Medical Services</p>
+                        </a> </div>
+                      <div class="col" >
+                        <p style="text-align: left; text-decoration: underline;">Other Services</p>
+                        <a href="#" class="footer-text">
+                        <p >Employment</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Community Involvement</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >About Us</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Contact Us</p>
+                        </a> </div>
+                      <div class="col" >
+                        <p style="text-align: left; text-decoration: underline;">Quick Links</p>
+                        <a href="#" class="footer-text">
+                        <p >Payment Information</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >SCS Employee Center</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Client Suggestions</p>
+                        </a> <a href="#" class="footer-text">
+                        <p>FAQ</p>
+                        </a> </div>
+                      <div class="col">
+                        <p style="text-align: left; text-decoration: underline;">About Us</p>
+                        <a href="#" class="footer-text">
+                        <p >Board of Directors</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Mission &amp; Vision</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Career Opportunities</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Employees</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >History</p>
+                        </a> <a href="#" class="footer-text">
+                        <p >Accreditations</p>
+                        </a> </div>
+                    </div>
+                    <div >
+                      <p>&nbsp;</p>
+                    </div>
+                    <h5>EMERGENCIES: Please call 911 in a life-threatening emergency</h5>
+                    <div >
+                      <p>&nbsp;</p>
+                    </div>
+                    <div class="col-12" style="border-top:solid 1px; padding-bottom:10px; padding-top:20px;">
+                      <p style="font-size:12px;">Copyright 2020 © Southwest Counseling Services. All rights reserved.</p>
+                    </div>
+                  </div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="js/vue_template.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap-4.4.1.js"></script>
+        <script type="text/javascript" src="js/test.js"></script>
+        <script src="js/function.js"></script>
+        <script src="js/test.js"></script>
+    </body>
+</html>
