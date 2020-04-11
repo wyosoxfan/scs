@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to Southwest Counseling Service | Rock Springs Wyoming</title>
+<!-- Bootstrap -->
+<link href="css/testAnimation.css" rel="stylesheet">
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/vue-router.js"></script>
+<style>
+
+
+
+/* Change color of dropdown links on hover 
+.dropdown-content:hover {background-color: #e68166;}*/
+
+/* Show the dropdown menu on hover
+.dropdown-div:hover .dropdown-content {display: block;} */
+/* Change the background color of the dropdown button when the dropdown content is shown 
+.dropdown-div:hover .dropbtn {background-color: #3e8e41;}*/
+	
+</style>
+</head>
+
+<body>
+<div class="d-flex">
+  <div class="navbar top-sub-menu col justify-content-start">
+    <ul>
+      <li><a href="#">Future Link</a></li>
+      <li><a href="">|</a></li>
+      <li><a href="#">Future Link</a></li>
+      <li><a href="">|</a></li>
+      <li><a class="bold highlight-color" href="#">Suicide Helpline 1-800-273-8255</a></li>
+    </ul>
+  </div>
+  <div class="navbar top-sub-menu col justify-content-end " style="margin-top:5px; margin-right:20px;"> <a class="orange-color bold" style="font-size:15px;" href="#" title=""> <img src="images/phone.svg" alt="" />&nbsp; &nbsp;307.352.6677</a> </div>
+</div>
+<nav class="navbar navbar-expand-lg" >
+  <div class="brand-centered " > <a class="navbar-brand logo-xs logo-sm logo-md logo-lg logo-xl" href="index.html"> <img id="southwest-counseling-logo" class="img-fluid"  src="images/SWCounselingLogo414-web.png" width="414px" height="125px" alt="Southwest Couseling Service - Enriching live through wellness, recovery, and hope."/> </a> </div>
+  <button class="navbar-toggler" id="hamburgerMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-top">
+      <li class="nav-item "> <a class="nav-link active" style="margin-left:20px;" href="index.html">Home</a> </li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="get-started.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Get Started </a>
+        <div class="dropdown-menu dropdown-border" style="" aria-labelledby="navbarDropdown">
+          <div class="row d-flex dropdown-area" style="" >
+            <div class="col text-center" >
+              <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-laughing-mature-mother-embracing-happy-millennial-daughter-spending-time-together-caring-smiling-1444021535.jpg" data-holder-rendered="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+              </div>
+            </div>
+            <div class="col-8 dropdown-innerText" > <a class="dropdown-item" href="get-started.html">How to Get Started</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="help-myself.html">Get Help for Myself</a> <a class="dropdown-item" href="help-family.html">Get Help for a Family Member</a> <a class="dropdown-item" href="help-friend.html">Get Help for a Friend</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="payment-info.html">Payment Information</a> </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Services </a>
+        <div class="dropdown-menu dropdown-border" aria-labelledby="navbarDropdown" >
+          <div class="row d-flex dropdown-area" style="" >
+            <div class="col text-center" >
+              <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-psychological-guidance-521585995.jpg" data-holder-rendered="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+              </div>
+            </div>
+            <div class="col-8 dropdown-innerText" style=""> <a class="dropdown-item" href="evaluation.html">Evaluation &amp; Assessments</a> <a class="dropdown-item" href="mental-health.html">Mental Health</a> <a class="dropdown-item" href="substance-abuse.html">Substance Abuse</a> <a class="dropdown-item" href="child-adolescents.html">Children &amp; Adolescents</a> <a class="dropdown-item" href="psychosocial.html">Psychosocial</a> <a class="dropdown-item" href="prevention.html">Prevention</a> <a class="dropdown-item" href="medical-services">Medical Services</a> <a class="dropdown-item" href="employment.html">Employment</a> <a class="dropdown-item" href="community-involvement.html">Community Involvement</a> <a class="dropdown-item" href="employee-center.html">SCS Employee Center</a>
+              <div class="dropdown-divider"> </div>
+            </div>
+          </div>
+          <!--<div style="background-color:#fff; margin:5px;"><a class="dropdown-item" href="evaluation.html">Evaluation &amp; Assessments</a> 
+			<a class="dropdown-item" href="mental-health.html">Mental Health</a>
+          <a class="dropdown-item" href="child-adolescents.html">Children &amp; Adolescents</a>
+			<a class="dropdown-item" href="psychosocial.html">Psychosocial</a>
+          <a class="dropdown-item" href="prevention.html">Prevention</a>
+			<a class="dropdown-item" href="medical-services">Medical Services</a>
+          <a class="dropdown-item" href="employment.html">Employment</a>
+			 <a class="dropdown-item" href="community-involvement.html">Community Involvement</a>
+			<a class="dropdown-item" href="employee-center.html">SCS Employee Center</a>
+			<div class="dropdown-divider"></div>
+		  </div>--> 
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item"><a class="nav-link" href="calendar-mental-health.html">Calendar</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+      <li class="nav-item"><a class="nav-link"  style="margin-right:20px;" href="about-us.html">About Us</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+	<div class="container-fluid searchbar-container" style="position: relative;  display: inline-block;">
+    <div class="row align-items-center ">
+      <div class="col">&nbsp;
+      </div>
+      <div class="col-8 searchbar">
+        <div class=" search-form d-flex mb-0" >
+			<input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
+			<div class="input-group-prepend">
+            <button class="search-button" type="button" id="button-addon1" ><div id="search"  alt="Search"></div></button>
+			</div>
+		  </div>
+		</div>
+      <div class="col">&nbsp;
+      </div>
+    </div>
+    <div class="row d-flex" id="dropdown-container" style="">
+      <div class="col">
+      </div>
+      <div id="dropdownList" class="col-8" style="width: {define width}
+position: absolute;
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000; "  >
+        <div class="container-fluid">
+          <div class="row" style="">
+            <div class="col-4 text-center search-dropmenu" >
+              <div>
+                <h6 style="color: #e68166;">TRENDING</h6>
+                <hr style="background-color:#fff; margin:0 0 10px 0;">
+                <a href="#"><p>Alcoholism</p></a>
+                <a href="#"><p>Depression</p></a>
+                <a href="#"><p>Suicide</p></a>
+              </div>
+              <h6 style="color: #e68166;">LINKS</h6>
+              <hr style="background-color:#fff; margin:0 0 10px 0;">
+              <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a>
+            </div>
+            <div class="col">
+              <ul id="myUL" class="list-group">
+                <li class="list-group-item active" style="display: none;">
+                  <h3>Test 1</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 2</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 3</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 4</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 5</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 6</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+	
+  <div class="jumbotron" id="top-image">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h4 class="text-left">ENRICHING LIVES <br>
+            THROUGH WELLNESS, <br>
+            RECOVERY, AND HOPE.</h4>
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+          <p>&nbsp;</p>
+          <p class="text-center"><a class="btn btn-secondary" href="getstarted.html" role="button">Learn more</a> </p>
+        </div>
+        <div class="col-lg-8"> <img class="img-fluid" src="images/top-image-lady.png"  alt="Enriching lives through wellness, recover, and hope."/><!--width="684" height="300"--> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+	
+	<div class="container-fluid dropdown-div" >
+	 <div class="row justify-content-end" id="contact-flags" ><!--href="tel:3073526677"-->
+    <div class="icon-square"><a id="phone-square" href="#"><img src="images/spacer.png"  alt=""/></a></div>
+	<div class="icon-square " ><a class="dropbtn" id="map-square" href="#map-square-map"><img src="images/spacer.png"  alt=""/></a></div>
+	  <div class="icon-square"><a id="facebook-square" href="http://www.facebook.com/swcounseling/"><img src="images/spacer.png" alt=""/></a></div>
+	</div> 
+	<div class="row d-flex">
+      <div class="col">
+      </div>
+	 <div id="mapView" class="row justify-content-end dropdown-content" style="display: none; visibility: hidden;">
+		 <div class="col">
+		    <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7> <br>
+		    <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7><br>
+			  <h7>307-352-6677</h7>
+			  <div>&nbsp;</div>
+	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		  </div>
+			</div> 
+		</div>
+	</div>
+</header>
+	
+	
+<section class="header-title">
+  <div class="container">
+    <div class="row ">
+      <div class="col text-center"> <a href="help-myself.html" ><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/help-myslelf-icon.png" data-holder-rendered="true">
+        <h4 style="margin-top:10px;">Help For Myself</h4>
+        </a> </div>
+      <div class="col text-center"> <a href="help-family.html" > <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/help-family-icon.png" data-holder-rendered="true">
+        <h4 style="margin-top:10px;">Help For My Family</h4>
+        </a> </div>
+      <div class="col text-center"> <a href="help-friend.html" ><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/help-friend-icon.png" data-holder-rendered="true">
+        <h4 style="margin-top:10px;">Help For a Friend</h4>
+        </a> </div>
+    </div>
+  </div>
+</section>
+<section class="survey-section">
+  <div class="container">
+    <div class="row">
+      <p>&nbsp; </p>
+    </div>
+    <div class="row no-gutters"  >
+      <div class="col d-flex survey-box" >
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-sad-young-man-in-white-t-shirt-is-looking-at-glass-of-beer-while-sitting-at-bar-counter-in-pub-in-386500174.jpg"  data-holder-rendered="true"> </div>
+        <div class="col align-self-center">
+          <p class="text-center" style="font-size: 18px;">Has your drinking <br>
+            become a problem?</p>
+          <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey" role="button">Find Out</a> </p>
+        </div>
+      </div>
+      <div class="col d-flex survey-box" >
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; " src="images/stock-photo-a-woman-sitting-alone-and-depressed-345397208.jpg" data-holder-rendered="true"> </div>
+        <div class="col align-self-center" >
+          <p class="text-center" style="font-size: 18px;">Is your sadness normal?</p>
+          <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey-depression" role="button">Find Out</a> </p>
+        </div>
+      </div>
+    </div>
+	  
+    <div class="row no-gutters" >
+      <div class="col d-flex survey-box">
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px; margin:0; padding:0 " src="images/stock-photo-a-young-sales-person-in-elegant-suit-sitting-with-paper-on-top-of-a-stone-in-the-clouds-concept-496908091.jpg" data-holder-rendered="true"> </div>
+        <div class="col align-self-center">
+          <p class="text-center" style="font-size: 18px;">Do you isolate <br>
+            yourself too much?</p>
+          <p class="text-center"><a class="btn button-white" id="openSurvey-anxiety" href="#" role="button">Find Out</a> </p>
+        </div>
+      </div>
+      <div class="col d-flex survey-box">
+        <div class="col" style="padding:0;"> <img alt="" style="width: 300px;" src="images/stock-photo-man-comforting-his-depressed-friend-in-bar-388576783.jpg" data-holder-rendered="true"> </div>
+        <div class="col align-self-center" >
+          <p class="text-center" style="font-size: 18px;">Do you feel like people would be happier without you?</p>
+          <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey-suicide" role="button">Find Out</a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+	
+	<section> 
+	<div id="myModal" class="modal">
+  <div class="modal-content" >
+    <span class="close">&times;</span>
+    <div class="container" >
+		<div class="row justify-content-center align-items-center">
+	  <div class="col-1 ">
+		 <a class="link-button" href="#" ><div id="back-link"  alt="Previous"></div></a>
+		</div>
+		 <div class="col survey-question-box">
+		  <h5>HOW OFTEN DO YOU FEEL HOPELESS?</h5>
+		   <p>
+		     <label>
+		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_0">
+		       Never</label>
+		     <br>
+		     <label>
+		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_1">
+		       Rarely</label>
+		     <br>
+		     <label>
+		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_2">
+		       Sometimes</label>
+		     <br>
+		     <label>
+		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_3">
+		       Often</label>
+		     <br>
+		     <label>
+		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_4">
+		       Always</label>
+		     <br>
+	        </p>
+         </div>
+		 <div class="col-1 ">
+		   <a class="link-button align-middle" href="#"  ><div id="next-link"  alt="Next Page"></div></a>
+		</div>
+	  </div>
+		
+		<div class="row justify-content-around" style="margin:20px 0px 0px 0px;">
+			<div class="col-4 text-center "><input class="btn btn-primary" type="button" value="BACK"></div>
+			<div class="col-4 text-center "><input class="btn btn-primary" type="button" value="NEXT"></div>
+		</div>
+		<div class="row justify-content-end" style="margin:30px 50px 0px 0px;">
+			<p id="question-number">Question 1 of 10</p>
+			</div>
+		
+	  </div>
+  </div>
+</div>
+	
+	</section>
+<section class="do-not-wait">
+  <div class="jumbotron waitSection">
+    <div class="container">
+      <div class="flex-column">
+        <p>&nbsp;</p>
+        <div class="text-center mx-auto">
+          <p class="lead">Do You Need Help Now?</p>
+        </div>
+        <div class="text-center mx-auto">
+          <p class="lead">Immediate Assistance&nbsp; &amp;&nbsp; 24 / 7 Emergency</p>
+        </div>
+        <div class="col-sm-4 text-center mx-auto"> <a class="btn btn-block btn-success button-orange" href="#" title=""> <img src="images/phone.svg" alt=""/>&nbsp; &nbsp;307.352.6677</a> </div>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="services-section">
+  <div class="container">
+    <div class="row">
+      <div >
+        <h5>SERVICES</h5>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom:10px" >
+      <div class="col top-padding"> <a href="evaluation.html" >
+        <div class="servicesSection"><img alt="" src="images/evaluations-blue.png"  data-holder-rendered="true">
+          <p>EVALUATIONS &amp; ASSESSMENTS</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="mental-health.html" >
+        <div class="servicesSection"><img alt="" src="images/mentalHealth-blue.png" data-holder-rendered="true">
+          <p>MENTAL HEALTH</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="substance-abuse.html" >
+        <div class="servicesSection"><img alt="" src="images/substanceAbuse-blue.png"  data-holder-rendered="true">
+          <p>SUBSTANCE ABUSE</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="child-adolescents" >
+        <div class="servicesSection"> <img alt="" src="images/children-blue.png" data-holder-rendered="true">
+          <p>CHILDREN &amp; ADOLESCENTS</p>
+        </div>
+        </a> </div>
+    </div>
+    <div class="row" style="margin-bottom:20px" >
+      <div class="col top-padding"> <a href="psychosocial.html" >
+        <div class="servicesSection"><img alt="" src="images/psychosocial-blue.png"  data-holder-rendered="true">
+          <p>PSYCHOSOCIAL</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="prevention.html" >
+        <div class="servicesSection"><img alt="" src="images/prevention-blue.png" data-holder-rendered="true">
+          <p>PREVENTION</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="medical-services" >
+        <div class="servicesSection"><img alt="" src="images/medicalServices-blue.png"  data-holder-rendered="true">
+          <p>MEDICAL SERVICES</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="employment.html" >
+        <div class="servicesSection"> <img alt="" src="images/employment-blue.png" data-holder-rendered="true">
+          <p>EMPLOYMENT</p>
+        </div>
+        </a> </div>
+    </div>
+  </div>
+</section>
+<section class="faq-seciont">
+  <div class="jumbotron faq" id="faq1">
+    <hr class="orange-line">
+    <div class="blue-title">
+      <div class="container">
+        <h5>Frequently Asked Questions</h5>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="faq-text accordion" > <a class="faq-a" href="#faq1" title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >What is mental health?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>A person who is mentally healthy can generally manage stress, respond appropriately to problems in life, and express emotions in a healthy, productive way. If a person runs into trouble with these sorts of tasks, or has a problem that just can’t be solved, therapy may be a good option to improve mental health.</p>
+            </div>
+          </div>
+          <div class="faq-text accordion"> <a class="faq-a"  href="#faq1"  title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >What can I expect at my first appointment?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>Plan on spending about two hours at your first appointment. You will be asked to fill out some forms for our agency, including your consent to have treatment at Southwest Counseling Service.</p>
+              <p> You will meet with a mental health clinician who will complete an assessment with you on the computer. This person will ask you questions about your history and your reasons for coming in for counseling. At the end of the session, you and your clinician will talk about options for treatment and your treatment plan.</p>
+            </div>
+          </div>
+          <div class="faq-text accordion"> <a class="faq-a"   href="#faq1"  title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >What is a sliding fee scale?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>This is a subsidized fee scale based on gross household income and the number of people in the household. This is offered because we are partially funded by the state.</p>
+            </div>
+          </div>
+          <div class="faq-text accordion"> <a class="faq-a"  href="#faq1" title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >What about confidentiality?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>Southwest Counseling Service takes your privacy very seriously, and we work hard to protect your confidentiality. Your information is kept in secure files, and is not shared with anyone without your consent.</p>
+              <p> There are some exceptions to that, which are legal reasons that your clinician would have to share information about you without your consent. Those include, but are not limited to, a serious medical emergency or threat to life, legally reportable information about child or adult neglect, or if there is a valid court order requiring information.</p>
+              <p> Sometimes people come to Southwest Counseling Service as a result of a court order or because of legal problems. If that is the case, we will usually have you sign a release of information form allowing us to contact your referral source about your therapy. This is often necessary to let the referral source know that you are attending therapy and how you are progressing.</p>
+              <p> For more information about all of the limits to confidentiality, as well as information about the employee code of ethics, please view the client information guide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="faq-text accordion"> <a class="faq-a"   href="#faq1"  title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >How do I make an appointment?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>You can make an appointment by calling any of our offices directly.</p>
+            </div>
+          </div>
+          <div class="faq-text accordion"> <a class="faq-a"   href="#faq1"  title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >How much does a drug and alcohol evaluation cost?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>The total cost for this evaluation is $240. You may make payment arrangements with the clerical staff if you will not be able to pay in full. Also, please be aware that we will notify referral resources, such as probation, courts, etc., of payment and non-payment.</p>
+              <p> Finally, if you have had an evaluation or addiction severity index (ASI) assessment completed in the past three months, SCS will require a copy and there will be no additional charge for this portion of the assessment. The cost with a previous ASI included is based on our sliding fee scale.</p>
+            </div>
+          </div>
+          <div class="faq-text accordion"> <a class="faq-a" href="#faq1"  title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >What is residential treatment?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>Rosen Recovery, Therapeutic Community, and Women’s Addiction Program are all residential treatment programs where individuals reside in Southwest Counseling Service housing during the substance abuse treatment program. Each program has various lengths of stay ranging from four months to more than one year.</p>
+            </div>
+          </div>
+          <div class="faq-text accordion"> <a class="faq-a" href="#faq1"  title="">
+            <div class="d-flex ">
+              <div class="col faq-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span >What are the hours of operation?</span></div>
+            </div>
+            </a>
+            <div class="faq-content">
+              <p>8:00am - 5:00pm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+		<div class="row">
+          <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="latest-news">
+  <div class="row">
+    <div class="col-sm-6 col-lg-6"> <img src="images/stock-photo-psychological-guidance-521585995.jpg" width="100%"  alt=""/> </div>
+    <div class="col-sm-6 col-lg-6 news left-right-padding">
+      <h5 style="margin-top: 15px;">LATEST NEWS</h5>
+      <hr class="orange-line-thin" style="">
+      <h7><strong>March 1, 2020</strong></h7>
+      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+      <a href="#" class="readMore" >Read More...</a>
+      <p>&nbsp;</p>
+      <h7><strong>February 14, 2020</strong></h7>
+      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+      <a href="#" class="readMore" >Read More...</a>
+      <p>&nbsp;</p>
+      <h7><strong>February 1, 2020</strong></h7>
+      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+      <a href="#" class="readMore" >Read More...</a>
+      <p>&nbsp;</p>
+    </div>
+  </div>
+</section>
+<section class="payment-secion">
+  <div class="jumbotron payment">
+    <hr class="orange-line">
+    <div class="blue-title">
+      <div class="container">
+        <h5>PAYMENT INFORMATION</h5>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row text-center mr-auto justify-content-center blue-background" style="padding:25px 0 10px 0;">
+        <div class="col" id="slidingFee" ><a href="#" ><img src="images/spacer-200.png" width="200px" alt=""/></a></div>
+        <div class="col" id="insurance" ><a href="#" ><img src="images/spacer-200.png" width="200px"   alt=""/></a></div>
+        <div class="col" id="medicare" ><a href="#" ><img src="images/spacer-200.png" width="210px"   alt=""/></a></div>
+        <div class="col" id="medicaid" ><a href="#" ><img src="images/spacer-200.png" width="210px"  alt=""/></a></div>
+        <div class="col" id="eap" ><a href="#" ><img src="images/spacer-200.png" width="210px"  alt=""/></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="location-section">
+  <div class="container" >
+    <div class="row"> </div>
+    <div >
+      <h5>SCS LOCATIONS</h5>
+      <hr class="orange-line-thin" style="width:170px;">
+    </div>
+    <div class="row justify-content-center "><!--row-cols-3-->
+      <div class="col">
+        <div>&nbsp;</div>
+        <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7>
+        <br>
+        <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7>
+        <br>
+        <h7>Phone: (307) 352-6677</h7>
+        <br>
+        <h7>Fax:(307) 352-6614</h7>
+        <br>
+        <h7>Hours: 8:00am - 5:00pm </h7>
+        <div>&nbsp;</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+      <div class="col">
+        <div>&nbsp;</div>
+        <h7>Southwest Counseling Services - <strong>Mental Health</strong></h7>
+        <br>
+        <h7>1124 College Dr. Rock Springs, WY 82901</h7>
+        <br>
+        <h7>Phone: (307) 352-6680</h7>
+        <br>
+        <h7>Fax: (307) 352-6676</h7>
+        <br>
+        <h7>Hours: 8:00am - 5:00pm </h7>
+        <br>
+        <div>&nbsp;</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.30783232254!2d-109.23738235111409!3d41.584222805473736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61189a7b7009%3A0x6547fdf9c6cbc427!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149630327!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+      <div class="col">
+        <div>&nbsp;</div>
+        <h7 >Southwest Counseling Services - <strong>Green River</strong></h7>
+        <br>
+        <h7>115 E. Flaming Gorge Way Green River, WY 82935</h7>
+        <br>
+        <h7>(307) 872-3205</h7>
+        <br>
+        <h7>Hours: 8:00am - 5:00pm </h7><br><br>
+        <div>&nbsp;</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.8781971093235!2d-109.4683197841813!3d41.52857897925135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a7dde55555555%3A0x3fae44f210f3efad!2sSouthwest%20Counseling%20Service!5e0!3m2!1sen!2sus!4v1584150269094!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="text-center">
+  <div class="jumbotron footerSection">
+    <div class="container">
+      <div class="row footer-box-top" >
+        <div class="col footer-box2" >
+          <p>SCS Main Office - Recovery Services</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>2300 Foothill Blvd. &nbsp;Rock Springs, WY 82901</p>
+        </div>
+        <div class="col top-padding"  > <a href="#" style="color:#e68166;"><strong>307-352-6677</strong></a> </div>
+      </div>
+      <div class="row footer-box-middle" >
+        <div class="col  footer-box2" >
+          <p>SCS Mental Health Services</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>1124 College Dr. &nbsp;Rock Springs, WY 82901</p>
+        </div>
+        <div class="col top-padding"  > <a href="#" style="color:#fff;">307-352-6680</a> </div>
+      </div>
+      <div class="row footer-box-middle" >
+        <div class="col footer-box2" >
+          <p>SCS Green River - Mental Health</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>115 E. Flaming Gorge Way&nbsp; Green River, WY 82935 </p>
+        </div>
+        <div class="col top-padding" > <a href="#" style="color:#fff;">307-872-3205</a> </div>
+      </div>
+      <div >
+        <p>&nbsp;</p>
+      </div>
+      <div class="row">
+        <div class="col"> <a href=""><img src="images/scs-logo-white.png" width="216" height="75" alt=""/> </a> </div>
+        <div class="col" >
+          <p style="text-align: left; text-decoration: underline;">Services</p>
+          <a href="evaluation.html" class="footer-text">
+          <p>Evaluations &amp; Assessments</p>
+          </a> <a href="mental-health.html" class="footer-text">
+          <p >Mental Health</p>
+          </a> <a href="substance-abuse.html" class="footer-text">
+          <p >Substance Abuse</p>
+          </a> <a href="psychosocial.html" class="footer-text">
+          <p >Psychosocial</p>
+          </a> <a href="prevention.html" class="footer-text">
+          <p >Prevention</p>
+          </a> <a href="children-services.html" class="footer-text">
+          <p >Children &amp; Adolescents</p>
+          </a> <a href="medical-services.html" class="footer-text">
+          <p >Medical Services</p>
+          </a> </div>
+        <div class="col" >
+          <p style="text-align: left; text-decoration: underline;">Other Services</p>
+          <a href="employment.html" class="footer-text">
+          <p >Employment</p>
+          </a> <a href="community.html" class="footer-text">
+          <p >Community Involvement</p>
+          </a> <a href="about-us.html" class="footer-text">
+          <p >About Us</p>
+          </a> <a href="contact-us.html" class="footer-text">
+          <p >Contact Us</p>
+          </a> </div>
+        <div class="col" >
+          <p style="text-align: left; text-decoration: underline;">Quick Links</p>
+          <a href="#" class="footer-text">
+          <p >Payment Information</p>
+          </a> <a href="payment-info.html" class="footer-text">
+          <p >SCS Employee Center</p>
+          </a> <a href="client-suggestions.html" class="footer-text">
+          <p >Client Suggestions</p>
+          </a> <a href="faq.html" class="footer-text">
+          <p>FAQ</p>
+          </a> </div>
+        <div class="col">
+          <p style="text-align: left; text-decoration: underline;">About Us</p>
+          <a href="about-us.html" class="footer-text">
+          <p >Board of Directors</p>
+          </a> <a href="about-us.html" class="footer-text">
+          <p >Mission &amp; Vision</p>
+          </a> <a href="employment.html" class="footer-text">
+          <p >Career Opportunities</p>
+          </a> <a href="scs-employees.html" class="footer-text">
+          <p >Employees</p>
+          </a> <a href="about-us.html" class="footer-text">
+          <p >History</p>
+          </a> <a href="about-us.html" class="footer-text">
+          <p >Accreditations</p>
+          </a> </div>
+      </div>
+      <div >
+        <p>&nbsp;</p>
+      </div>
+      <h5>EMERGENCIES: Please call 911 in a life-threatening emergency</h5>
+      <div >
+        <p>&nbsp;</p>
+      </div>
+      <div class="col-12" style="border-top:solid 1px; padding-bottom:10px; padding-top:20px;">
+        <p style="font-size:12px;">Copyright 2020 © Southwest Counseling Services. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script type="text/javascript" src="Test_Folder/TestAnimation.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/popper.min.js"></script> 
+<script src="js/bootstrap-4.4.1.js"></script> 
+<script type="text/javascript" src="js/test.js"></script> 
+<script src="js/function.js"></script> 
+<script src="js/test.js"></script>
+</body>
+</html>
