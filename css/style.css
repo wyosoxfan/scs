@@ -61,6 +61,10 @@ section{
     font-weight:600;
 }
 
+.under-line{
+	text-decoration:underline !important;
+}
+
 nav {
     background: #003366;
     color: #ffffff;
