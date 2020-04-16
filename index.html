@@ -8,19 +8,7 @@
 <!-- Bootstrap -->
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<style>
-
-
-
-/* Change color of dropdown links on hover 
-.dropdown-content:hover {background-color: #e68166;}*/
-
-/* Show the dropdown menu on hover
-.dropdown-div:hover .dropdown-content {display: block;} */
-/* Change the background color of the dropdown button when the dropdown content is shown 
-.dropdown-div:hover .dropbtn {background-color: #3e8e41;}*/
-	
-</style>
+<style></style>
 </head>
 
 <body>
@@ -92,22 +80,21 @@
   </div>
 </nav>
 <header>
-	<div class="container-fluid searchbar-container mb-0" style="position: relative;  display: inline-block;">
+  <div class="container-fluid searchbar-container mb-0" style="position: relative;  display: inline-block;">
     <div class="row align-items-center mb-0">
       <div class="col-1">&nbsp;</div>
       <div class="col-xs-10 col-8 col-lg-8 col-sm-10 searchbar">
         <div class="search-form d-flex" >
-			<input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
-			<div class="input-group-prepend">
-            <a class="search-button" type="button" id="button-addon1" ><div id="search"  alt="Search">&nbsp;</div></a>
-			</div>
-		  </div>
-		</div>
+          <input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
+          <div class="input-group-prepend"> <a class="search-button" type="button" id="button-addon1" >
+            <div id="search"  alt="Search">&nbsp;</div>
+            </a> </div>
+        </div>
+      </div>
       <div class="col-1">&nbsp; </div>
     </div>
     <div class="row d-flex" id="dropdown-container" style="">
-      <div class="col">
-      </div>
+      <div class="col"> </div>
       <div id="dropdownList" class="col-8" style="width: {define width}
 position: absolute;
 left: 0;
@@ -120,18 +107,20 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
               <div>
                 <h6 style="color: #e68166;">TRENDING</h6>
                 <hr style="background-color:#fff; margin:0 0 10px 0;">
-                <a href="#"><p>Alcoholism</p></a>
-                <a href="#"><p>Depression</p></a>
-                <a href="#"><p>Suicide</p></a>
-              </div>
+                <a href="#">
+                <p>Alcoholism</p>
+                </a> <a href="#">
+                <p>Depression</p>
+                </a> <a href="#">
+                <p>Suicide</p>
+                </a> </div>
               <h6 style="color: #e68166;">LINKS</h6>
               <hr style="background-color:#fff; margin:0 0 10px 0;">
               <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a>
-            </div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a> </div>
             <div class="col">
               <ul id="myUL" class="list-group">
                 <li class="list-group-item active" style="display: none;">
@@ -169,11 +158,9 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
           </div>
         </div>
       </div>
-      <div class="col">
-      </div>
+      <div class="col"> </div>
     </div>
   </div>
-	
   <div class="jumbotron" id="top-image">
     <div class="container">
       <div class="row">
@@ -191,30 +178,28 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       </div>
     </div>
   </div>
-	
-	<div class="container-fluid dropdown-div" >
-	 <div class="row justify-content-end" id="contact-flags" ><!--href="tel:3073526677"-->
-    <div class="icon-square"><a id="phone-square" href="#"><img src="images/spacer.png"  alt=""/></a></div>
-	<div class="icon-square " ><a class="dropbtn" id="map-square" href="#map-square-map"><img src="images/spacer.png"  alt=""/></a></div>
-	  <div class="icon-square"><a id="facebook-square" href="http://www.facebook.com/swcounseling/"><img src="images/spacer.png" alt=""/></a></div>
-	</div> 
-	<div class="row d-flex">
-      <div class="col">
+  <div class="container-fluid dropdown-div" >
+    <div class="row justify-content-end" id="contact-flags" ><!--href="tel:3073526677"-->
+      <div class="icon-square"><a id="phone-square" href="#"><img src="images/spacer.png"  alt=""/></a></div>
+      <div class="icon-square " ><a class="dropbtn" id="map-square" href="#map-square-map"><img src="images/spacer.png"  alt=""/></a></div>
+      <div class="icon-square"><a id="facebook-square" href="http://www.facebook.com/swcounseling/"><img src="images/spacer.png" alt=""/></a></div>
+    </div>
+    <div class="row d-flex">
+      <div class="col"> </div>
+      <div id="mapView" class="row justify-content-end dropdown-content" style="display: none; visibility: hidden;">
+        <div class="col">
+          <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7>
+          <br>
+          <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7>
+          <br>
+          <h7>307-352-6677</h7>
+          <div>&nbsp;</div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
       </div>
-	 <div id="mapView" class="row justify-content-end dropdown-content" style="display: none; visibility: hidden;">
-		 <div class="col">
-		    <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7> <br>
-		    <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7><br>
-			  <h7>307-352-6677</h7>
-			  <div>&nbsp;</div>
-	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-		  </div>
-			</div> 
-		</div>
-	</div>
+    </div>
+  </div>
 </header>
-	
-	
 <section class="header-title">
   <div class="container">
     <div class="row ">
@@ -237,94 +222,91 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
     </div>
     <div class="row no-gutters"  >
       <div class="col d-flex survey-box" >
-        <div class="col-6" style="padding:0;"> <img alt="" class="img-fluid" style="max-width: 225px;  min-width:100px; margin:0; padding:0 " src="images/stock-photo-sad-young-man-in-white-t-shirt-is-looking-at-glass-of-beer-while-sitting-at-bar-counter-in-pub-in-386500174.jpg"  data-holder-rendered="true"> </div>
-        <div class="col-6 align-self-center">
-          <p class="text-center" style="font-size: 18px;">Has your drinking <br>
+        <div class="col-7" style="padding:0;"> <img alt="" class="img-fluid survey-image" style=" " src="images/stock-photo-sad-young-man-in-white-t-shirt-is-looking-at-glass-of-beer-while-sitting-at-bar-counter-in-pub-in-386500174.jpg"  data-holder-rendered="true"> </div>
+        <div class="col-5 align-self-center">
+          <p class="text-center" style="font-size: 17px;">Has your drinking 
             become a problem?</p>
           <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey" role="button">Find Out</a> </p>
         </div>
       </div>
       <div class="col d-flex survey-box" >
-        <div class="col-6" style="padding:0;"> <img alt="" class="img-fluid" style="max-width: 225px; min-width:100px; margin:0; padding:0  " src="images/stock-photo-a-woman-sitting-alone-and-depressed-345397208.jpg" data-holder-rendered="true"> </div>
-        <div class="col-6 align-self-center" >
-          <p class="text-center" style="font-size: 18px;">Is your sadness normal?</p>
+        <div class="col-7" style="padding:0;"> <img alt="" class="img-fluid survey-image"src="images/stock-photo-a-woman-sitting-alone-and-depressed-345397208.jpg" data-holder-rendered="true"> </div>
+        <div class="col-5 align-self-center" >
+          <p class="text-center" style="font-size: 17px;">Is your sadness normal?</p>
           <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey-depression" role="button">Find Out</a> </p>
         </div>
       </div>
     </div>
-	  
     <div class="row no-gutters" >
-      <div class="col d-flex survey-box">
-        <div class="col-6" style="padding:0;"> <img alt="" class="img-fluid" style="max-width: 225px; min-width:100px; margin:0; padding:0 " src="images/stock-photo-a-young-sales-person-in-elegant-suit-sitting-with-paper-on-top-of-a-stone-in-the-clouds-concept-496908091.jpg" data-holder-rendered="true"> </div>
-        <div class="col-6 align-self-center">
-          <p class="text-center" style="font-size: 18px;">Do you isolate <br>
-            yourself too much?</p>
+      <div class="col d-flex survey-box" >
+        <div class="col-7" style="padding:0;"> <img alt="" class="img-fluid survey-image" src="images/stock-photo-a-young-sales-person-in-elegant-suit-sitting-with-paper-on-top-of-a-stone-in-the-clouds-concept-496908091.jpg" data-holder-rendered="true"> </div>
+        <div class="col-5 align-self-center">
+          <p class="text-center" style="font-size: 17px;">Do you isolate yourself too much?</p>
           <p class="text-center"><a class="btn button-white" id="openSurvey-anxiety" href="#" role="button">Find Out</a> </p>
         </div>
       </div>
-      <div class="col d-flex survey-box">
-        <div class="col-6" style="padding:0;"> <img alt="" class="img-fluid" style="max-width: 225px;  min-width:100px; margin:0; padding:0 " src="images/stock-photo-ptsd-mental-health-concept-post-traumatic-stress-disorder-the-depressed-woman-sitting-alone-on-1179632617.jpg" data-holder-rendered="true"> </div>
-        <div class="col-6 align-self-center" >
-          <p class="text-center" style="font-size: 18px;">Do you feel people would be happier without you?</p>
+      <div class="col d-flex survey-box" >
+        <div class="col-7" style="padding:0;"> <img alt="" class="img-fluid survey-image" src="images/stock-photo-ptsd-mental-health-concept-post-traumatic-stress-disorder-the-depressed-woman-sitting-alone-on-1179632617.jpg" data-holder-rendered="true"> </div>
+        <div class="col-5 align-self-center" >
+          <p class="text-center" style="font-size: 17px;">Do you feel people would be happier without you?</p>
           <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey-suicide" role="button">Find Out</a> </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-	
-	<section id="myModal" class="modal"> 
-	<div >
-  <div class="modal-content" >
-    <span class="close">&times;</span>
-    <div class="container" >
-		<div class="row justify-content-center align-items-center">
-	  <div class="col-1 ">
-		 <a class="link-button" href="#" ><div id="back-link"  alt="Previous"></div></a>
-		</div>
-		 <div class="col survey-question-box">
-		  <h5>HOW OFTEN DO YOU FEEL HOPELESS?</h5>
-		   <p>
-		     <label>
-		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_0">
-		       Never</label>
-		     <br>
-		     <label>
-		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_1">
-		       Rarely</label>
-		     <br>
-		     <label>
-		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_2">
-		       Sometimes</label>
-		     <br>
-		     <label>
-		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_3">
-		       Often</label>
-		     <br>
-		     <label>
-		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_4">
-		       Always</label>
-		     <br>
-	        </p>
-         </div>
-		 <div class="col-1 ">
-		   <a class="link-button align-middle" href="#"  ><div id="next-link"  alt="Next Page"></div></a>
-		</div>
-	  </div>
-		
-		<div class="row justify-content-around" style="margin:20px 0px 0px 0px;">
-			<div class="col-4 text-center "><input class="btn btn-primary" type="button" value="BACK"></div>
-			<div class="col-4 text-center "><input class="btn btn-primary" type="button" value="NEXT"></div>
-		</div>
-		<div class="row justify-content-end" style="margin:30px 50px 0px 0px;">
-			<p id="question-number">Question 1 of 10</p>
-			</div>
-		
-	  </div>
+<section id="myModal" class="modal">
+  <div >
+    <div class="modal-content" > <span class="close">&times;</span>
+      <div class="container" >
+        <div class="row justify-content-center align-items-center">
+          <div class="col-1 "> <a class="link-button" href="#" >
+            <div id="back-link"  alt="Previous"></div>
+            </a> </div>
+          <div class="col survey-question-box">
+            <h5>HOW OFTEN DO YOU FEEL HOPELESS?</h5>
+            <p>
+              <label>
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_0">
+                Never</label>
+              <br>
+              <label>
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_1">
+                Rarely</label>
+              <br>
+              <label>
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_2">
+                Sometimes</label>
+              <br>
+              <label>
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_3">
+                Often</label>
+              <br>
+              <label>
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_4">
+                Always</label>
+              <br>
+            </p>
+          </div>
+          <div class="col-1 "> <a class="link-button align-middle" href="#"  >
+            <div id="next-link"  alt="Next Page"></div>
+            </a> </div>
+        </div>
+        <div class="row justify-content-around" style="margin:20px 0px 0px 0px;">
+          <div class="col-4 text-center ">
+            <input class="btn btn-primary" type="button" value="BACK">
+          </div>
+          <div class="col-4 text-center ">
+            <input class="btn btn-primary" type="button" value="NEXT">
+          </div>
+        </div>
+        <div class="row justify-content-end" style="margin:30px 50px 0px 0px;">
+          <p id="question-number">Question 1 of 10</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-	
-	</section>
+</section>
 <section class="do-not-wait">
   <div class="jumbotron waitSection">
     <div class="container">
@@ -495,8 +477,8 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
           </div>
         </div>
       </div>
-		<div class="row">
-          <p>&nbsp;</p>
+      <div class="row">
+        <p>&nbsp;</p>
       </div>
     </div>
   </div>
@@ -586,7 +568,9 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <br>
         <h7>(307) 872-3205</h7>
         <br>
-        <h7>Hours: 8:00am - 5:00pm </h7><br><br>
+        <h7>Hours: 8:00am - 5:00pm </h7>
+        <br>
+        <br>
         <div>&nbsp;</div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.8781971093235!2d-109.4683197841813!3d41.52857897925135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a7dde55555555%3A0x3fae44f210f3efad!2sSouthwest%20Counseling%20Service!5e0!3m2!1sen!2sus!4v1584150269094!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
