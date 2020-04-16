@@ -200,6 +200,7 @@ display: block;
     padding: 8px;
     margin: 6px -6px -3px -6px;
 	 box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.5);
+	z-index:9999!important;
 }
 .search-menu {
     position: absolute;
@@ -218,6 +219,7 @@ display: block;
     background-clip: padding-box;
     border: 3px solid #e68166;
 }
+
 .top-padding {
     padding-top: 10px;
 }
@@ -282,6 +284,11 @@ display: block;
 	border-left:1px solid #003366;
     margin-right: auto;
     margin-left: auto;
+	width:100%;
+}
+
+button {
+  border-radius: 0;
 }
 	
 input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
@@ -294,7 +301,8 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
 .btn {
   color: #000;
   background-color: #fff;
-  border-color: #003366; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.5);
+  border-color: #003366; 
+  box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.5);
 }
 
 /*.btn {
@@ -397,6 +405,7 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
     padding: 0;
     width: auto;
     background-color: #fff;
+	z-index:2000;
 }
 /*navbar-top {
     color: #ffffff;
@@ -438,6 +447,7 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
   .logo-xs {
     max-width: 60%; 
 	  margin:-30px auto;
+	  z-index:99;
   }
 }
 
@@ -548,6 +558,7 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
 		margin:0;
 		padding:0;
 		height:50px;
+		border-radius:0;
 	}
 	
 	#search:hover{
@@ -555,6 +566,7 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
 		margin:0;
 		padding:0;
 		height:50px;
+		
 	}
 	
 
@@ -653,7 +665,7 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
 	right: 12%;  
 	position:absolute;  
 	box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.5);  
-	z-index: 9999; 
+	z-index: 9999 !important; 
 }
 	.dropbtn:hover, .dropbtn:focus {
   background-color: #2980B9;
@@ -673,7 +685,7 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
+  z-index: 9999 !important; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
