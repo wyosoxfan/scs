@@ -1270,6 +1270,37 @@ margin:0;
 		padding-right: 5%;
 	}
 
+.form-control::-webkit-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+	font-size:11px;
+}
+
+.form-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+	font-size:11px;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+	font-size:11px;
+}
+
+.form-control::-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+	font-size:11px;
+}
+
+.form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+	font-size:11px;
+}
+
+
 	.footer-box-top{
 		border-bottom:solid 1px; 
 		padding-top:20px; 
