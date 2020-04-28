@@ -1016,7 +1016,7 @@ margin:0;
 	 position: relative;
 	 display: inline-block;
 	 color: #000;
-	 border-bottom: 2px solid #003366;
+	 border-bottom: 0px solid #003366;
 	 cursor: pointer;
 	 overflow: hidden;
 	 transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -1075,62 +1075,66 @@ margin:0;
 	 color: #fff;
 	 background-color: #003366;
 	 transition-delay: 0.6s;
+	  border-bottom: 2px solid #003366;
 }
 	/*.services-text span{
 		margin:5px;
 		padding:5px 10px;
-	*/	
-	/*}
- .services-1{
-		background: url("../images/check-orange.png") left top no-repeat;
-		padding:0px 0 0px 0;
-		*/margin:0px 0 0 0px;
-	}
-	
-		/*.services-1:hover{
-		background: url("../images/check-white2.png") left top no-repeat;
-		color:#fff;
-	}
-	.*/services-a{
-	/*	margin-left:-10px;
-	}
-.services-a:hover{
-		color:fff !important;
-	}*/
-/*.services-text{
-	/*	padding:0;
-	}*/
-		*/
-	/*.services-text{
-		color:#000;
-		padding:5px 0 0px 0px;
-		text-align:left;
-	}*/
-	
-	/*.services-a:hover{
-		color:fff !important;
-	}
-*/
-	/*.services-text span{
-	/*	margin:0 0 0 -5px;
-		padding:0;
-	*/	
 	}*/
 
-/*.services-text a:hover{
-		color:fff !important;
-	}*/
-/*		.services-1{
+ /*.services-1{
 		background: url("../images/check-orange.png") left top no-repeat;
 		padding:0px 0 0px 0;
-		margin:-5px 0 0 0;
+		margin:0px 0 0 0px;
 	}*/
 	
 	/*	.services-1:hover{
 		background: url("../images/check-white2.png") left top no-repeat;
 		color:#fff;
+	}*/
+
+	/*.services-a{
+		margin-left:-10px;
+	}*/
+
+/*.services-a:hover{
+		color:fff !important;
+	}*/
+
+.services-text{
+		padding:0;
 	}
-	*/
+		
+	.services-text{
+		color:#000;
+		padding:5px 0 0px 0px;
+		text-align:left;
+	}
+	
+	.services-a:hover{
+		color:fff !important;
+	}
+
+	.services-text span{
+		margin:0 0 0 -5px;
+		padding:0;
+	}	
+	
+
+.services-text a:hover{
+		color:fff !important;
+	}
+		.services-1{
+		background: url("../images/check-orange.png") left top no-repeat;
+		padding:0px 0 0px 0;
+		margin:-5px 0 0 0;
+	}
+	
+		.services-1:hover{
+		background: url("../images/check-white2.png") left top no-repeat;
+		color:#fff;
+	}
+	
 	
 	.orange-line{
 		background-color: #e68166;

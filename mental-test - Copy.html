@@ -9,30 +9,103 @@
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <style>
-	.services-text span{
-		margin:0px;
-		padding:5px 10px;
-	}
-
+body {
+	 margin: 0;
+	 padding: 0;
+}
+ * {
+	 box-sizing: border-box;
+}
+ body {
+	 /*display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 height: 100vh;
+	 width: 100%;
+	 font-family: Doko-Book, serif;*/
+	 -webkit-font-smoothing: antialiased;
+	 background-color: #e4e4e2;
+}
+ a {
+	 /*font-size: 2em;*/
+	 text-transform: uppercase;
+	 text-decoration: none;
+	 /*letter-spacing: 0.1em;*/
+}
+ .btn-draw {
+	 position: relative;
+	 display: inline-block;
+	 color: #324577;
+	 border-bottom: 2px solid #324577;
+	 cursor: pointer;
+	 overflow: hidden;
+	 transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+ .btn-draw:after {
+	 content: '';
+	 position: absolute;
+	 right: 0;
+	 bottom: 0;
+	 height: 100%;
+	 width: 2px;
+	 background: #324577;
+	 transform: translateY(100%);
+	 transition: transform 0.2s ease-in-out;
+	 transition-delay: 0.6s;
+}
+ .btn-draw span {
+	 position: relative;
+	 display: block;
+	 padding: 0.5em;
+	 color: inherit;
+}
+ .btn-draw span:before, .btn-draw span:after {
+	 content: '';
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 background: #324577;
+	 transition: transform 0.2s ease-in-out;
+}
+ .btn-draw span:before {
+	 height: 2px;
+	 width: 100%;
+	 transform: translateX(100%);
+	 transition-delay: 0.4s;
+}
+ .btn-draw span:after {
+	 height: 100%;
+	 width: 2px;
+	 transform: translateY(-100%);
+	 transition-delay: 0.2s;
+}
+ .btn-draw:hover:after, .btn-draw:hover > span:before, .btn-draw:hover > span:after {
+	 transform: translate(0, 0);
+}
+ .btn-draw:hover:after {
+	 transition-delay: 0s;
+}
+ .btn-draw:hover > span:before {
+	 transition-delay: 0.2s;
+}
+ .btn-draw:hover > span:after {
+	 transition-delay: 0.4s;
+}
+ .btn-draw:hover {
+	 color: #e4e4e2;
+	 background-color: #324577;
+	 transition-delay: 0.6s;
+}
  .services-1{
 		background: url("images/check-orange.png") left top no-repeat;
 		padding:0px 0 0px 0;
-		margin:0px 0 0 0px;
+		margin:-5px 0 0 0;
 	}
 	
 		.services-1:hover{
 		background: url("images/check-white2.png") left top no-repeat;
 		color:#fff;
 	}
-
-	.services-a{
-		margin-left:-10px;
-	}
-
-.services-a:hover{
-		color:fff !important;
-	}
-	
 </style>
 </head>
 
@@ -295,65 +368,72 @@ The truth is, mental illness can happen to anybody regardless of age, culture, r
     <div class="container">
       <div class="row text-center mr-auto justify-content-center blue-background" style="padding:15px 0 15px 0;">
         <div class="col" style="min-width:300px;">
-          <div class="services-text" > 
-			 
+			
+			
+          <div class="services-text" >
+            <div class="d-flex ">
+			<a class="btn-draw services-a" href="#">
+              <!--<div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>-->
+              <div class="col-11 align-middle"><span>Hover Me</span></div>
+			</a>
+             </div>
+			</div>
+			  
+          <div class="services-text" > <a class="services-a" href="#" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="case-management.html" title=""><span >Case Management</span> </a></div>
+              <div class="col-11 align-middle"><span>Individual &amp; Family Therapy</span></div>
             </div>
-            </div>
-          <div class="services-text" > 
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"><a class="btn-draw services-a" href="#" title=""><span>Individual &amp; Family Therapy</span></a> </div>
-            </div>
-            </div>
+            </a> </div>
 			 <div class="services-text" > 
+			  <a class="services-a" href="psychiatric-services.html" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"><a class="btn-draw services-a" href="psychiatric-services.html" title=""><span >Psychiatric Services</span></a></div>
-            </div> </div>
+              <div class="col-11 align-middle"><span >Psychiatric Services</span></div>
+            </div></a> </div>
         </div>
         <div class="col" style="min-width:300px;">
           <div class="services-text" > 
-			  
+			  <a class="services-a" href="psychological-evaluations.html" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"><a class="btn-draw services-a" href="psychological-evaluations.html" title=""><span>Psychological Evaluations</span></a></div>
+              <div class="col-11 align-middle"><span>Psychological Evaluations </span></div>
             </div>
-             </div>
+            </a> </div>
 			<div class="services-text" > 
+			  <a class="services-a" href="#" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"><a class="btn-draw services-a" href="#" title=""><span >Resource &amp; Links</span></a> </div>
-            </div></div>
-          <div class="services-text" > 
+              <div class="col-11 align-middle"><span >Resource &amp; Links</span></div>
+            </div></a> </div>
+          <div class="services-text" > <a class="services-a" href="#" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"><a class="btn-draw services-a" href="#" title=""> <span >Employee Assistance Programs</span> </a></div>
+              <div class="col-11 align-middle"> <span >Employee Assistance Programs</span></div>
             </div>
-            
+            </a> 
 			</div>
         </div>
         <div class="col" style="min-width:300px;">
+          <div class="services-text" > <a class="services-a" href="prevention.html" title="">
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span>Relapse &amp; Prevention</span></div>
+            </div>
+            </a> </div>
+          <div class="services-text" > <a class="services-a" href="#" title="">
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle"><span>Open Access </span></div>
+            </div>
+            </a> </div>
           <div class="services-text" > 
+			  <a class="services-a" href="#emergency-services" title="">
             <div class="d-flex ">
               <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"><a class="btn-draw services-a" href="prevention.html" title=""><span>Relapse &amp; Prevention</span></a></div>
+              <div class="col-11 align-middle"> <span >Emergency Services</span></div>
             </div>
-             </div>
-          <div class="services-text" >
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#" title=""><span>Open Access</span></a></div>
-            </div>
-             </div>
-          <div class="services-text" > 
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"><a class="btn-draw services-a" href="#emergency-services" title=""> <span >Emergency Services</span></a></div>
-            </div>
-             </div>
+            </a> </div>
         </div>
       </div>
     </div>
