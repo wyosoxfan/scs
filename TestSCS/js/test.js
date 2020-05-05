@@ -31,7 +31,8 @@ function searching() {
 function hide() {
     if (document.getElementById("text_box").value == "") {
         document.getElementById("dropdownList").style.visibility = "hidden"; // Hide the search box results.
-		document.getElementById("dropdown-container").style.display = "none";
+        document.getElementById("dropdown-container").style.display = "none";
+        document.getElementById("text_box").blur();
     }
 }
 
@@ -53,6 +54,7 @@ var mapButton = document.getElementById("map-square");
 searchBar.addEventListener("input", searching);
 searchBar.addEventListener("focusin", searching);
 searchBar.addEventListener("focusout", hide);
+dropdownList.addEventListener("mouseleave", hide);
 dropdownList.addEventListener("focusin", searching);
 mapButton.addEventListener("click", enableMapView);
 
