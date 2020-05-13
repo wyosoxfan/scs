@@ -26,6 +26,7 @@ const PsychologicalEvaluations = { template: '#psychological-evaluations' };
 const PsychosocialCalendar = { template: '#psychosocial-calendar' };
 const SubstanceAbuseCalendar = { template: '#substance-abuse-calendar' };
 const Survey = { template: '#survey' };
+const TestCalendar = { template: '#test-calendar' };
 
 const routes = [
     { path: '/', component: HomePage },
@@ -55,7 +56,8 @@ const routes = [
     { path: '/psychological-evaluations', component: PsychologicalEvaluations },
     { path: '/psychosocial-calendar', component: PsychosocialCalendar },
     { path: '/substance-abuse-calendar', component: SubstanceAbuseCalendar },
-    { path: '/survey', component: Survey }
+    { path: '/survey', component: Survey },
+    { path: '/test-calendar', component: TestCalendar }
 ];
 
 const router = new VueRouter({

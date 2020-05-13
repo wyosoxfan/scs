@@ -10435,45 +10435,100 @@
 
         <template id="survey">
             <div>
+                <div class="container">
+                        <!-- Trigger/Open The Modal -->
+                    <button id="openSurvey">Open Modal</button>
+                    
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                      <div class="modal-content" style="max-width:650px; min-width:300px;">
+                        <span class="close">&times;</span>
+                        <div class="container" >
+                            <div class="row justify-content-center align-items-center">
+                          <div class="col-1 ">
+                             <a class="link-button" href="#" ><div id="back-link"  alt="Previous"></div></a>
+                            </div>
+                             <div class="col survey-question-box">
+                              <h5 id="questionText">HOW OFTEN DO YOU FEEL HOPELESS?</h5>
+                               <p>
+                                 <label>
+                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_0">
+                                   Never</label>
+                                 <br>
+                                 <label>
+                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_1">
+                                   Rarely</label>
+                                 <br>
+                                 <label>
+                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_2">
+                                   Sometimes</label>
+                                 <br>
+                                 <label>
+                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_3">
+                                   Often</label>
+                                 <br>
+                                 <label>
+                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_4">
+                                   Always</label>
+                                 <br>
+                                </p>
+                             </div>
+                             <div class="col-1 ">
+                               <a class="link-button align-middle" href="#"><div id="next-link"  alt="Next Page"></div></a>
+                            </div>
+                          </div>
+                            
+                            <div class="row justify-content-around" style="margin:20px 0px 0px 0px;">
+                                <div class="col-4 text-center "><input class="btn btn-primary" type="button" value="BACK"></div>
+                                <div class="col-4 text-center "><input id="next" class="btn btn-primary" type="button" value="NEXT"></div>
+                            </div>
+                            <div class="row justify-content-end" style="margin:30px 50px 0px 0px;">
+                                <p id="question-number">Question 1 of 10</p>
+                                </div>
+                            
+                          </div>
+                      </div>
+                    </div>
+                </div>
                 <style>
                     /* The Modal (background) */
             .modal {
-              display: block; /* Hidden by default */
-              position: fixed; /* Stay in place */
-              z-index: 9999; /* Sit on top */
-              left: 0;
-              top: 0;
-              width: 100%; /* Full width */
-              height: 100%; /* Full height */
-              overflow: auto; /* Enable scroll if needed */
-              background-color: rgb(0,0,0); /* Fallback color */
-              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                display: block; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 9999; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
             }
             
             /* Modal Content/Box */
             .modal-content {
-              background-color: #ffff;
-              margin: 15% auto; /* 15% from the top and centered */
-              padding: 20px;
-              border: 1px solid #888;
-              width:650px
-              /* max-width: 60%; Could be more or less, depending on screen size */
+                background-color: #ffff;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 20px;
+                border: 1px solid #888;
+                width:650px
+                /* max-width: 60%; Could be more or less, depending on screen size */
             }
             
             /* The Close Button */
             .close {
-              color: #aaa;
-              float: right;
-              font-size: 28px;
-              font-weight: bold;
-              margin-bottom: 5px;
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                margin-bottom: 5px;
             }
             
             .close:hover,
             .close:focus {
-              color: black;
-              text-decoration: none;
-              cursor: pointer;
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
             }
                     
             .survey-question-box{
@@ -10512,61 +10567,6 @@
             .link-button {height:25px; width:25px; padding:0; margin:0;}
                     
                 </style>
-                <div class="container">
-                        <!-- Trigger/Open The Modal -->
-                    <button id="openSurvey">Open Modal</button>
-                    
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                      <div class="modal-content" style="max-width:650px; min-width:300px;">
-                        <span class="close">&times;</span>
-                        <div class="container" >
-                            <div class="row justify-content-center align-items-center">
-                          <div class="col-1 ">
-                             <a class="link-button" href="#" ><div id="back-link"  alt="Previous"></div></a>
-                            </div>
-                             <div class="col survey-question-box">
-                              <h5>HOW OFTEN DO YOU FEEL HOPELESS?</h5>
-                               <p>
-                                 <label>
-                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_0">
-                                   Never</label>
-                                 <br>
-                                 <label>
-                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_1">
-                                   Rarely</label>
-                                 <br>
-                                 <label>
-                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_2">
-                                   Sometimes</label>
-                                 <br>
-                                 <label>
-                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_3">
-                                   Often</label>
-                                 <br>
-                                 <label>
-                                   <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_4">
-                                   Always</label>
-                                 <br>
-                                </p>
-                             </div>
-                             <div class="col-1 ">
-                               <a class="link-button align-middle" href="#"><div id="next-link"  alt="Next Page"></div></a>
-                            </div>
-                          </div>
-                            
-                            <div class="row justify-content-around" style="margin:20px 0px 0px 0px;">
-                                <div class="col-4 text-center "><input class="btn btn-primary" type="button" value="BACK"></div>
-                                <div class="col-4 text-center "><input class="btn btn-primary" type="button" value="NEXT"></div>
-                            </div>
-                            <div class="row justify-content-end" style="margin:30px 50px 0px 0px;">
-                                <p id="question-number">Question 1 of 10</p>
-                                </div>
-                            
-                          </div>
-                      </div>
-                    </div>
-                </div>
             </div>
         </template>
 
