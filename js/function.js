@@ -41,39 +41,3 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-
-var nextQuestionBtn = document.getElementById("next");
-var questions = [
-  'HOW OFTEN DO YOU FEEL HOPELESS?',
-  'QUESTION 2',
-  'QUESTION 3',
-  'QUESTION 4',
-  'QUESTION 5',
-  'QUESTION 6',
-  'QUESTION 7',
-  'QUESTION 8',
-  'QUESTION 9',
-  'QUESTION 10'
-];
-
-var currentQuestion = 0;
-
-nextQuestionBtn.onclick = function(event) {
-    // Create an alert!
-    alert("Entering next question!");
-
-    // Get necessary elements.
-    var questionText = document.getElementById('questionText');
-    var questionNumber = document.getElementById('question-number');
-  
-    // Update the currentQuestion index.
-    currentQuestion++;
-  
-    // Update the question.
-    questionText.innerText = questions[currentQuestion];
-  
-    // Update the question number.
-    questionNumber.innerText = currentQuestion + 1;
-  
-    // Update the bullet points (if necessary).
-}
