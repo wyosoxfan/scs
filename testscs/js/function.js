@@ -42,7 +42,28 @@ window.onclick = function(event) {
   }
 }
 
+/* FIND A WAY TO MAKE UNINITIALIZED PROPERTIES??? */
+var Survey = {
+  questions: [
+    'HOW OFTEN DO YOU FEEL HOPELESS?',
+    'QUESTION 2',
+    'QUESTION 3',
+    'QUESTION 4',
+    'QUESTION 5',
+    'QUESTION 6',
+    'QUESTION 7',
+    'QUESTION 8',
+    'QUESTION 9',
+    'QUESTION 10'
+  ],
+  questionSelections: [
+
+  ],
+  currentQuestion: 0,
+};
+
 var nextQuestionBtn = document.getElementById("next");
+var backQuestionBtn = document.getElementById("back");
 var questions = [
   'HOW OFTEN DO YOU FEEL HOPELESS?',
   'QUESTION 2',
@@ -55,25 +76,44 @@ var questions = [
   'QUESTION 9',
   'QUESTION 10'
 ];
-
 var currentQuestion = 0;
 
 nextQuestionBtn.onclick = function(event) {
-    // Create an alert!
-    alert("Entering next question!");
+  // Create an alert!
+  //alert("Entering next question!");
 
-    // Get necessary elements.
-    var questionText = document.getElementById('questionText');
-    var questionNumber = document.getElementById('question-number');
-  
-    // Update the currentQuestion index.
-    currentQuestion++;
-  
-    // Update the question.
-    questionText.innerText = questions[currentQuestion];
-  
-    // Update the question number.
-    questionNumber.innerText = currentQuestion + 1;
-  
-    // Update the bullet points (if necessary).
+  // Get necessary elements.
+  var questionText = document.getElementById('questionText');
+  var questionNumber = document.getElementById('question-number');
+
+  // Update the currentQuestion index.
+  currentQuestion++;
+
+  // Update the question.
+  questionText.innerText = questions[currentQuestion];
+
+  // Update the question number.
+  questionNumber.innerText = "Question " + (currentQuestion + 1) + " of 10";
+
+  // Update the bullet points (if necessary).
+}
+
+backQuestionBtn.onclick = function(event) {
+  // Create an alert!
+  //alert("Entering previous question!");
+
+  // Get necessary elements.
+  var questionText = document.getElementById("questionText");
+  var questionNumber = document.getElementById("question-number");
+
+  // Update the currentQuestion index.
+  currentQuestion--;
+
+  // Update the question.
+  questionText.innerText = questions[currentQuestion];
+
+  // Update the question number.
+  questionNumber.innerText = "Question " + (currentQuestion + 1) + " of 10";
+
+  // Update the bullet points (if necessary).
 }
