@@ -36,7 +36,7 @@ function hide() {
     }
 }
 
-function enableMapView() {
+function clickMapView() {
     var mapView = document.getElementById("mapView");
     if (mapView.style.visibility != "visible") {
         mapView.style.visibility = "visible";
@@ -45,18 +45,38 @@ function enableMapView() {
         mapView.style.visibility = "hidden";
         mapView.style.display = "none";
     }
-    document.getElementById("map-square").removeEventListener("click", enableMapView);
+}
+
+function enableMapView() {
+    var mapView = document.getElementById("mapView");
+    if (mapView.style.visibility != "visible") {
+        mapView.style.visibility = "visible";
+        mapView.style.display = "";
+    }
+}
+
+function disableMapView() {
+    var mapView = document.getElementById("mapView");
+    if (mapView.style.visibility == "visible") {
+        mapView.style.visibility = "hidden";
+        mapView.style.display = "none";
+    }
 }
 
 var searchBar = document.getElementById("text_box");
 var dropdownList = document.getElementById("dropdownList");
 var mapButton = document.getElementById("map-square");
+var mapView = document.getElementById("mapView");
 searchBar.addEventListener("input", searching);
 searchBar.addEventListener("focusin", searching);
 searchBar.addEventListener("focusout", hide);
 dropdownList.addEventListener("mouseleave", hide);
 dropdownList.addEventListener("focusin", searching);
-mapButton.addEventListener("click", enableMapView);
+mapButton.addEventListener("click", clickMapView);
+mapButton.addEventListener("mouseover", enableMapView);
+mapButton.addEventListener("mouseleave", disableMapView);
+mapView.addEventListener('mouseenter', enableMapView);
+mapView.addEventListener('mouseleave', disableMapView);
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
