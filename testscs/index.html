@@ -72,16 +72,16 @@
                 <div class="navbar top-sub-menu col justify-content-end " style="margin-top:5px; margin-right:20px;"> <a class="orange-color bold" style="font-size:15px;" href="#" title=""> <img src="images/phone.svg" alt="" />&nbsp; &nbsp;307.352.6677</a> </div>
             </div>
             <nav class="navbar navbar-expand-lg" >
-            <div class="brand-centered " > <a class="navbar-brand logo-xs logo-sm logo-md logo-lg logo-xl" href="#/"> <img id="southwest-counseling-logo" class="img-fluid"  src="images/SWCounselingLogo414-web.png" width="414px" height="125px" alt="Southwest Couseling Service - Enriching live through wellness, recovery, and hope."/> </a> </div>
+            <div class="brand-centered " > <a class="navbar-brand logo-xs logo-sm logo-md logo-lg logo-xl" href="#/"> <img id="southwest-counseling-logo" class="img-fluid"  src="images/SWCounselingLogo414-web.png" width="414px" height="125px" alt="Southwest Couseling Service - Enriching live through wellness, recovery, and hope." /> </a> </div>
             <button class="navbar-toggler" id="hamburgerMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto navbar-top">
                 <li class="nav-item "> <a class="nav-link active" style="padding-left:30px !important;" href="#/">Home</a></li>
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#/get-started" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
-                    <div class="dropdown-menu dropdown-border" style="" aria-labelledby="navbarDropdown">
-                    <div class="row d-flex dropdown-area" style="">
-                        <div class="col text-center" >
-                        <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-laughing-mature-mother-embracing-happy-millennial-daughter-spending-time-together-caring-smiling-1444021535.jpg" data-holder-rendered="true">
+                    <div class="dropdown-menu dropdown-border" aria-labelledby="navbarDropdown">
+                    <div class="row d-flex dropdown-area">
+                        <div class="col text-center">
+                        <div><img alt="getting started" width="175px" src="images/stock-photo-laughing-mature-mother-embracing-happy-millennial-daughter-spending-time-together-caring-smiling-1444021535.jpg" data-holder-rendered="true">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
                         </div>
                         </div>
@@ -101,7 +101,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
                         </div>
                         </div>
-                        <div class="col-8 dropdown-innerText" style=""> <a class="dropdown-item" href="#/evaluation">Evaluation &amp; Assessments</a> <a class="dropdown-item" href="#/mental-health">Mental Health</a> <a class="dropdown-item" href="#/substance-abuse">Substance Abuse</a> <a class="dropdown-item" href="#/child-adolescents">Children &amp; Adolescents</a> <a class="dropdown-item" href="#/psychosocial">Psychosocial</a> <a class="dropdown-item" href="#/prevention">Prevention</a> <a class="dropdown-item" href="#/medical-services">Medical Services</a> <a class="dropdown-item" href="#/employment">Employment</a> <a class="dropdown-item" href="#/community-involvement">Community Involvement</a> <a class="dropdown-item" href="#/employee-center">SCS Employee Center</a>
+                        <div class="col-8 dropdown-innerText"> <a class="dropdown-item" href="#/evaluation">Evaluation &amp; Assessments</a> <a class="dropdown-item" href="#/mental-health">Mental Health</a> <a class="dropdown-item" href="#/substance-abuse">Substance Abuse</a> <a class="dropdown-item" href="#/child-adolescents">Children &amp; Adolescents</a> <a class="dropdown-item" href="#/psychosocial">Psychosocial</a> <a class="dropdown-item" href="#/prevention">Prevention</a> <a class="dropdown-item" href="#/medical-services">Medical Services</a> <a class="dropdown-item" href="#/employment">Employment</a> <a class="dropdown-item" href="#/community-involvement">Community Involvement</a> <a class="dropdown-item" href="#/employee-center">SCS Employee Center</a>
                         <div class="dropdown-divider"> </div>
                         </div>
                     </div>
@@ -139,18 +139,12 @@
                   </div>
                   <div class="col-1">&nbsp; </div>
                 </div>
-                <div class="row d-flex" id="dropdown-container" style="">
-                  <div class="col"> </div>
-                  <div id="dropdownList" class="col-8" style="width: {define width};
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin-left: auto;
-            margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000; "  >
+                <div class="row d-flex" id="dropdown-container">
+                  <div class="col"></div>
+                  <div id="dropdownList" class="col-8" style="width: {define width}; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000;"  >
                     <div class="container-fluid">
-                      <div class="row" style="">
-                        <div class="col-4 text-center search-dropmenu" >
-                          <div>
+                      <div class="row">
+                        <div id="trending-bar" class="col-4 text-center search-dropmenu">
                             <h6 style="color: #e68166;">TRENDING</h6>
                             <hr style="background-color:#fff; margin:0 0 10px 0;">
                             <a href="#">
@@ -159,14 +153,15 @@
                             <p>Depression</p>
                             </a> <a href="#">
                             <p>Suicide</p>
-                            </a> </div>
+                            </a>
                           <h6 style="color: #e68166;">LINKS</h6>
                           <hr style="background-color:#fff; margin:0 0 10px 0;">
                           <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
                           <div class="dropdown-divider"></div>
-                          <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a> </div>
+                          <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a> 
+                        </div>
                         <div class="col">
                           <ul id="myUL" class="list-group">
                             <li class="list-group-item active" style="display: none;">
@@ -10571,6 +10566,7 @@
         </template>
 
         <script src="js/vue_template.js"></script>
+        <script src="js/mobile.js"></script>
         <script src="js/jquery-3.4.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/popper.min.js"></script>

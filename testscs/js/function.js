@@ -79,6 +79,9 @@ var depressionQuestion3 = document.getElementById("depression-question1_2");
 var depressionQuestion4 = document.getElementById("depression-question1_3");
 var depressionQuestion5 = document.getElementById("depression-question1_4");
 
+// Hide the back button.
+backQuestionBtn.style.visibility = "hidden";
+
 depressionQuestion1.onclick = function(event) {
   // Set the selected option.
   survey.questionSelections[survey.currentQuestion] = "Never";
@@ -135,6 +138,9 @@ depressionQuestion5.onclick = function(event) {
 }
 
 nextQuestionBtn.onclick = function(event) {
+  // Show the previous button.
+  backQuestionBtn.style.visibility = "";
+
   if (survey.currentQuestion + 1 < survey.questions.length){
     // Create an alert!
     //alert("Entering next question!");
@@ -148,6 +154,13 @@ nextQuestionBtn.onclick = function(event) {
 
     // Update the currentQuestion index.
     survey.currentQuestion++;
+
+    // Check the current position to see if the next button label needs changing.
+    if (survey.currentQuestion == survey.questions.length - 1){
+      nextQuestionBtn.value = "SUBMIT";
+    } else {
+      nextQuestionBtn.value = "NEXT";
+    }
 
     // Update the question.
     questionText.innerText = survey.questions[survey.currentQuestion];
@@ -186,6 +199,9 @@ backQuestionBtn.onclick = function(event) {
     // Create an alert!
     //alert("Entering previous question!");
 
+    // Change the next button.
+    nextQuestionBtn.value = "NEXT";
+
     // Get necessary elements.
     var questionText = document.getElementById("questionText");
     var questionNumber = document.getElementById("question-number");
@@ -222,6 +238,11 @@ backQuestionBtn.onclick = function(event) {
       } else if (survey.questionSelections[survey.currentQuestion] == "Always"){
         depressionQuestion5.checked = true;
       }
+    }
+
+    if (survey.currentQuestion == 0){
+      // Hide the previous button.
+      backQuestionBtn.style.visibility = "hidden";
     }
   }
 }
