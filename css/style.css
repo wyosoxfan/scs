@@ -1395,6 +1395,31 @@ margin:0;
 	font-size:11px;
 }
 
+	.services-text span{
+		margin:0px;
+		padding:5px 10px;
+	}
+
+ .services-1{
+		background: url("../images/check-orange.png") left top no-repeat;
+		padding:0px 0 0px 0;
+		margin:0px 0 0 0px;
+	}
+	
+		.services-1:hover{
+		background: url("../images/check-white2.png") left top no-repeat;
+		color:#fff;
+	}
+
+	.services-a{
+		margin-left:-10px;
+	}
+
+.services-a:hover{
+		color:fff !important;
+	}
+	
+
 
 	.footer-box-top{
 		border-bottom:solid 1px; 
