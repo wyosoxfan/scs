@@ -31,19 +31,7 @@ function searching() {
 function hide() {
     if (document.getElementById("text_box").value == "") {
         document.getElementById("dropdownList").style.visibility = "hidden"; // Hide the search box results.
-        document.getElementById("dropdown-container").style.display = "none";
-        document.getElementById("text_box").blur();
-    }
-}
-
-function clickMapView() {
-    var mapView = document.getElementById("mapView");
-    if (mapView.style.visibility != "visible") {
-        mapView.style.visibility = "visible";
-        mapView.style.display = "";
-    } else {
-        mapView.style.visibility = "hidden";
-        mapView.style.display = "none";
+		document.getElementById("dropdown-container").style.display = "none";
     }
 }
 
@@ -52,31 +40,21 @@ function enableMapView() {
     if (mapView.style.visibility != "visible") {
         mapView.style.visibility = "visible";
         mapView.style.display = "";
-    }
-}
-
-function disableMapView() {
-    var mapView = document.getElementById("mapView");
-    if (mapView.style.visibility == "visible") {
+    } else {
         mapView.style.visibility = "hidden";
         mapView.style.display = "none";
     }
+    document.getElementById("map-square").removeEventListener("click", enableMapView);
 }
 
 var searchBar = document.getElementById("text_box");
 var dropdownList = document.getElementById("dropdownList");
 var mapButton = document.getElementById("map-square");
-var mapView = document.getElementById("mapView");
 searchBar.addEventListener("input", searching);
 searchBar.addEventListener("focusin", searching);
 searchBar.addEventListener("focusout", hide);
-dropdownList.addEventListener("mouseleave", hide);
 dropdownList.addEventListener("focusin", searching);
-mapButton.addEventListener("click", clickMapView);
-mapButton.addEventListener("mouseover", enableMapView);
-mapButton.addEventListener("mouseleave", disableMapView);
-mapView.addEventListener('mouseenter', enableMapView);
-mapView.addEventListener('mouseleave', disableMapView);
+mapButton.addEventListener("click", enableMapView);
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
