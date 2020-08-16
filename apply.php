@@ -17,6 +17,6 @@ $doc = new CouchDocument($client);
 //foreach($_POST as $key=>$value){
 //	doc->{$key} = $value;
     //echo $key, ' => ', $value, "<br/>n";
-}
+//}
 
 ?> 
