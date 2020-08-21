@@ -1,12 +1,22 @@
 var trending = document.getElementById("trending-bar");
 var logo = document.getElementById("southwest-counseling-logo");
 var hamburgerMenu = document.getElementById("hamburgerMenu");
+var gettingStartedImg1 = document.getElementById("gettingStartedImg");
+var gettingStartedImg2 = document.getElementById("gettingStartedImg2");
 
 hamburgerMenu.onclick = function(event){
     if (logo.style.visibility == "hidden"){
         logo.style.visibility = "visible";
+        gettingStartedImg1.style.visibility = "visible";
+        gettingStartedImg1.style.display = "";
+        gettingStartedImg2.style.visibility = "visible";
+        gettingStartedImg2.style.display = "";
     } else {
         logo.style.visibility = "hidden";
+        gettingStartedImg1.style.visibility = "hidden";
+        gettingStartedImg1.style.display = "none";
+        gettingStartedImg2.style.visibility = "hidden";
+        gettingStartedImg2.style.display = "none";
     }
 }
 
