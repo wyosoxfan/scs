@@ -1168,6 +1168,14 @@ margin:0;
 		height:20px;
 	}
 
+.blue-line-top{
+		background-color: #003366;
+		width:100%;
+		margin:0;
+		padding:0;
+		height:7px;
+	}
+
 	.blue-line-thin{
 		background-color: #e68166;
 		padding:0;
@@ -1205,6 +1213,16 @@ margin:0;
 		background-color: #97b5d3;
 		color: #000;
 	}
+
+.orange-title{
+		background-color: #e68166;
+		width:100%;
+		margin-left:auto;
+		margin-right:auto;
+		padding:15px 0 5px 0px;
+		min-height:40px;
+		color: #fff;
+	}
 	
 	.button-orange{
 		background-color:#e68166;
@@ -1215,6 +1233,12 @@ margin:0;
 
 .button-orange-sm{
 		background-color:#e68166;
+		width:175px;
+		color:#000;
+		margin:auto;
+	}
+.button-white-sm{
+		background-color:#fff;
 		width:175px;
 		color:#000;
 		margin:auto;
