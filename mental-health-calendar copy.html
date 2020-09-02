@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mental health calendar and group times information - Southwest Counseling Service | Rock Springs Wyoming</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<script src="js/jquery-3.4.1.min.js"></script> 
+<link href="css/fullcalendar.css" rel="stylesheet" />
+<link href="css/fullcalendar.print.css" rel="stylesheet" media="print" />
+<script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
+<script src="js/fullcalendar.js" type="text/javascript"></script>
+<script>
+
+	$(document).ready(function() {
+	    var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+
+		/*  className colors
+
+		className: default(transparent), important(red), chill(pink), success(green), info(blue)
+
+		*/
+
+
+		/* initialize the external events
+		-----------------------------------------------------------------*/
+
+		$('#external-events div.external-event').each(function() {
+
+			// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+			// it doesn't need to have a start or end
+			var eventObject = {
+				title: $.trim($(this).text()) // use the element's text as the event title
+			};
+
+			// store the Event Object in the DOM element so we can get to it later
+			$(this).data('eventObject', eventObject);
+
+			// make the event draggable using jQuery UI
+			$(this).draggable({
+				zIndex: 999,
+				revert: true,      // will cause the event to go back to its
+				revertDuration: 0  //  original position after the drag
+			});
+
+		});
+
+
+		/* initialize the calendar
+		-----------------------------------------------------------------*/
+
+		var calendar =  $('#calendar').fullCalendar({
+			header: {
+				left: 'title',
+				center: 'agendaDay,agendaWeek,month',
+				right: 'prev,next today'
+			},
+			editable: false,
+			firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
+			selectable: true,
+			defaultView: 'month',
+
+			axisFormat: 'h:mm',
+			columnFormat: {
+                month: 'ddd',    // Mon
+                week: 'ddd d', // Mon 7
+                day: 'dddd M/d',  // Monday 9/7
+                agendaDay: 'dddd d'
+            },
+            titleFormat: {
+                month: 'MMMM yyyy', // September 2009
+                week: "MMMM yyyy", // September 2009
+                day: 'MMMM yyyy'                  // Tuesday, Sep 8, 2009
+            },
+			allDaySlot: false,
+			selectHelper: true,
+			select: function(start, end, allDay) {
+				var title = prompt('Event Title:');
+				if (title) {
+					calendar.fullCalendar('renderEvent',
+						{
+							title: title,
+							start: start,
+							end: end,
+							allDay: allDay
+						},
+						true // make the event "stick"
+					);
+				}
+				calendar.fullCalendar('unselect');
+			},
+			droppable: true, // this allows things to be dropped onto the calendar !!!
+			drop: function(date, allDay) { // this function is called when something is dropped
+
+				// retrieve the dropped element's stored Event Object
+				var originalEventObject = $(this).data('eventObject');
+
+				// we need to copy it, so that multiple events don't have a reference to the same object
+				var copiedEventObject = $.extend({}, originalEventObject);
+
+				// assign it the date that was reported
+				copiedEventObject.start = date;
+				copiedEventObject.allDay = allDay;
+
+				// render the event on the calendar
+				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+				$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+				// is the "remove after drop" checkbox checked?
+				if ($('#drop-remove').is(':checked')) {
+					// if so, remove the element from the "Draggable Events" list
+					$(this).remove();
+				}
+
+			},
+
+			events: [
+        {
+          id: 999,
+          title: 'Women\'s Domestic Violence',
+          start: new Date(y, m, d, 14, 0),
+          end: new Date(y, m, d, 16, 0),
+          allDay: false,
+          className: 'important'
+        },
+        {
+          id: 999,
+          title: 'Women\'s Domestic Violence',
+          start: new Date(y, m, d+7, 14, 0),
+          end: new Date(y, m, d+7, 16, 0),
+          allDay: false,
+          className: 'important'
+        },
+        {
+          id: 999,
+          title: 'Women\'s Domestic Violence',
+          start: new Date(y, m, d+14, 14, 0),
+          end: new Date(y, m, d+14, 16, 0),
+          allDay: false,
+          className: 'important'
+        },
+        {
+          id: 999,
+          title: 'Women\'s Domestic Violence',
+          start: new Date(y, m, d+21, 14, 0),
+          end: new Date(y, m, d+21, 16, 0),
+          allDay: false,
+          className: 'important'
+        },
+        {
+          id: 999,
+          title: 'Men\'s Domestic Violence',
+          start: new Date(y, m, d, 17, 30),
+          end: new Date(y, m, d, 20, 0),
+          allDay: false,
+          className: 'info'
+        },
+        {
+          id: 999,
+          title: 'Men\'s Domestic Violence',
+          start: new Date(y, m, d+7, 17, 30),
+          end: new Date(y, m, d+7, 20, 0),
+          allDay: false,
+          className: 'info'
+        },
+        {
+          id: 999,
+          title: 'Men\'s Domestic Violence',
+          start: new Date(y, m, d+14, 17, 30),
+          end: new Date(y, m, d+14, 20, 0),
+          allDay: false,
+          className: 'info'
+        },
+        {
+          id: 999,
+          title: 'Men\'s Domestic Violence',
+          start: new Date(y, m, d+21, 17, 30),
+          end: new Date(y, m, d+21, 20, 0),
+          allDay: false,
+          className: 'info'
+        },
+        {
+          title: 'Girl\'s Group',
+          start: new Date(y, m, d-1, 18, 0),
+          end: new Date(y, m, d-1, 19, 30),
+          allDay: false
+        },
+        {
+          title: 'Girl\'s Group',
+          start: new Date(y, m, d+6, 18, 0),
+          end: new Date(y, m, d+6, 19, 30),
+          allDay: false
+        },
+        {
+          title: 'Girl\'s Group',
+          start: new Date(y, m, d+13, 18, 0),
+          end: new Date(y, m, d+13, 19, 30),
+          allDay: false
+        },
+        {
+          title: 'Girl\'s Group',
+          start: new Date(y, m, d+20, 18, 0),
+          end: new Date(y, m, d+20, 19, 30),
+          allDay: false
+        },
+        {
+          title: 'Girl\'s Group',
+          start: new Date(y, m, d+27, 18, 0),
+          end: new Date(y, m, d+27, 19, 30),
+          allDay: false
+        }
+			],
+		});
+
+
+	});
+
+</script>
+<style>
+
+	/*body {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Helvetica Nueue",Arial,Verdana,sans-serif;
+		background-color: #DDDDDD;
+		}*/
+
+	#wrap {
+		width: 1100px;
+		margin: 0 auto;
+		}
+
+	#external-events {
+		float: left;
+		width: 150px;
+		padding: 0 10px;
+		text-align: left;
+		}
+
+	#external-events h4 {
+		font-size: 16px;
+		margin-top: 0;
+		padding-top: 1em;
+		}
+
+	.external-event { /* try to mimick the look of a real event */
+		margin: 10px 0;
+		padding: 2px 4px;
+		background: #3366CC;
+		color: #fff;
+		font-size: .85em;
+		cursor: pointer;
+		}
+
+	#external-events p {
+		margin: 1.5em 0;
+		font-size: 11px;
+		color: #666;
+		}
+
+	#external-events p input {
+		margin: 0;
+		vertical-align: middle;
+		}
+
+	#calendar {
+/* 		float: right; */
+        margin: 0 auto;
+		width: 900px;
+		background-color: #FFFFFF;
+		  border-radius: 6px;
+        box-shadow: 0 1px 2px #C3C3C3;
+		}
+
+</style>
+</head>
+
+<body>
+<div class="d-flex">
+  <div class="navbar top-sub-menu col justify-content-start">
+    <ul>
+      <!--<li><a href="#">Future Link</a></li>
+    <li><a href="">|</a></li>
+    <li><a href="#">Future Link</a></li>
+    <li><a href="">|</a></li>-->
+      <li><a class="bold highlight-color" href="#">Suicide Helpline 1-800-273-8255</a></li>
+    </ul>
+  </div>
+  <div class="navbar top-sub-menu col justify-content-end " style="margin-top:5px; margin-right:20px;"> <a class="orange-color bold" style="font-size:15px;" href="#" title=""> <img src="images/phone.svg" alt="" />&nbsp; &nbsp;307.352.6677</a> </div>
+</div>
+<nav class="navbar navbar-expand-lg" >
+  <div class="brand-centered " > <a class="navbar-brand logo-xs logo-sm logo-md logo-lg logo-xl" href="index.html"> <img id="southwest-counseling-logo" class="img-fluid"  src="images/SWCounselingLogo414-web.png" width="414px" height="125px" alt="Southwest Couseling Service - Enriching live through wellness, recovery, and hope."/> </a> </div>
+  <button class="navbar-toggler" id="hamburgerMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-top">
+      <li class="nav-item "> <a class="nav-link" style="padding-left:30px !important;" href="index.html">Home</a> </li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="get-started.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Get Started </a>
+        <div class="dropdown-menu dropdown-border" style="" aria-labelledby="navbarDropdown">
+          <div class="row d-flex dropdown-area" style="" >
+            <div class="col text-center" >
+              <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-laughing-mature-mother-embracing-happy-millennial-daughter-spending-time-together-caring-smiling-1444021535.jpg" data-holder-rendered="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+              </div>
+            </div>
+            <div class="col-8 dropdown-innerText" > <a class="dropdown-item" href="get-started.html">How to Get Started</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="help-myself.html">Get Help for Myself</a> <a class="dropdown-item" href="help-family.html">Get Help for a Family Member</a> <a class="dropdown-item" href="help-friend.html">Get Help for a Friend</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="payment-info.html">Payment Information</a> </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Services </a>
+        <div class="dropdown-menu dropdown-border" aria-labelledby="navbarDropdown" >
+          <div class="row d-flex dropdown-area" style="" >
+            <div class="col text-center" >
+              <div class="" ><img alt="getting started" width="175px" src="images/stock-photo-psychological-guidance-521585995.jpg" data-holder-rendered="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus quos libero eius ipsum qui sit molestiae. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
+              </div>
+            </div>
+            <div class="col-8 dropdown-innerText" style=""> <a class="dropdown-item" href="evaluation.html">Evaluation &amp; Assessments</a> <a class="dropdown-item" href="mental-health.html">Mental Health</a> <a class="dropdown-item" href="substance-abuse.html">Substance Abuse</a> <a class="dropdown-item" href="child-adolescents.html">Children &amp; Adolescents</a> <a class="dropdown-item" href="psychosocial.html">Psychosocial</a> <a class="dropdown-item" href="prevention.html">Prevention</a> <a class="dropdown-item" href="medical-services">Medical Services</a> <a class="dropdown-item" href="employment.html">Employment</a> <a class="dropdown-item" href="community-involvement.html">Community Involvement</a> <a class="dropdown-item" href="employee-center.html">SCS Employee Center</a>
+              <div class="dropdown-divider"> </div>
+            </div>
+          </div>
+        
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item"><a class="nav-link active" href="substance-abuse-calendar.html">Calendar</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+      <li class="nav-item"><a class="nav-link"  style="margin-right:20px;" href="prevention.html">Prevention</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+  <div class="container-fluid searchbar-container" style="position: relative;  display: inline-block;">
+    <div class="row align-items-center ">
+      <div class="col">&nbsp; </div>
+      <div class="col-8 searchbar">
+        <div class=" search-form d-flex mb-0" >
+          <input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
+          <div class="input-group-prepend">
+            <button class="search-button" type="button" id="button-addon1" >
+            <div id="search"  alt="Search"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col">&nbsp; </div>
+    </div>
+    <div class="row d-flex" id="dropdown-container" style="">
+      <div class="col"> </div>
+      <div id="dropdownList" class="col-8" style="width: {define width}
+position: absolute;
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000; "  >
+        <div class="container-fluid">
+          <div class="row" style="">
+            <div class="col-4 text-center search-dropmenu" >
+              <div>
+                <h6 style="color: #e68166;">TRENDING</h6>
+                <hr style="background-color:#fff; margin:0 0 10px 0;">
+                <a href="#">
+                <p>Alcoholism</p>
+                </a> <a href="#">
+                <p>Depression</p>
+                </a> <a href="#">
+                <p>Suicide</p>
+                </a> </div>
+              <h6 style="color: #e68166;">LINKS</h6>
+              <hr style="background-color:#fff; margin:0 0 10px 0;">
+              <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a> </div>
+            <div class="col">
+              <ul id="myUL" class="list-group">
+                <li class="list-group-item active" style="display: none;">
+                  <h3>Test 1</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 2</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 3</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 4</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 5</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+                <li class="list-group-item" style="display: none;">
+                  <h3>Test 6</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <button  class="btn btn-secondary">Find out more!</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col"> </div>
+    </div>
+  </div>
+	<div class="container-fluid">
+  <div class="row">
+    <div class="col justify-content-start breadcrumb-menu">
+      <ul >
+        <li><a href="index.html">Home</a></li>
+        <li><a >&gt;</a></li>
+        <li><a href="mental-health.html">Services</a></li>
+        <li><a >&gt;</a></li>
+        <li><a href="mental-health.html">Mental Health Services</a></li>
+        <li><a >&gt;</a></li>
+        <li><a href="#">Calendar</a></li>
+      </ul>
+    </div>
+  </div>
+	</div>
+</header>
+<section class="calendar">
+  <div class="jumbotron whiteBack" >
+    <hr class="orange-line">
+    <div class="blue-title">
+      <div class="container">
+        <h5>MENTAL HEALTH GROUPS</h5>
+      </div>
+    </div>
+	    <div class="container"> <img src="images/mockup-calendar.jpg" width="100%" alt=""/> </div>
+	   </div>
+</section>
+	
+	
+	  <!--CALENDAR-->
+    
+	  <div id="wrap">
+
+<div id="calendar"></div>
+
+<div style="clear:both"></div>
+</div>
+	  
+	 
+<section class="services-provided">
+  <div class="jumbotron payment">
+    <hr class="orange-line">
+    <div class="blue-title">
+      <div class="container">
+        <h5>GROUPS PROVIDED</h5>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row text-center mr-auto justify-content-center blue-background" style="padding:15px 0 15px 0;">
+        <div class="col">
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#pre-teen-group" title=""><span >Pre-teen Group</span></a></div>
+            </div>
+             </div>
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#girls-group" title=""><span>Girl’s Group</span>  </a> </div>
+            </div>
+          </div>
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#boys-group" title=""><span >Boy’s Group</span> </a></div>
+            </div>
+            </div>
+         <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#headstart" title=""><span >Headstart</span></a></div>
+            </div>
+             </div>
+        </div>
+        <div class="col">
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#domestic-violence" title=""><span>Women’s Domestic Violence </span></a></div>
+            </div>
+             </div>
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#domestic-violence" title=""><span >Men’s Domestic Violence </span>  </a></div>
+            </div>
+           </div>
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#intensive-family" title=""> <span >Intensive Family Based Treatment</span> </a></div>
+            </div>
+            </div>
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#anger-management" title=""><span >Women’s Anger Management</span></a></div>
+            </div>
+             </div>
+        </div>
+        <div class="col">
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#anger-management" title=""><span>Men’s Anger Management</span>  </a> </div>
+            </div>
+          </div>
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#seeking-safety" title=""><span>Seeking Safety</span></a></div>
+            </div>
+             </div>
+          <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#eating-disorder" title=""><span>Eating Disorder Group</span></a></div>
+            </div>
+             </div>
+         <div class="services-text" > 
+            <div class="d-flex ">
+              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
+              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#life-skills" title=""><span>Life Skills</span> </a></div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="group-descriptions">
+ <div class="jumbotron white-back">
+  <div class="row " >
+    <div class="col-sm-6 col-lg-6 left-right-padding"  id="domestic-violence"   style=" border:2px solid black;">
+      <p>&nbsp; </p>
+      <h5 class="bold">Domestic Violence Program</h5>
+      <p>The Domestic Violence Program provides group and individual treatment for court-ordered adults convicted of a misdemeanor or felony which involved violence in the home. For more information about this program, please call (307) 352-6680. </p>
+      <div>
+        <h6>Men’s Domestic Violence Group Meetings</h6>
+        <p> Wednesdays <br>
+          5:30 - 8:00 pm <br>
+          1124 College Drive <br>
+        </p>
+      </div>
+      <div >
+        <h6>Women’s Domestic Violence Group Meetings</h6>
+        <p> Wednesdays <br>
+          2:00 - 4:00 pm <br>
+          1124 College Drive <br>
+        </p>
+      </div>
+      <div class="align-self-end"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div>
+      <p>&nbsp; </p>
+    </div>
+    <div class="col-sm-6 col-lg-6 left-right-padding"  id="girls-group" style=" border:2px solid black;">
+      <p>&nbsp; </p>
+      <h5 class="bold">Girl’s Group Meetings</h5>
+      <p>This group is for adolescent girls aged 12-17. This is an open, on-going group that can be joined at any time.</p>
+      <div>
+        <p> Some of the topics covered are: </p>
+        <ul>
+          <li>Self-esteem</li>
+          <li>Assertiveness</li>
+          <li>Family and Relationships</li>
+          <li>Sexuality</li>
+          <li>Social impacts of actions, cliques, and identifying with being a girl in a macho culture</li>
+          <li>Self-defeating behaviors and body image</li>
+          <li>Values</li>
+          <li>Grief and loss </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <h6>Girl’s Group Meetings</h6>
+          <p> Tuesdays<br>
+            6:00-7:30 pm <br>
+            1124 College Dr.<br>
+            Rock Springs, WY 82901 </p>
+        </div>
+        <!-- <div class="col-2 text-center align-self-end"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div> --> 
+      </div>
+      <p>&nbsp; </p>
+    </div>
+  </div>
+	</div>
+  <div class="jumbotron white-back">
+  <div class="row " >
+    <div class="col-sm-6 col-lg-6 left-right-padding"  id="anger-management"  style="border:2px solid black;">
+      <p>&nbsp; </p>
+      <h5 class="bold">Anger Management Program</h5>
+      <p>The Anger Management Program provides group and individual treatment for court-ordered adults. For more information about this program, please call (307) 352-6677. </p>
+      <div>
+        <h6>Men’s Anger Management Group Meetings</h6>
+        <p> Thursdays<br>
+          5:30 - 7:30 pm<br>
+          2300 Foothill Blvd.<br>
+          Rock Springs, WY 82901 </p>
+      </div>
+      <div>
+        <h6>Women’s Anger Management Group Meetings</h6>
+        <p> Wednesdays<br>
+          1:00 - 3:00 pm <br>
+          2300 Foothill Blvd.<br>
+          Rock Springs, WY 82901 </p>
+      </div>
+      <div class="align-self-end"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div>
+      <p>&nbsp; </p>
+    </div>
+    <div class="col-sm-6 col-lg-6 left-right-padding"  id="eating-disorder"  style=" border:2px solid black;">
+      <p>&nbsp; </p>
+      <h5 class="bold">Eating Disorder Group</h5>
+      <p>The Eating Disorder Group helps women diagnosed with an eating disorder to enhance self-esteem and provide structure for healthy eating habits. </p>
+      <div>
+        <p> The group focuses on the following eating disorders: </p>
+        <ul>
+          <li>Anorexia Nervosa</li>
+          <li>Bulimia Nervosa</li>
+          <li>Binge Eating</li>
+          <li>Restricting Behaviors</li>
+        </ul>
+      </div>
+      <div >
+        <h6>Eating Disorder Group Meetings</h6>
+        <p> Thursdays<br>
+          1:30 - 3:30 pm <br>
+          2300 Foothill Blvd. <br>
+          Rock Springs, WY 82901 <br>
+        </p>
+      </div>
+      <!-- <div class="col-2 text-center align-self-end"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div> -->
+      
+      <p>&nbsp; </p>
+    </div>
+  </div>
+	</div>
+ <div class="jumbotron white-back">
+  <div class="row" >
+    <div class="col-sm-6 col-lg-6 left-right-padding"  id="seeking-saftey"  style=" border:2px solid black;">
+      <p>&nbsp; </p>
+      <h5 class="bold">SEEKING SAFETY</h5>
+      <p>Seeking Safety is a group for women that are dealing with substance abuse/dependency and have experienced severe trauma.  Trauma can include emotional or physical abuse or Post Traumatic Stress Disorder (PTSD). Group is focused around providing women with a safe environment to process their trauma and begin to heal in order to overcome the abuse and learn to live a healthy life. </p>
+      <h6>Seeking Safety Group Meetings</h6>
+      <p> Tuesdays <br>
+        3:30 - 4:30 pm <br>
+        2300 Foothill Blvd. <br>
+      </p>
+      <p> The group is for women 18 years and older and will require an intake evaluation. As with all of Southwest Counseling Service’s offered services, group membership and discussions will remain confidential.
+        
+        For any questions or concerns, contact our Foothill location at (307) 352-6677. </p>
+      <p>&nbsp; </p>
+    </div>
+  </div>
+	</div>
+</section>
+<section class="location-section">
+  <div class="container" >
+    <div class="row"> </div>
+    <div >
+      <h5>SCS LOCATIONS</h5>
+      <hr class="orange-line-thin" style="width:170px;">
+    </div>
+    <div class="row justify-content-center "><!--row-cols-3-->
+      <div class="col">
+        <div>&nbsp;</div>
+        <h7 >Southwest Counseling Services - <strong>Main Office</strong></h7>
+        <br>
+        <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7>
+        <br>
+        <h7>Phone: (307) 352-6677</h7>
+        <br>
+        <h7>Fax:(307) 352-6614</h7>
+        <br>
+        <h7>Hours: 8:00am - 5:00pm </h7>
+        <div>&nbsp;</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+      <div class="col">
+        <div>&nbsp;</div>
+        <h7>Southwest Counseling Services - <strong>Mental Health</strong></h7>
+        <br>
+        <h7>1124 College Dr. Rock Springs, WY 82901</h7>
+        <br>
+        <h7>Phone: (307) 352-6680</h7>
+        <br>
+        <h7>Fax: (307) 352-6676</h7>
+        <br>
+        <h7>Hours: 8:00am - 5:00pm </h7>
+        <br>
+        <div>&nbsp;</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.30783232254!2d-109.23738235111409!3d41.584222805473736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61189a7b7009%3A0x6547fdf9c6cbc427!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149630327!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="service-icons">
+  <div class="container">
+    <div class="row">
+      <div >
+        <h5>SERVICES</h5>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom:10px" >
+      <div class="col top-padding"> <a href="evaluation.html" >
+        <div class="servicesSection"><img alt="" src="images/evaluations-blue.png"  data-holder-rendered="true">
+          <p>EVALUATIONS &amp; ASSESSMENTS</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="mental-health.html" >
+        <div class="servicesSection"><img alt="" src="images/mentalHealth-blue.png" data-holder-rendered="true">
+          <p>MENTAL HEALTH</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="substance-abuse.html" >
+        <div class="servicesSection"><img alt="" src="images/substanceAbuse-blue.png"  data-holder-rendered="true">
+          <p>SUBSTANCE ABUSE</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a  href="child-adolescents.html" >
+        <div class="servicesSection"> <img alt="" src="images/children-blue.png" data-holder-rendered="true">
+          <p>CHILDREN &amp; ADOLESCENTS</p>
+        </div>
+        </a> </div>
+    </div>
+    <div class="row" style="margin-bottom:20px" >
+      <div class="col top-padding"> <a href="psychosocial.html" >
+        <div class="servicesSection"><img alt="" src="images/psychosocial-blue.png"  data-holder-rendered="true">
+          <p>PSYCHOSOCIAL</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="prevention.html" >
+        <div class="servicesSection"><img alt="" src="images/prevention-blue.png" data-holder-rendered="true">
+          <p>PREVENTION</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="medical-services.html" >
+        <div class="servicesSection"><img alt="" src="images/medicalServices-blue.png"  data-holder-rendered="true">
+          <p>MEDICAL SERVICES</p>
+        </div>
+        </a> </div>
+      <div class="col top-padding"> <a href="employment.html" >
+        <div class="servicesSection"> <img alt="" src="images/employment-blue.png" data-holder-rendered="true">
+          <p>EMPLOYMENT</p>
+        </div>
+        </a> </div>
+    </div>
+  </div>
+</section>
+<footer class="text-center">
+  <div class="jumbotron footerSection">
+    <div class="container">
+      <div class="row footer-box-top" >
+        <div class="col footer-box2" >
+          <p>SCS Main Office - Recovery Services</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>2300 Foothill Blvd. &nbsp;Rock Springs, WY 82901</p>
+        </div>
+        <div class="col top-padding"  > <a href="#" style="color:#e68166;"><strong>307-352-6677</strong></a> </div>
+      </div>
+      <div class="row footer-box-middle" >
+        <div class="col  footer-box2" >
+          <p>SCS Mental Health Services</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>1124 College Dr. &nbsp;Rock Springs, WY 82901</p>
+        </div>
+        <div class="col top-padding"  > <a href="#" style="color:#fff;">307-352-6680</a> </div>
+      </div>
+      <div class="row footer-box-middle" >
+        <div class="col footer-box2" >
+          <p>SCS Green River - Mental Health</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>115 E. Flaming Gorge Way&nbsp; Green River, WY 82935 </p>
+        </div>
+        <div class="col top-padding" > <a href="#" style="color:#fff;">307-872-3205</a> </div>
+      </div>
+      <div >
+        <p>&nbsp;</p>
+      </div>
+      <div class="row">
+        <div class="col"> <a href="index.html"><img src="images/scs-logo-white.png" width="216" height="75" alt=""/> </a> </div>
+        <div class="col" >
+          <p style="text-align: left; text-decoration: underline;">Services</p>
+          <a href="evaluation.html" class="footer-text">
+          <p>Evaluations &amp; Assessments</p>
+          </a> <a href="mental-health.html" class="footer-text">
+          <p >Mental Health</p>
+          </a> <a href="substance-abuse.html" class="footer-text">
+          <p >Substance Abuse</p>
+          </a> <a href="psychosocial.html" class="footer-text">
+          <p >Psychosocial</p>
+          </a> <a href="prevention.html" class="footer-text">
+          <p >Prevention</p>
+          </a> <a href="children-adolescents.html" class="footer-text">
+          <p >Children &amp; Adolescents</p>
+          </a> <a href="medical-services.html" class="footer-text">
+          <p >Medical Services</p>
+          </a> </div>
+        <div class="col" >
+          <p style="text-align: left; text-decoration: underline;">Other Services</p>
+          <a href="employment.html" class="footer-text">
+          <p >Employment</p>
+          </a> <a href="community.html" class="footer-text">
+          <p >Community Involvement</p>
+          </a> <a href="contact-us.html" class="footer-text">
+          <p >About Us</p>
+          </a> <a href="contact-us.html" class="footer-text">
+          <p >Contact Us</p>
+          </a> </div>
+        <div class="col" >
+          <p style="text-align: left; text-decoration: underline;">Quick Links</p>
+          <a href="payment-info.html" class="footer-text">
+          <p >Payment Information</p>
+          </a> <a href="employee-center.html" class="footer-text">
+          <p >SCS Employee Center</p>
+          </a> <a href="client-suggestions.html" class="footer-text">
+          <p >Client Suggestions</p>
+          </a> <a href="faq.html" class="footer-text">
+          <p>FAQ</p>
+          </a> </div>
+        <div class="col">
+          <p style="text-align: left; text-decoration: underline;">About Us</p>
+          <a href="contact-us.html" class="footer-text">
+          <p >Board of Directors</p>
+          </a> <a href="contact-us.html" class="footer-text">
+          <p >Mission &amp; Vision</p>
+          </a> <a href="employment.html" class="footer-text">
+          <p >Career Opportunities</p>
+          </a> <a href="employee-center.html" class="footer-text">
+          <p >Employees</p>
+          </a> <a href="contact-us.html" class="footer-text">
+          <p >History</p>
+          </a> <a href="contact-us.html" class="footer-text">
+          <p >Accreditations</p>
+          </a> </div>
+      </div>
+      <div >
+        <p>&nbsp;</p>
+      </div>
+      <h5>EMERGENCIES: Please call 911 in a life-threatening emergency</h5>
+      <div >
+        <p>&nbsp;</p>
+      </div>
+      <div class="col-12" style="border-top:solid 1px; padding-bottom:10px; padding-top:20px;">
+        <p style="font-size:12px;">Copyright 2020 © Southwest Counseling Services. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/popper.min.js"></script> 
+<script src="js/bootstrap-4.4.1.js"></script> 
+<!--<script src="js/function.js"></script>--> 
+<script src="js/function.js"></script> 
+<script src="js/test.js"></script>
+<!--<script src="js/fullcalendar.js" type="text/javascript"></script>
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>-->
+</body>
+</html>
