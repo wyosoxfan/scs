@@ -4,26 +4,72 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Children and adolescent calendar and group times information - Southwest Counseling Service | Rock Springs Wyoming</title>
+<title>Substance Abuse - Southwest Counseling Service | Rock Springs Wyoming</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<style></style>
+<style>
+.dropdown-innerText {
+    background-color: #fff;
+    margin-right: 2px;
+}
+.dropdown-border {
+    width: 700px;
+    border: solid #e68166 3px;
+    padding: 0;
+    margin: 0;
+}
+.dropdown-area {
+    border: solid #fff 3px;
+    border-top: 0px;
+    padding: 8px;
+    margin: 6px -6px -3px -6px;
+}
+.search-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #e68166;
+    background-clip: padding-box;
+    border: 3px solid #e68166;
+}
+#calendar-icon {
+    background-image: url("images/calendar-white.png") center center no-repeat !important;
+    padding: 0;
+    margin: 0;
+    width: 350px;
+    height: 200px;
+}
+#calendar-icon:hover {
+    background-image: url("images/calendar-hover.png") center center no-repeat !important;
+}
+</style>
 </head>
 
 <body>
 <div class="d-flex">
-  <div class="navbar top-sub-menu col justify-content-start">
-    <ul>
-     <!-- <li><a href="#">Future Link</a></li>
-      <li><a href="">|</a></li>
-      <li><a href="#">Future Link</a></li>
-      <li><a href="">|</a></li>-->
-      <li><a class="bold highlight-color" href="#">Suicide Helpline 1-800-273-8255</a></li>
-    </ul>
-  </div>
-  <div class="navbar top-sub-menu col justify-content-end " style="margin-top:5px; margin-right:20px;"> <a class="orange-color bold" style="font-size:15px;"  href="tel:3073526680" title=""> <img src="images/phone.svg" alt="" />&nbsp; &nbsp;307.352.6680</a> </div>
+<div class="navbar top-sub-menu col justify-content-start">
+  <ul>
+   <!-- <li><a href="#">Future Link</a></li>
+    <li><a href="">|</a></li>
+    <li><a href="#">Future Link</a></li>
+    <li><a href="">|</a></li>-->
+    <li><a class="bold highlight-color" href="#">Suicide Helpline 1-800-273-8255</a></li>
+  </ul>
 </div>
+<div class="navbar top-sub-menu col justify-content-end " style="margin-top:5px; margin-right:20px;">
+ <a class="orange-color bold" style="font-size:15px;" href="tel:3073526680" title=""> <img src="images/phone.svg" alt="" />&nbsp; &nbsp;307.352.6680</a> 
+</div>
+	</div>
 <nav class="navbar navbar-expand-lg" >
   <div class="brand-centered " > <a class="navbar-brand logo-xs logo-sm logo-md logo-lg logo-xl" href="index.html"> <img id="southwest-counseling-logo" class="img-fluid"  src="images/SWCounselingLogo414-web.png" width="414px" height="125px" alt="Southwest Couseling Service - Enriching live through wellness, recovery, and hope."/> </a> </div>
   <button class="navbar-toggler" id="hamburgerMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
@@ -46,7 +92,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Services </a>
+      <li class="nav-item dropdown"> <a class="nav-link active dropdown-toggle" href="services.html" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Services </a>
         <div class="dropdown-menu dropdown-border" aria-labelledby="navbarDropdown" >
           <div class="row d-flex dropdown-area" style="" >
             <div class="col text-center" >
@@ -73,7 +119,7 @@
       </li>
     </ul>
     <ul class="navbar-nav navbar-right">
-      <li class="nav-item"><a class="nav-link active" href="substance-abuse-calendar.html">Calendar</a></li>
+      <li class="nav-item"><a class="nav-link" href="substance-abuse-calendar.html">Calendar</a></li>
       <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
       <li class="nav-item"><a class="nav-link"  style="margin-right:20px;" href="prevention.html">Prevention</a></li>
     </ul>
@@ -82,21 +128,22 @@
 <header>
   <div class="container-fluid searchbar-container" style="position: relative;  display: inline-block;">
     <div class="row align-items-center ">
-      <div class="col">&nbsp; </div>
+      <div class="col">&nbsp;
+      </div>
       <div class="col-8 searchbar">
         <div class=" search-form d-flex mb-0" >
-          <input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
-          <div class="input-group-prepend">
-            <button class="search-button" type="button" id="button-addon1" >
-            <div id="search"  alt="Search"></div>
-            </button>
-          </div>
-        </div>
+			<input id="text_box" type="text" class="form-control search-input" placeholder="What are you looking for?" aria-label="Search"  aria-describedby="button-addon1">
+			<div class="input-group-prepend">
+            <button class="search-button" type="button" id="button-addon1" ><div id="search"  alt="Search"></div></button>
+			</div>
+		  </div>
+		</div>
+      <div class="col">&nbsp;
       </div>
-      <div class="col">&nbsp; </div>
     </div>
     <div class="row d-flex" id="dropdown-container" style="">
-      <div class="col"> </div>
+      <div class="col">
+      </div>
       <div id="dropdownList" class="col-8" style="width: {define width}
 position: absolute;
 left: 0;
@@ -109,20 +156,18 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
               <div>
                 <h6 style="color: #e68166;">TRENDING</h6>
                 <hr style="background-color:#fff; margin:0 0 10px 0;">
-                <a href="#">
-                <p>Alcoholism</p>
-                </a> <a href="#">
-                <p>Depression</p>
-                </a> <a href="#">
-                <p>Suicide</p>
-                </a> </div>
+                <a href="#"><p>Alcoholism</p></a>
+                <a href="#"><p>Depression</p></a>
+                <a href="#"><p>Suicide</p></a>
+              </div>
               <h6 style="color: #e68166;">LINKS</h6>
               <hr style="background-color:#fff; margin:0 0 10px 0;">
               <a class="dropdown-item dropdown-item-hover" href="#">How to Get Started</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item dropdown-item-hover" href="#">Get Help for Myself</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a> </div>
+              <a class="dropdown-item dropdown-item-hover" href="#">Payment Information</a>
+            </div>
             <div class="col">
               <ul id="myUL" class="list-group">
                 <li class="list-group-item active" style="display: none;">
@@ -160,219 +205,252 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
           </div>
         </div>
       </div>
-      <div class="col"> </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron" id="top-image">
+    <div class="container">
+      <div class="row">
+        <div class="col"> 
+          <!--<h4 class="text-left">ENRICHING LIVES <br>
+THROUGH WELLNESS, <br>
+RECOVERY, AND HOPE.</h4>-->
+          <p class="text-left">Southwest Counseling Service provides open access for clients...<br> <br></p>
+          <p>&nbsp;</p>
+          <p class="text-center"><a class="btn btn-secondary" href="tel:3073526680" title="307-352-6680" role="button"> <img src="images/phone.svg" alt=""/>&nbsp; &nbsp;Contact Us</a> </p>
+        </div>
+        <div class="col-lg-8"> <img class="img-fluid" src="images/top-image-psychiatric.jpg" style="box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.5); margin-bottom:15px;" alt="Enriching lives through wellness, recover, and hope."/><!--width="684" height="300"--> 
+        </div>
+      </div>
     </div>
   </div>
 	<div class="container-fluid">
   <div class="row">
     <div class="col justify-content-start breadcrumb-menu">
       <ul >
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a >&gt;</a></li>
-        <li><a href="#">Services</a></li>
+        <li><a href="#">SERVICES</a></li>
         <li><a >&gt;</a></li>
-        <li><a href="#">Children and Adolescents Services</a></li>
-        <li><a >&gt;</a></li>
-        <li><a href="#">Calendar</a></li>
+        <li><a href="mental-health.html">MENTAL ABUSE SERVICES</a></li>
+		   <li><a >&gt;</a></li>
+        <li><a href="#">Open Access</a></li>
       </ul>
     </div>
+     <div class="col container-fluid dropdown-div" >
+	 <div class="row justify-content-end" id="contact-flags" ><!--href="tel:3073526680"-->
+    <div class="icon-square"><a id="phone-square" href="tel:3073526680" title="307-352-6680"><img src="images/spacer.png"  alt=""/></a></div>
+	<div class="icon-square " ><a class="dropbtn" id="map-square" href="#map-square-map"><img src="images/spacer.png"  alt=""/></a></div>
+	  <div class="icon-square"><a id="facebook-square" target="_blank" href="http://www.facebook.com/swcounseling/"><img src="images/spacer.png" alt=""/></a></div>
+	</div> 
+	<div class="row d-flex">
+      <div class="col">
+      </div>
+	 <div id="mapView" class="row justify-content-end dropdown-content" style="display: none; visibility: hidden;">
+		 <div class="col">
+		    <h7 >Southwest Counseling Services</h7> <br>
+		    <h7>1124 College Dr. Rock Springs, WY 82901 </h7><br>
+			  <h7>307-352-6680</h7>
+			  <div>&nbsp;</div>
+	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.30783232254!2d-109.23738235111409!3d41.584222805473736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61189a7b7009%3A0x6547fdf9c6cbc427!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149630327!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		  </div>
+			</div> 
+		</div>
+	</div>
   </div>
 	</div>
 </header>
-<!--<section class="calendar">
-  <div class="jumbotron whiteBack" >
-    <hr class="orange-line">
-    <div class="blue-title">
-      <div class="container">
-        <h5>CHILD &amp; ADOLESCENT GROUPS</h5>
+<section class="header-title" style="margin-top:-10px !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <hr class="black-line-thin">
+      </div>
+      <div class="col-6 align-content-center" >
+        <h3 class="text-center">OPEN ACCESS</h3>
+      </div>
+      <div class="col">
+        <hr class="black-line-thin">
       </div>
     </div>
-    <div class="container"> <img src="images/mockup-calendar.jpg" width="100%" alt=""/> 
-	  
+  </div>
+  <div class="container">
+    <div class="row">
+      <div >
+		  <h5 ><strong>First Step:</strong></h5>
+        <p>Come into the College Drive office at 1124 College Drive for Open Access. Open Access is  Monday through Thursday 1:00 to 4:00. It is a first come first serve basis. You may come in  to any or our offices ahead of time to complete paperwork or you may come in  the day you want to be seen for Open Access to complete the required paperwork, we recommend coming in between 12:00-12:30 if you are completing pw the day of.  Once paperwork is completed you will be given a time that you will be seen between 1:00 and 4:00.</p>
+ <p>
+Required paperwork includes your insurance information, proof of gross combined household income which includes all sources including gross wages, tips, social security, disability, pensions, annuities, veteran’s payments, net business or self-employment, alimony, child support, military, unemployment and public aid.  If you are a veteran or dependant of a veteran we need proof of vet status.</p>
+ <p>
+If you are being referred by the courts, probation, DFS or any other third party please call any of our offices to get further information regarding an appointment. If you have an Employee Assistance Program please call any of our offices regarding an appointment so we may ensure your appointment is set up correctly.</p>
+ <p>
+In special circumstances we may be able to accommodate a scheduled appointment, please be aware that these appointments are very limited and may be a three to four week wait.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"  style="min-width:250px;">
+        <p> </p>
+      </div>
+      <div class="col"  style="min-width:250px;">
+		  <p></p>
+
+      </div>
+      <div class="col"  style="min-width:250px;">
+       
+		  <br>
+ <p>
+
+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<section class="blue-double-section blue-background-black" >
+  <div class="container" >
+	  <div class="row top-bottom-border" >
+    <div class="col-sm-6 col-lg-6"> <p></p>
+      <h5>LINKAGE</h5>
+      <hr class="orange-line-thin" style="width:100px">
+		<p>Clinicians and Case Managers link clients with additional services within the agency and throughout the community.  Linkage services are provided on an individual basis. </p>
+		
+<p>These services can include:</p>
+		<ul>
+		<li>Arranging and preparing clients for services with Southwest Counseling Service</li>
+			<li>Arranging and preparing clients for other appointments with community providers such as:</li>
+			<ul>
+				<li>Schools &amp; Colleges</li>	
+				<li>Probation (Juvenile &amp; Adult)</li>
+				<li>Department of Vocational Rehabilitation (DVR)</li>
+				<li>Department of Family Services (DFS)</li>
+				<li>Disability Services</li>
+				<li>Medical Services</li>
+				<li>Substance Abuse Services</li>
+				<li>Psychiatric Services</li>
+				<li>Housing Authority</li>
+			</ul>
+		</ul>
+	  </div>
+    <div class="col-sm-6 col-lg-6">
+      <p></p>
+      <h5>REFFERALS</h5>
+      <hr class="orange-line-thin" style="width:120px">
+      <p>Your case manager and/or clinician may suggest additional services.  Referrals may include providing addresses, phone numbers, other contact information, and assisting in the arrangement of appointments.  
+</p>
+		<p>Referrals can be made for the following:</p>
+          <ul>
+            <li>Medical Services</li>
+            <li>Education</li>
+            <li>Employment</li>
+            <li>Southwest Counseling Service Treatment Groups</li>
+            <li>Psychiatric Services</li>
+            <li>Relocation Assistance</li>
+          </ul>
+      </div>
+    </div>   
 	</div>
+	</section>-->
+	
+<!--<section id="jail-treatment">
+	<div class="jumbotron white-back">
+  <div class="row top-bottom-border align-items-center" >
+    <div class="col-sm-6 col-lg-6"> <img src="images/psychologist-services.jpg" width="100%"  alt=""/> </div>
+    <div class="col-sm-6 col-lg-6 left-right-padding" style="">
+      <div > &nbsp; </div>
+      <h5>ADDITIONAL SERVICES</h5>
+      <hr class="orange-line-thin" style="width:240px;">
+      <p class="mb-0">Additional services or assistance may be available to help you meet the goals set in your treatment plan.  Please ask your clinician or case manager about additional services or assistance that you might qualify for. <br></p>
+		<br>
+		<p>
+		Assistance may be offered to help with:<br></p>
+       
+       <div class="d-flex" >
+        <div class="col" style="padding-left:0px;">
+          <ul>
+            <li>Basic Needs</li>
+           <ul><li>Food</li>
+            <li>Clothing</li>
+            <li>Housing</li>
+            <li>Transportation</li>
+			  </ul> 
+			</ul>
+            <ul>
+            <li>Medical Needs</li>
+           <ul><li>Dental</li>
+            <li>Vision</li>
+            <li>Medication</li>
+			</ul> 
+			</ul>
+        </div>
+        <div class="col"  style="padding-left:0px;">
+           <ul>
+            <li>Continuing Education</li>
+           <ul><li>Professional Development</li>
+            <li>School Supplies</li>
+            <li>Academic Support</li>
+			  </ul> 
+			</ul>
+           <ul>
+            <li>Pro-Social Activities</li>
+           <ul><li>Social Groups</li>
+            <li>Community Events</li>
+			</ul> 
+			</ul>
+        </div>
+    </div>
+ </div>
+  </div>
+	</div>
+</section>-->
+	
+<!--<section id="residential-treatment">
+  <div class="jumbotron orangeBack" >
+    <hr class="orange-line">
+	  <hr class="blue-line">-->
+    <!--<div class="blue-title">
+      <div class="container">
+        <h5></h5>
+      </div>
+    </div>-->
+  <!--  <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-lg-4">
+          <p><h6 ><strong>Follow Up</strong></h6></p>
+          <p>Case managers and/or clinicians will follow-up with clients to monitor the individual progress of their treatment plan.  Follow-up is done after regular appointments, completion of any treatment groups, and after linkage with other agencies and service providers.
+          </p>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+          <p>
+			<h6 ><strong>Advocacy</strong></h6></p>
+		<p>
+          Advocacy provides the client with additional support by the case manager and/or clinician.  Support can include making and receiving phone calls, completing forms, applications and reports that are necessary in accessing needed services.
+			</p>
+		  <p>
+A clinician and/or case manager may be able to advocate for you at Multi-Disciplinary Team (MDT) meetings or in an Individual Education Plan meeting.
+          </p>
+         
+        </div>
+		<div class="col-sm-4 col-lg-4">
+          <p><h6 ><strong>Crisis Intervention</strong></h6></p>
+          <p>
+Southwest Counseling Service case managers may provide crisis intervention and stabilization in situations that require immediate attention or resolution.  The case manager may provide the initial intervention and would assist the client with other needed crisis services.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>-->
 
-<section class="services-provided">
-  <div class="jumbotron payment">
-    <hr class="orange-line">
-    <div class="blue-title">
-      <div class="container">
-       <h5>GROUPS PROVIDED</h5>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row text-center mr-auto justify-content-center blue-background" style="padding:15px 0 15px 0;">
-        <div class="col">
-          <div class="services-text" > 
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#adolescent-outpatient" title=""><span>Adolenscent Intensive Outpatient Program (AIOP)</span></a></div>
-            </div>
-             </div>
-			
-        </div>
-        <div class="col">
-			<div class="services-text" > 
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#adolescent-aftercare" title=""><span>Adolescent Aftercare</span></a></div>
-            </div>
-             </div>
-        </div>
-        <div class="col">
-          
-			<div class="services-text" > 
-            <div class="d-flex ">
-              <div class="col services-1" width="25px" ><img src="images/spacer32.png" width="32" height="32" alt=""/></div>
-              <div class="col-11 align-middle text-left"> <a class="btn-draw services-a" href="#corrective-thinking" title=""><span >Corrective Thinking</span> </a></div>
-            </div>
-            </div>
-			
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="group-descriptions">
- <div class="jumbotron white-back">
-  <div class="row " >
-     <div class="col-sm-6 col-lg-6 left-right-padding" id="adolescent-outpatient" style=" border:2px solid black;">
-      <p>&nbsp; </p>
-      <h5 class="bold">ADOLESCENT INTENSIVE OUTPATIENT PROGRAM</h5>
-      <p>
-Southwest Counseling Service’s Adolescent Intensive Outpatient Program is designed for adolescents 12 to 17 years old who are abusing or are dependent on alcohol or drugs, including marijuana, methamphetamines, cocaine, and prescription medications. </p>
-		<h6><strong> Screening &amp; Admission</strong></h6>
-<p>
-Eligible participants will have the following criteria:
-<ul style="margin-left:-10px;">
-	<li>The adolescent is less than 18 years old.</li>
-<li>An adolescent drug and alcohol assessment is required before treatment.  </li>	
-	<li>The adolescent must be diagnosed with substance dependence.</li>
-		 </ul>
-</p><p>This program lasts at least 9 weeks.</p>
-      <div>
-		  
-        <h6>Adolescent Intensive Outpatient Program Meetings</h6>
-           <p>Mondays &amp; Wednesdays<br>
-          3:30-5:30 pm<br>
-          2706 Ankeny Way<br>
-          Rock Springs, WY 82901<br>
-        </p>
-		   <p>Fridays<br>
-          3:30-5:30 pm<br>
-          2300 Foothill Blvd<br>
-          Rock Springs, WY 82901<br>
-		  
-        </p>
-      </div>
       
-       <div class="align-self-end"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div> 
-      <p>&nbsp; </p>
-    </div>
-    <div class="col-sm-6 col-lg-6 left-right-padding" id="adolescent-aftercare" style="border:2px solid black;">
-      <p>&nbsp; </p>
-      <h5 class="bold">ADOLESCENT AFTERCARE</h5>
-      <p> Adolescent Aftercare is the last phase of treatment for adolescents after completing requirements in the Adolescent Intensive Outpatient Program.  The group focuses on relapse prevention and can include:</p>
-      <div>
-        <ul>
-          <li>Weekly journaling</li>
-          <li>Awareness of triggers</li>
-          <li>Warning signs of life changes in home/school</li>
-          <li>Learning to communicate signs of relapse thinking</li>
-          <li>Group support and presentations</li>
-          <li>Assignments</li>
-        </ul>
-      </div>
-      <p>Group will focus on any issues and experiences that may cause them to deviate from their sobriety to help keep adolescents on track in their recovery. </p>
-      <div><p>This program lasts 2-3 months.</p>
-        <h6>Adolescent Aftercare Meetings</h6>
-        <p> Wednesdays<br>
-          3:30 - 4:30 pm <br>
-          2300 Foothill Blvd.<br>
-          <br>
-          For more information, please call (307) 352-6680. </p>
-      </div>
-      
-      <!-- <div class="col-2 text-center align-self-end"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div> -->
-      
-      <p>&nbsp; </p>
-    </div>
-  </div>
-	</div>
-  <div class="jumbotron white-back">
-  <div class="row" >
-    <div class="col-sm-6 col-lg-6 left-right-padding" id="corrective-thinking" style=" border:2px solid black;">
-      <p>&nbsp; </p>
-      <h5 class="bold">CORRECTIVE THINKING GROUP</h5>
-      <p>The Corrective Thinking group is designed to address thinking errors that are barriers to sober and responsible pro-social living. It is an open-ended, American Society of Addiction Medicine (ASAM) Level I group.</p>
-      <h6>Criteria</h6>
-      <p> An individual must have an evaluation and be recommended or ordered to attend this group. </p>
-      <h6>To Get Started</h6>
-      <p> Arrange an appointment by calling (307) 352-6680. Individuals will be seen one-on-one until admitted into the group. </p>
-		<p>This program lasts 25 weeks.</p>
-      <div>
-        <h6> Corrective Thinking Group Meetings</h6>
-        <p> Tuesdays<br>
-          6:00 pm - 8:00 pm<br>
-          2300 Foothill Blvd. <br>
-          Rock Springs, WY 82901<br>
-          <br>
-          Thursdays<br>
-          9:00 - 11:00 am <br>
-          2300 Foothill Blvd.<br>
-        </p>
-      </div>
-      
-      <!-- <div class="align-self-end"> <a class="btn btn-primary btn-block button-orange-sm"  href="#" title=""> Download Brochure</a> </div> -->
-      <p>&nbsp; </p>
-    </div>
-    
-	  </div>
-	</div>
-</section>
-<section class="location-section">
-  <div class="container" >
-    <div class="row"> </div>
-    <div >
-      <h5>SCS LOCATIONS</h5>
-      <hr class="orange-line-thin" style="width:170px;">
-    </div>
-    <div class="row justify-content-center"><!--row-cols-3-->
-      <div class="col">
-        <div>&nbsp;</div>
-        <h7 >Southwest Counseling Services - <strong>Recovery</strong></h7>
-        <br>
-        <h7>2300 Foothill Blvd. Rock Springs, WY 82901</h7>
-        <br>
-        <h7>Phone: (307) 352-6677</h7>
-        <br>
-        <h7>Fax:(307) 352-6614</h7>
-        <br>
-        <h7>Hours: 8:00am - 5:00pm </h7>
-        <div>&nbsp;</div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5914664102224!2d-109.26482877544296!3d41.578085622542986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61721ad81d6f%3A0xc1abc141307a6f6!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149189405!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-      </div>
-      <div class="col">
-        <div>&nbsp;</div>
-        <h7>Southwest Counseling Services - <strong>Mental Health</strong></h7>
-        <br>
-        <h7>1124 College Dr. Rock Springs, WY 82901</h7>
-        <br>
-        <h7>Phone: (307) 352-6680</h7>
-        <br>
-        <h7>Fax: (307) 352-6676</h7>
-        <br>
-        <h7>Hours: 8:00am - 5:00pm </h7>
-        <br>
-        <div>&nbsp;</div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.30783232254!2d-109.23738235111409!3d41.584222805473736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875a61189a7b7009%3A0x6547fdf9c6cbc427!2sSouthwest%20Counseling%20Services!5e0!3m2!1sen!2sus!4v1584149630327!5m2!1sen!2sus" width="350" height="300" frameborder="0" style="border:2px solid #000;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-      </div>
-      
-    </div>
-  </div>
-</section>
-<section class="service-icons">
+	
+
+	
+
+
+
+
+<section  class="service-icons">
   <div class="container">
     <div class="row">
       <div >
@@ -428,32 +506,43 @@ Eligible participants will have the following criteria:
 <footer class="text-center">
   <div class="jumbotron footerSection">
     <div class="container">
-      <div class="row footer-box-top" >
-        <div class="col footer-box2" >
-          <p>SCS Main Office - Recovery Services</p>
-        </div>
-        <div class="col-5 footer-box2" >
-          <p>2300 Foothill Blvd. &nbsp;Rock Springs, WY 82901</p>
-        </div>
-        <div class="col top-padding"  > <a href="tel:3073526677" style="color:#e68166;"><strong>307-352-6677</strong></a> </div>
-      </div>
       <div class="row footer-box-middle" >
         <div class="col  footer-box2" >
-          <p>SCS Mental Health Services</p>
+          <p>SCS - Mental Health Services</p>
         </div>
         <div class="col-5 footer-box2" >
-          <p>1124 College Dr. &nbsp;Rock Springs, WY 82901</p>
+          <p>1124 College Dr., &nbsp;Rock Springs, WY 82901</p>
         </div>
-        <div class="col top-padding"  > <a href="tel:3073526680" style="color:#fff;">307-352-6680</a> </div>
+        <div class="col "  ><div ><a href="tel:3073526680" style="color:#fff;">Phone: 307-352-6680</a> <br>
+		<p style="color:#fff;">Fax: 307-352-6676 </p> </div> </div>
+      </div>
+		<div class="row footer-box-top" >
+        <div class="col footer-box2" >
+          <p>SCS  - Recovery Services</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>2300 Foothill Blvd., &nbsp;Rock Springs, WY 82901</p>
+        </div>
+        <div class="col"  > <a href="tel:3073526677" style="color:#fff;">Phone: 307-352-6677</a>
+			<p>Fax: 307-352-6614 </p></div>
+      </div>
+		 <div class="row footer-box-middle" >
+        <div class="col footer-box2" >
+          <p>SCS - Medical Services</p>
+        </div>
+        <div class="col-5 footer-box2" >
+          <p>706 Ankeny Way, &nbsp;  Rock Springs, WY 82901</p>
+        </div>
+        <div class="col " > <a href="tel:3073526689" style="color:#fff;">Phone: 307-352-6689</a><br> <p>Fax: 307-352-6692</p></div>
       </div>
       <div class="row footer-box-middle" >
         <div class="col footer-box2" >
           <p>SCS Green River - Mental Health</p>
         </div>
         <div class="col-5 footer-box2" >
-          <p>115 E. Flaming Gorge Way&nbsp; Green River, WY 82935 </p>
+          <p>115 E. Flaming Gorge Way,&nbsp; Green River, WY 82935 </p>
         </div>
-        <div class="col top-padding" > <a href="tel:3078723205" style="color:#fff;">307-872-3205</a> </div>
+        <div class="col top-padding" > <a href="tel:3078723205" style="color:#fff;">Phone: 307-872-3205</a> </div>
       </div>
       <div >
         <p>&nbsp;</p>
@@ -481,9 +570,9 @@ Eligible participants will have the following criteria:
           <p style="text-align: left; text-decoration: underline;">Other Services</p>
           <a href="employment.html" class="footer-text">
           <p >Employment</p>
-          </a> <a href="community.html" class="footer-text">
+          </a> <!--<a href="community.html" class="footer-text">
           <p >Community Involvement</p>
-          </a> <a href="contact-us.html" class="footer-text">
+          </a> --><a href="contact-us.html" class="footer-text">
           <p >About Us</p>
           </a> <a href="contact-us.html" class="footer-text">
           <p >Contact Us</p>
@@ -494,10 +583,10 @@ Eligible participants will have the following criteria:
           <p >Payment Information</p>
           </a> <a href="employee-center.html" class="footer-text">
           <p >SCS Employee Center</p>
-          </a> <a href="client-suggestions.html" class="footer-text">
+         </a> <!-- <a href="client-suggestions.html" class="footer-text">
           <p >Client Suggestions</p>
-          </a> 
-			<a href="faq.html" class="footer-text">
+          </a> -->
+			<a href="#faq1" class="footer-text">
           <p>FAQ</p> </a>
 			 <a href="mental-health-calendar.html" class="footer-text">
           <p >Mental Health Classes &amp; Groups</p>
@@ -511,17 +600,17 @@ Eligible participants will have the following criteria:
           </div>
         <div class="col">
           <p style="text-align: left; text-decoration: underline;">About Us</p>
-          <a href="contact-us.html" class="footer-text">
+          <a href="contact-us.html#board-of-directors" class="footer-text">
           <p >Board of Directors</p>
           </a> <a href="contact-us.html" class="footer-text">
           <p >Mission &amp; Vision</p>
           </a> <a href="employment.html" class="footer-text">
           <p >Career Opportunities</p>
-          </a> <a href="employee-center.html" class="footer-text">
+          </a><!-- <a href="employee-center.html" class="footer-text">
           <p >Employees</p>
-          </a> <a href="contact-us.html" class="footer-text">
+          </a> --><a href="contact-us.html#history" class="footer-text">
           <p >History</p>
-          </a> <a href="contact-us.html" class="footer-text">
+          </a> <a href="contact-us.html#accreditations" class="footer-text">
           <p >Accreditations</p>
           </a> </div>
       </div>
@@ -533,7 +622,7 @@ Eligible participants will have the following criteria:
         <p>&nbsp;</p>
       </div>
       <div class="col-12" style="border-top:solid 1px; padding-bottom:10px; padding-top:20px;">
-        <p style="font-size:12px;">Copyright 2020 © Southwest Counseling Services. All rights reserved.</p>
+        <p style="font-size:13px;">Copyright 2020 © Southwest Counseling Services. All rights reserved.</p>
       </div>
     </div>
   </div>
@@ -545,7 +634,7 @@ Eligible participants will have the following criteria:
 <script src="js/popper.min.js"></script> 
 <script src="js/bootstrap-4.4.1.js"></script> 
 <!--<script src="js/function.js"></script>--> 
-<script src="js/function.js"></script> 
-<script src="js/test.js"></script>
+<script src="js/function.js"></script>
+	<script src="js/test.js"></script>
 </body>
 </html>
