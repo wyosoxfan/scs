@@ -106,6 +106,7 @@ btn.onclick = function() {
     survey.questionSelections[survey.currentQuestion] = "Yes";
   
     // Unselect all other checkboxes.
+    depressionQuestion1.checked = true;
     depressionQuestion2.checked = false;
     depressionQuestion3.checked = false;
     depressionQuestion4.checked = false;
@@ -120,6 +121,7 @@ btn.onclick = function() {
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
+    depressionQuestion2.checked = true;
     depressionQuestion3.checked = false;
     depressionQuestion4.checked = false;
     depressionQuestion5.checked = false;
@@ -175,6 +177,7 @@ btn2.onclick = function() {
     survey.questionSelections[survey.currentQuestion] = "Never";
   
     // Unselect all other checkboxes.
+    depressionQuestion1.checked = true;
     depressionQuestion2.checked = false;
     depressionQuestion3.checked = false;
     depressionQuestion4.checked = false;
@@ -189,6 +192,7 @@ btn2.onclick = function() {
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
+    depressionQuestion2.checked = true;
     depressionQuestion3.checked = false;
     depressionQuestion4.checked = false;
     depressionQuestion5.checked = false;
@@ -203,6 +207,7 @@ btn2.onclick = function() {
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
     depressionQuestion2.checked = false;
+    depressionQuestion3.checked = true;
     depressionQuestion4.checked = false;
     depressionQuestion5.checked = false;
   
@@ -217,6 +222,7 @@ btn2.onclick = function() {
     depressionQuestion1.checked = false;
     depressionQuestion2.checked = false;
     depressionQuestion3.checked = false;
+    depressionQuestion4.checked = true;
     depressionQuestion5.checked = false;
   
     // Enable the next button.
@@ -231,6 +237,7 @@ btn2.onclick = function() {
     depressionQuestion2.checked = false;
     depressionQuestion3.checked = false;
     depressionQuestion4.checked = false;
+    depressionQuestion5.checked = true;
   
     // Enable the next button.
     nextQuestionBtn.disabled = false;
@@ -257,76 +264,6 @@ backQuestionBtn.style.visibility = "hidden";
 
 // Disable the next button.
 nextQuestionBtn.disabled = true;
-
-depressionQuestion1.onclick = function(event) {
-  // Set the selected option.
-  survey.questionSelections[survey.currentQuestion] = "Never";
-
-  // Unselect all other checkboxes.
-  depressionQuestion2.checked = false;
-  depressionQuestion3.checked = false;
-  depressionQuestion4.checked = false;
-  depressionQuestion5.checked = false;
-
-  // Enable the next button.
-  nextQuestionBtn.disabled = false;
-}
-
-depressionQuestion2.onclick = function(event) {
-  // Set the selected option.
-  survey.questionSelections[survey.currentQuestion] = "Rarely";
-
-  // Unselect all other checkboxes.
-  depressionQuestion1.checked = false;
-  depressionQuestion3.checked = false;
-  depressionQuestion4.checked = false;
-  depressionQuestion5.checked = false;
-
-  // Enable the next button.
-  nextQuestionBtn.disabled = false;
-}
-
-depressionQuestion3.onclick = function(event) {
-  // Set the selected option.
-  survey.questionSelections[survey.currentQuestion] = "Sometimes";
-
-  // Unselect all other checkboxes.
-  depressionQuestion1.checked = false;
-  depressionQuestion2.checked = false;
-  depressionQuestion4.checked = false;
-  depressionQuestion5.checked = false;
-
-  // Enable the next button.
-  nextQuestionBtn.disabled = false;
-}
-
-depressionQuestion4.onclick = function(event) {
-  // Set the selected option.
-  survey.questionSelections[survey.currentQuestion] = "Often";
-
-  // Unselect all other checkboxes.
-  depressionQuestion1.checked = false;
-  depressionQuestion2.checked = false;
-  depressionQuestion3.checked = false;
-  depressionQuestion5.checked = false;
-
-  // Enable the next button.
-  nextQuestionBtn.disabled = false;
-}
-
-depressionQuestion5.onclick = function(event) {
-  // Set the selected option.
-  survey.questionSelections[survey.currentQuestion] = "Always";
-
-  // Unselect all other checkboxes.
-  depressionQuestion1.checked = false;
-  depressionQuestion2.checked = false;
-  depressionQuestion3.checked = false;
-  depressionQuestion4.checked = false;
-
-  // Enable the next button.
-  nextQuestionBtn.disabled = false;
-}
 
 nextQuestionBtn.onclick = function(event) {
   // Show the previous button.
@@ -371,9 +308,11 @@ nextQuestionBtn.onclick = function(event) {
 
     if (survey.questionSelections[survey.currentQuestion] != null){
       // Restore the selected checkbox if possible.
-      if (survey.questionSelections[survey.currentQuestion] == "Never"){
+      if (survey.questionSelections[survey.currentQuestion] == "Never" ||
+      survey.questionSelections[survey.currentQuestion] == "Yes"){
         depressionQuestion1.checked = true;
-      } else if (survey.questionSelections[survey.currentQuestion] == "Rarely"){
+      } else if (survey.questionSelections[survey.currentQuestion] == "Rarely" ||
+      survey.questionSelections[survey.currentQuestion] == "No"){
         depressionQuestion2.checked = true;
       } else if (survey.questionSelections[survey.currentQuestion] == "Sometimes"){
         depressionQuestion3.checked = true;
@@ -413,7 +352,7 @@ backQuestionBtn.onclick = function(event) {
     questionText.innerText = survey.questions[survey.currentQuestion];
 
     // Update the question number.
-    questionNumber.innerText = "Question " + (survey.currentQuestion + 1) + " of 10";
+    questionNumber.innerText = "Question " + (survey.currentQuestion + 1) + " of " + (survey.questions.length);
 
     // Reset the checkboxes.
     depressionQuestion1.checked = false;
@@ -424,9 +363,11 @@ backQuestionBtn.onclick = function(event) {
 
     if (survey.questionSelections[survey.currentQuestion] != null){
       // Restore the selected checkbox if possible.
-      if (survey.questionSelections[survey.currentQuestion] == "Never"){
+      if (survey.questionSelections[survey.currentQuestion] == "Never" ||
+      survey.questionSelections[survey.currentQuestion] == "Yes"){
         depressionQuestion1.checked = true;
-      } else if (survey.questionSelections[survey.currentQuestion] == "Rarely"){
+      } else if (survey.questionSelections[survey.currentQuestion] == "Rarely" ||
+      survey.questionSelections[survey.currentQuestion] == "No"){
         depressionQuestion2.checked = true;
       } else if (survey.questionSelections[survey.currentQuestion] == "Sometimes"){
         depressionQuestion3.checked = true;
