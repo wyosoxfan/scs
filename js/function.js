@@ -83,6 +83,9 @@ btn.onclick = function() {
   // Display the modal.
   modal.style.display = "block";
 
+  // Set the first question.
+  questionText.innerHTML = survey.questions[0];
+
   // Update the question number.
   questionNumber.innerText = "Question " + (survey.currentQuestion + 1) + " of " + (survey.questions.length);
 
@@ -147,6 +150,9 @@ btn2.onclick = function() {
 
   // Display the modal.
   modal.style.display = "block";
+
+  // Set the first question.
+  questionText.innerHTML = survey.questions[0];
 
   // Update the question number.
   questionNumber.innerText = "Question " + (survey.currentQuestion + 1) + " of " + (survey.questions.length);
