@@ -8,7 +8,8 @@ function getData(str) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             // Update the list shown to the user.
-            alert("Found!");
+            //alert("Found!");
+            alert(this.responseText);
         }
     };
     alert("Sending xhttp!");
