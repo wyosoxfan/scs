@@ -11,6 +11,7 @@ function getData(str) {
             alert("Found!");
         }
     };
+    alert("Sending xhttp!");
     xhttp.open("GET", "../searchbardb/search.php?q="+str, true);
     xhttp.send();
 }
