@@ -1,3 +1,20 @@
+function getData(str) {
+    var xhttp;
+    if (str == ""){
+        // Do something if there's nothing returned.
+    }
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Update the list shown to the user.
+            alert("Found!");
+        }
+    };
+    xhttp.open("GET", "search.php?q="+str, true);
+    xhttp.send();
+}
+
 function searching() {
 	var dropdown = document.getElementById("dropdownList");
 	var dropdownContainer = document.getElementById("dropdown-container");
@@ -11,6 +28,11 @@ function searching() {
     // OTHER SEARCH FUNCTIONALITY HERE...
     // For each possible search result in searchResults...
     if (input.value != ""){
+        // Get the data from the database...
+        getData(input.value);
+
+        // Search the data for the input...
+        // Display the results...
         for (i = 0; i < searchResults.length; i++){
             header = searchResults[i].getElementsByTagName("h3")[0];
             headerValue = header.textContent || header.innerText;
