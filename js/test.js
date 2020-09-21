@@ -12,7 +12,7 @@ function getData(str) {
         }
     };
     alert("Sending xhttp!");
-    xhttp.open("GET", "../searchbardb/search.php?q=" + str, true);
+    xhttp.open("GET", "./searchbardb/search.php?q=" + str, true);
     xhttp.send();
 }
 
