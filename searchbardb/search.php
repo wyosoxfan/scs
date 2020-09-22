@@ -1,14 +1,16 @@
 <?php
-$servername = "";
-$username = "";
-$password = "";
+require 'vendor/autoload.php';
+use App\SQLiteConnection;
+
+$pdo = (new SQLiteConnection())->connect();
+if ($pdo != null)
+    echo 'Connected to the SQLite database successfully!';
+else
+    echo 'Whoops, could not connect to the SQLite database!';
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=db", $username, $password);
-    // set the PDO error mode to exception.
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    $this->pdo = new \PDO("sqlite:" . Config::PATH_TO_SQLITE_FILE);
+} catch (\PDOException $e) {
+    // handle exception...
 }
 ?>
