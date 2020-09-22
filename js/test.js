@@ -9,10 +9,10 @@ function getData(str) {
         if (this.readyState == 4 && this.status == 200) {
             // Update the list shown to the user.
             //alert("Found!");
-            alert(this.responseText);
+            //alert(this.responseText);
         }
     };
-    alert("Sending xhttp!");
+    //alert("Sending xhttp!");
     xhttp.open("GET", "./searchbardb/index.php?q=" + str, true);
     xhttp.send();
 }
