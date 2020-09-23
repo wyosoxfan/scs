@@ -73,6 +73,8 @@ include_once('couchdb\CouchDocument.php');
 include_once('couchdb\CouchReplicator.php');
 include_once('couchdb\ObjectUtils.php');
 
+require('fpdf.php');
+
 //include_once('couchdb\Couch.php');
 //include_once('couchdb\CouchClient.php');
 //include_once('couchdb\CouchDocument.php');
@@ -80,11 +82,11 @@ include_once('couchdb\ObjectUtils.php');
 //use  PHPOnCouch\CouchDocument; //The CouchDocument object
 
 //Entry point for the rest api
-$possible_get_actions = array("list");
+$possible_get_actions = array("list","viewApplication");
 $possible_post_actions = array("apply");
-if(isset($_GET["action"]) && in_array($_GET["action"], $possible_get_actions))
+if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && in_array($_GET["action"], $possible_get_actions))
 {
-	switch($_SERVER["REQUEST_METHOD"] == "GET" && $_GET["action"])
+	switch($_GET["action"])
 	{
 		case "list":
 			$application_list = array();
@@ -106,6 +108,59 @@ if(isset($_GET["action"]) && in_array($_GET["action"], $possible_get_actions))
 			//return $application_list;
 			
 			//return "blah";
+		case "viewApplication":
+			
+			// Set a new connector to the CouchDB server
+			$client = new PHPOnCouch\CouchClient('http://admin:Pu758KazLT@localhost:5984', 'employment');
+			//$selector =  ['_id' => ['$eq' => $_GET["id"]]];
+			$doc = $client->asCouchDocuments()->getDoc($_GET["id"]);
+			
+			
+			$pdf = new FPDF();
+			$pdf->AddPage();
+			$pdf->SetFont('Arial','B',12);
+			
+			//Create the name, address, email & phone
+			if($doc->{'client-name-suffix'} != '')
+				$pdf->Cell(0,6,$doc->{'client-first-name'} . ' ' . $doc->{'client-last-name'} . ' ' . $doc->{'client-name-suffix'},0,1);
+			else
+				$pdf->Cell(0,6,$doc->{'client-first-name'} . ' ' . $doc->{'client-last-name'},0,1);
+			$pdf->Cell(0,6,$doc->{'client-address'},0,1);
+			if($doc->{'client-address2Help'} != '')
+				$pdf->Cell(0,6,$doc->{'client-address2Help'},0,1);
+			$pdf->Cell(0,6,$doc->{'client-city'} . ', ' . $doc->{'client-state'} . '  ' . $doc->{'client-zip'},0,1);
+			
+			if($doc->{'client-email'} != '')
+				$pdf->Cell(0,6,$doc->{'client-email'},0,1);
+			if($doc->{'client-phone'} != '')
+				$pdf->Cell(0,6,$doc->{'client-phone'},0,1);
+			
+			$pdf->Ln();
+			$pdf->Ln();
+			
+			
+			
+			for($x=1; $x < 4; $x++)
+			{
+				$pdf->SetFont('Arial','BU',16);
+				$pdf->Cell(0,6,"Previous Employer " . $x,0,1);
+				$pdf->SetFont('Arial','B',12);	
+				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-name'},0,1);
+				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-job'},0,1);
+				$pdf->Cell(0,6,'From ' . $doc->{'employer-' . $x . '-from-date'} . ' to ' . $doc->{'employer-' . $x . '-to-date'},0,1);
+				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-address'},0,1);
+				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-city'} . ', ' . $doc->{'employer-' . $x . '-state'} . '  ' . $doc->{'employer-' . $x . '-zip'},0,1);
+				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-phone'},0,1);
+				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-supervisor'},0,1);
+				$pdf->ln();
+				$pdf->Cell(0,6,'Reason for leaving: ' . $doc->{'employer-' . $x . '-reason-leaving'},0,1);
+				$pdf->ln();
+				$pdf->Cell(0,6,'Contact Employer? ' . $doc->{'employer-' . $x . '-contact'},0,1);
+			}
+			
+			//$pdf->Cell(40,10,'Hello World!');
+			$pdf->Output();
+			break;
 	}
 }
 else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["action"]) && in_array($_GET["action"], $possible_post_actions))
@@ -132,8 +187,9 @@ function save_application()
 	}
 	
 	//Save the resume if it exists
-	if(isset($_FILES['resume-upload']))
+	if($_FILES['resume-upload']['tmp_name'] != '')
 	{
+		
 		$resume = file_get_contents($_FILES['resume-upload']['tmp_name']);
 		$result = $client->storeAsAttachment($doc, $resume, 'resume.pdf','application/pdf');
 	}
