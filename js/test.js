@@ -92,7 +92,7 @@ var dropdownList = document.getElementById("dropdownList");
 var mapButton = document.getElementById("map-square");
 var mapView = document.getElementById("mapView");
 var searchbarContainer = document.getElementById("searchbar-container");
-searchbarContainer.style.visibility = "hidden";
+//searchbarContainer.style.visibility = "hidden";
 //searchbarContainer.style.display = "none";
 searchBar.addEventListener("input", searching);
 searchBar.addEventListener("focusin", searching);
