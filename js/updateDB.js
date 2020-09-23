@@ -23,7 +23,7 @@ function updateDB() {
     var elementID;
     var elementHTML;
     var elementText;
-    for (var i = 0; i < pageElements.length(); i++) {
+    for (var i = 0; i < pageElements.length; i++) {
         elementID = pageElements[i].id;                       // Get the id.
 	    elementHTML = pageElements[i].outerHTML;              // Get the html.
 	    elementText = pageElements[i].innerText;              // Get the text.
