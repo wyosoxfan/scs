@@ -10,7 +10,7 @@ function updateDB() {
 
     var pageTitle = document.title;                           // Get the name of the page.
     var pageURL = window.location.href;                       // Get the URL of the page.
-    var pageElements = getElementsByTagName('*');             // Get all elements on the page.
+    var pageElements = document.getElementsByTagName('*');    // Get all elements on the page.
     var elements = [];                                        // List of elements to be sent to the database.
 
     function Element(id, html, text, pageID) {
