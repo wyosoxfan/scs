@@ -105,6 +105,9 @@ mapButton.addEventListener("mouseleave", disableMapView);
 mapView.addEventListener('mouseenter', enableMapView);
 mapView.addEventListener('mouseleave', disableMapView);
 
+// Load the page to the database.
+updateDB();
+
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
 
