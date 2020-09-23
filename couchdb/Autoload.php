@@ -24,6 +24,7 @@ class Autoload {
     public static function autoload($className) {
         //PSR4 autoloader
         $splitName = explode('\\', $className);
+		echo $splitName[0];
         if ($splitName[0] == __NAMESPACE__) {
             array_shift($splitName);
             $ps4Format = join(DIRECTORY_SEPARATOR, $splitName);
@@ -31,8 +32,10 @@ class Autoload {
 
 
             //Default source files
+			echo $file_name;
             if (file_exists($file_name)) {
                 require_once $file_name;
+				echo $file_name;
             }
         }
     }
@@ -40,4 +43,3 @@ class Autoload {
 }
 
 define('ROOT_DIR', __DIR__);
-spl_autoload_register(['PHPOnCouch\\Autoload', 'autoload']);

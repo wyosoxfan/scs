@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AdapterInterface.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721459994261" remote="132452721450000000" Dst="2" />
+<file name="ApacheAdapter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721460183749" remote="132452721460000000" Dst="2" />
+<file name="ArrayAdapter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721460363270" remote="132452721460000000" Dst="2" />
+<file name="EnvConstAdapter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721460542849" remote="132452721460000000" Dst="2" />
+<file name="GuardedWriter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721460722341" remote="132452721460000000" Dst="2" />
+<file name="ImmutableWriter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721460901831" remote="132452721460000000" Dst="2" />
+<file name="MultiReader.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721461061402" remote="132452721460000000" Dst="2" />
+<file name="MultiWriter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721461230950" remote="132452721460000000" Dst="2" />
+<file name="PutenvAdapter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721461430416" remote="132452721460000000" Dst="2" />
+<file name="ReaderInterface.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721461589989" remote="132452721460000000" Dst="2" />
+<file name="ReplacingWriter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721461759536" remote="132452721460000000" Dst="2" />
+<file name="ServerConstAdapter.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721461949028" remote="132452721460000000" Dst="2" />
+<file name="WriterInterface.php" server="//aphinium/WebSites/southwestcounseling/test/" local="132452721462098628" remote="132452721460000000" Dst="2" />
+</dwsync>
