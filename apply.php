@@ -180,6 +180,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && in_array($_G
 			$pdf->MultiCell(0,6,$doc->{'three-addresses'},0,1);
 			$pdf->Ln();
 			
+			
+			
 			for($x=1; $x < 4; $x++)
 			{
 				$pdf->SetFont('Arial','BU',16);
