@@ -37,5 +37,7 @@ function updateDB() {
 	    qPageTitle: pageTitle,
 	    qPageURL: pageURL,
 	    qElements: elements
+    }, function(data,status){
+        alert("Data: " + data + "\nStatus: " + status);
     });
 }
