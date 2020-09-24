@@ -90,6 +90,11 @@ display: block;
   background-color: #e68166 !important;
 }
 
+tr.highlight td.jsgrid-cell {
+	background-color: #e68166 !important;
+    border-color: #c4e2ff;
+}
+
 .nav-link {
   border-radius: 0;
 }

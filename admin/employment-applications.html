@@ -25,9 +25,9 @@
 	<div class="container" style="margin-top:50px;">
 		
 	<header>
-   <button onClick="viewApplication()">View Application</button>
-	  <button value="View Resume" onClick="viewResume()" >View Resume</button>
-	  <button value="Delete Application" onClick="deleteApplication()" >Delete Application</button>
+      <!-- <button onClick="viewApplication()">View Application</button> -->
+      <!-- <button value="View Resume" onClick="viewResume()" >View Resume</button> -->
+  	  <!-- <button value="Delete Application" onClick="deleteApplication()" >Delete Application</button> -->
   </header>
 		
   <main class="row">
@@ -42,37 +42,17 @@
 		
 <script>
 		function viewApplication() {
-			var location = "../apply.php?action=viewApplication&id=" + selectedApplication.Id;
-			
-			var newElement1 = "<embed src='" + location + "' id='pdf1' style='width:700px;height:700px'>";
-			$('#pdf1').remove();
-			$('#pdfApplicationContainer').append(newElement1);
-			
-			var newElement2 = "<embed src='" + location + "' id='pdf2' style='width:700px;height:700px'>";
-			$('#pdf2').remove();
-			$('#pdfResumeContainer').append(newElement2);
-		}
-		
-		
-		function viewResume() {
 			
 		}
-		
+
 		function deleteApplication() {
 			
 		}
 	</script> 
 <script>
-		var selectedApplication;
+	var selectedApplication;
 		
-    var clients = [
-        { "Id": "db3c60ef1fb577ff10c1a84435009005", "Date": 12/1/15, "LastName": "Adams", "FirstName": "Don", "ApplyingFor": "Ap #897-1459 Quam Avenue"},
-        { "Id": 2, "Date": 12/1/15, "LastName": "Bates", "FirstName": "Thomas", "ApplyingFor": "Ap #370-4647 Dis Av"},
-        { "Id": 3, "Date": 12/1/15, "LastName": "Peters", "FirstName": "Sal", "ApplyingFor": "Ap #365-8835 Integer St."},
-        { "Id": 4, "Date": 12/1/15, "LastName": "Thompson", "FirstName": "Lefty", "ApplyingFor": "911-5143 Luctus Ave"},
-        { "Id": 5, "Date": 12/1/15, "LastName": "James", "FirstName": "King", "ApplyingFor": "Ap #614-689 Vehicula Street"}
-    ];
- 
+
     $("#jsGrid").jsGrid({
         width: "100%",
         height: "100%",
@@ -81,18 +61,79 @@
         editing: false,
         sorting: true,
         paging: false,
+		autoload: true,
  
-        data: clients,
+        controller: {
+            loadData: function() {
+				
+				selectedApplication = null;
+				$('#pdf1').remove();
+				$('#pdf2').remove();
+				
+                var d = $.Deferred();
+ 
+                $.ajax({
+                    url: "../apply.php?action=viewList",
+                    dataType: "json"
+                }).done(function(response) {
+                    d.resolve(response);
+                });
+ 
+                return d.promise();
+            }
+        },
 		
  		rowClick: function(v) {
+				if(selectedApplication != null)
+				{
+					var $currentrow = this.rowByItem(selectedApplication);
+					$currentrow.toggleClass("highlight");
+				}
+						
 				selectedApplication = v.item;
+			
+			 	var $row = this.rowByItem(selectedApplication); 
+				$row.toggleClass("highlight");
+			    //$row.row
+			
+				var location1 = "../apply.php?action=viewApplication&id=" + selectedApplication._id;
+				var location2 = "../apply.php?action=viewResume&id=" + selectedApplication._id;
+			
+				var newElement1 = "<embed src='" + location1 + "' id='pdf1' style='width:700px;height:700px'>";
+				$('#pdf1').remove();
+				$('#pdfApplicationContainer').append(newElement1);
+			
+				var newElement2 = "<embed src='" + location2 + "' id='pdf2' style='width:700px;height:700px'>";
+				$('#pdf2').remove();
+				$('#pdfResumeContainer').append(newElement2);
 			},
+		onItemDeleting: function(v) {
 
+			//Create the uri to delete the application
+			var location1 = "../apply.php?action=deleteApplication&id=" + v.item._id;
+			
+			//Execute a jquery call to delete the row
+			$.post(location1,function(v) {
+				var p = v.trim();
+				if(p == 'ok') {
+					//Get a reference to the grid and delete the item
+					//$('#jsGrid').deleteItem(v.item);
+					$('#jsGrid').jsGrid("render");
+				}
+				else {
+					alert('cannot delete item');
+				}
+			});
+			
+			//Always cancel.  We handle it in the promise
+			v.cancel = true;
+		},
         fields: [
-            { name: "Date", type: "date", width: 75 },
-            { name: "LastName", type: "text", width: 100 },
-            { name: "FirstName", type: "text", width: 200 },
-            { name: "ApplyingFor", type: "text", width: 200 }
+            { name: "application-date", title: 'Applied On', type: "date", width: 75 },
+            { name: "client-last-name", title: 'Last Name', type: "text", width: 100 },
+            { name: "client-first-name", title: 'First Name', type: "text", width: 200 },
+            { name: "job-name", title: 'Position', type: "text", width: 200 },
+			{ type: "control", editButton:false, deleteButton:true, clearFilterButton:false, modeSwitchButton:false }
         ]
     });
 	</script>

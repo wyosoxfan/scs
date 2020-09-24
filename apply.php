@@ -82,37 +82,65 @@ require('fpdf.php');
 //use  PHPOnCouch\CouchDocument; //The CouchDocument object
 
 //Entry point for the rest api
-$possible_get_actions = array("list","viewApplication");
-$possible_post_actions = array("apply");
+$possible_get_actions = array("viewList","viewApplication","viewResume");
+$possible_post_actions = array("apply", "deleteApplication");
 if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && in_array($_GET["action"], $possible_get_actions))
 {
 	switch($_GET["action"])
 	{
-		case "list":
+		case "viewList":
+			//The list of applications to view
 			$application_list = array();
 			
 			// Set a new connector to the CouchDB server
 			$client = new PHPOnCouch\CouchClient('http://admin:Pu758KazLT@localhost:5984', 'employment');
 			
+			//Get all resumes from the database
+			//_id,application-date, client-last-name,client-first-name,job-name
 			$selector =  ['_id' => ['$gt' => NULL]];
-			$result = $client->find($selector);
+			$result = $client->fields(['_id', 'application-date', 'client-last-name', 'client-first-name', 'job-name'])->find($selector);
 			
-			//$application1 = (object)[];
-			//$application1->name = 'Neil Christensen';
-			//$application1->job = "Job #1";
+			//Set the header return type
+			header('Content-Type: application/json');
 			
-			//array_push($application_list, $application1);
-			
+			//Returh the results
 			echo json_encode($result);
-			break;
-			//return $application_list;
 			
-			//return "blah";
+			break;
+		case "viewResume":
+			// Set a new connector to the CouchDB server
+			$client = new PHPOnCouch\CouchClient('http://admin:Pu758KazLT@localhost:5984', 'employment');
+			
+			//Get the document
+			$doc = $client->asCouchDocuments()->getDoc($_GET["id"]);
+			
+			//Get the attachment uri
+			$attachmentUri = $doc->getAttachmentUri("resume.pdf");
+			
+			//Check to make sure uri is valid
+			if($doc->_attachments)
+			{
+				//Get the file from the uri
+				$resume = file_get_contents($attachmentUri);
+			
+				//Set the correct content type
+				header("content-type:application/pdf");
+			
+				//Send back the resume
+				echo $resume;
+			}
+			else
+			{
+				echo "";
+			}
+			
+			break;
 		case "viewApplication":
 			
 			// Set a new connector to the CouchDB server
 			$client = new PHPOnCouch\CouchClient('http://admin:Pu758KazLT@localhost:5984', 'employment');
-			//$selector =  ['_id' => ['$eq' => $_GET["id"]]];
+
+			//Get the document
 			$doc = $client->asCouchDocuments()->getDoc($_GET["id"]);
 			
 			
@@ -135,16 +163,28 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && in_array($_G
 			if($doc->{'client-phone'} != '')
 				$pdf->Cell(0,6,$doc->{'client-phone'},0,1);
 			
-			$pdf->Ln();
+			
+			$pdf->SetFont('Arial','BU',12);
+			$pdf->Cell(0,6,"                                                                                                                        ",0,1);
+			$pdf->SetFont('Arial','',12);	
+			
 			$pdf->Ln();
 			
+			$pdf->Cell(0,6,"How long have you been at your current address (Years & Months)? " .$doc->{'address-length'},0,1);
 			
+			$pdf->Ln();
+			
+			$pdf->SetFont('Arial','BU',16);	
+			$pdf->Cell(0,6,"Previous Addresses",0,1);
+			$pdf->SetFont('Arial','',12);	
+			$pdf->MultiCell(0,6,$doc->{'three-addresses'},0,1);
+			$pdf->Ln();
 			
 			for($x=1; $x < 4; $x++)
 			{
 				$pdf->SetFont('Arial','BU',16);
 				$pdf->Cell(0,6,"Previous Employer " . $x,0,1);
-				$pdf->SetFont('Arial','B',12);	
+				$pdf->SetFont('Arial','',12);	
 				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-name'},0,1);
 				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-job'},0,1);
 				$pdf->Cell(0,6,'From ' . $doc->{'employer-' . $x . '-from-date'} . ' to ' . $doc->{'employer-' . $x . '-to-date'},0,1);
@@ -152,11 +192,51 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && in_array($_G
 				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-city'} . ', ' . $doc->{'employer-' . $x . '-state'} . '  ' . $doc->{'employer-' . $x . '-zip'},0,1);
 				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-phone'},0,1);
 				$pdf->Cell(0,6,$doc->{'employer-' . $x . '-supervisor'},0,1);
-				$pdf->ln();
 				$pdf->Cell(0,6,'Reason for leaving: ' . $doc->{'employer-' . $x . '-reason-leaving'},0,1);
-				$pdf->ln();
 				$pdf->Cell(0,6,'Contact Employer? ' . $doc->{'employer-' . $x . '-contact'},0,1);
+				$pdf->Ln();
+				$pdf->Ln();
 			}
+			
+			$pdf->Ln();
+			$pdf->Ln();
+			
+			for($x=1; $x < 4; $x++)
+			{
+				$pdf->SetFont('Arial','BU',16);
+				$pdf->Cell(0,6,"Reference " . $x,0,1);
+				$pdf->SetFont('Arial','',12);	
+				$pdf->Cell(0,6,$doc->{'reference-' . $x . '-name'},0,1);
+				$pdf->Cell(0,6,$doc->{'reference-' . $x . '-address'},0,1);
+				$pdf->Cell(0,6,$doc->{'reference-' . $x . '-city'} . ', ' . $doc->{'reference-' . $x . '-state'} . '  ' . $doc->{'reference-' . $x . '-zip'},0,1);
+				$pdf->Cell(0,6,$doc->{'reference-' . $x . '-phone'},0,1);
+				$pdf->Cell(0,6,$doc->{'reference-' . $x . '-occupation'},0,1);
+				$pdf->Cell(0,6,'How long? ' . $doc->{'reference-' . $x . '-time'},0,1);
+				$pdf->Ln();
+				$pdf->Ln();
+			}
+
+			$pdf->SetFont('Arial','BU',12);
+			$pdf->Cell(0,6,"                                                                                                                        ",0,1);
+			$pdf->SetFont('Arial','',12);	
+			
+			$pdf->Ln();
+			
+			$pdf->Cell(0,6,"Have you ever plead guilty, or no contest to, or been convicted of a felony? " . $doc->{'felony'},0,1);
+			
+			$pdf->Ln();	
+			
+			$pdf->MultiCell(0,6,"Have you been arrested for any matters for which you are out on bail or on your own recognizance pending trial? " . $doc->{'arrested'},0,1);
+			
+			$pdf->Ln();
+			
+			$pdf->Cell(0,6,"Have you ever been convicted of a DUI? " . $doc->{'dui'},0,1);
+			
+			$pdf->Ln();
+				
+			$pdf->Cell(0,6,"Have you ever been charged with child abuse of neglect? " . $doc->{'child-abuse'},0,1);
+			
+			$pdf->Ln();
 			
 			//$pdf->Cell(40,10,'Hello World!');
 			$pdf->Output();
@@ -170,6 +250,28 @@ else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["action"]) && in_arr
 		case "apply":
 			save_application();
 			break;
+		case "deleteApplication":
+			echo delete_application();
+			break;
+	}
+}
+
+function delete_application()
+{
+	//Set a new connector to the CouchDB server
+	$client = new PHPOnCouch\CouchClient('http://admin:Pu758KazLT@localhost:5984', 'employment');
+
+	//Get the document
+	$doc = $client->asCouchDocuments()->getDoc($_GET["id"]);
+	
+	try
+	{
+		$client->deleteDoc($doc);
+		return "ok";
+	}
+	catch(exception $e)
+	{
+		return "error";
 	}
 }
 
@@ -185,6 +287,7 @@ function save_application()
 	foreach($_POST as $key=>$value){
 		$doc->{$key} = $value;
 	}
+	$doc->{'application-date'} = date('Y/m/d');
 	
 	//Save the resume if it exists
 	if($_FILES['resume-upload']['tmp_name'] != '')

@@ -218,12 +218,12 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       <div class="row form-group ">
         <div class="col-4" style="padding-left:0;">
           <label for="client-first-Name">First Name *</label>
-          <input type="text" placeholder="First Name"  name="client-first-name" class="form-control" id="client-first-name" aria-describedby="client-first-nameHelp">
+          <input required type="text" placeholder="First Name"  name="client-first-name" class="form-control" id="client-first-name" aria-describedby="client-first-nameHelp">
           <!--<small id="client-first-NameHelp" class="form-text text-muted">Please enter your first name.</small>-->
         </div>
         <div class="col-6">
           <label for="client-last-Name">Last Name *</label>
-          <input type="text"  placeholder="Last Name"  name="client-last-name" class="form-control" id="client-last-name" aria-describedby="client-last-nameHelp">
+          <input required type="text"  placeholder="Last Name"  name="client-last-name" class="form-control" id="client-last-name" aria-describedby="client-last-nameHelp">
           <!--<small id="client-last-NameHelp" class="form-text text-muted">Please enter your last name.</small>-->
         </div>
         <div class="col-2">
@@ -234,21 +234,21 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       <div class="row form-group">
         <div class="col-8" style="padding-left:0; min-width:50%">
           <label for="client-phone">Email Address *</label>
-          <input type="text" placeholder="Email Address" name="client-email" class="form-control" id="client-email" aria-describedby="client-phoneHelp">
+          <input required type="text" placeholder="Email Address" name="client-email" class="form-control" id="client-email" aria-describedby="client-phoneHelp">
           <!--<small id="client-emailHelp" class="form-text text-muted">Format: abc@abc.com</small>-->
         </div>
         <div class="col-4" style="padding-left:0;">
           <label for="client-phone">Phone Number *</label>
-          <input type="text" placeholder="Please enter your main phone number with area code" name="client-phone" class="form-control" id="client-phone" aria-describedby="client-phoneHelp">
+          <input required type="text" placeholder="Please enter your main phone number with area code" name="client-phone" class="form-control" id="client-phone" aria-describedby="client-phoneHelp">
         </div>
       </div>
       <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="email-updates">
         <label class="form-check-label" for="exampleCheck1">Check here to receive email updates.</label>
       </div>
       <div class="row form-group">
         <label for="client-address">Address *</label>
-        <input type="text" placeholder="Please enter your full address" name="client-address" class="form-control" id="client-address" aria-describedby="client-addressHelp">
+        <input required type="text" placeholder="Please enter your full address" name="client-address" class="form-control" id="client-address" aria-describedby="client-addressHelp">
       </div>
       <div class="row form-group">
         <label for="client-address">Address 2</label>
@@ -257,18 +257,18 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       <div class="row form-group"  >
         <div class="col-6" style="padding-left:0;">
           <label for="client-first-Name">City *</label>
-          <input type="text" placeholder="City"  name="client-city" class="form-control" id="client-city" aria-describedby="client-cityHelp">
+          <input required type="text" placeholder="City"  name="client-city" class="form-control" id="client-city" aria-describedby="client-cityHelp">
         </div>
         <div class="col-3">
           <label for="client-state">State *</label>
-          <select id="client-state" name="client-state" class="form-control">
+          <select required id="client-state" name="client-state" class="form-control">
             <option value="WY">WY- Wyoming</option>
             <option value="UT">UT - Utah</option>
           </select>
         </div>
         <div class="col-3">
           <label for="client-Name">Zip Code *</label>
-          <input type="text"  placeholder="Zip code"  name="client-zip" class="form-control" id="client-zip" aria-describedby="client-zipHelp">
+          <input required type="text"  placeholder="Zip code"  name="client-zip" class="form-control" id="client-zip" aria-describedby="client-zipHelp">
           <!--  <small id="client-name-suffixHelp" class="form-text text-muted">ie: SR</small>-->
         </div>
       </div>
@@ -277,11 +277,11 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       </div>
       <div class="row form-group">
         <label for="address-length">How long have you been at your current address? (Years &amp; Months) *</label>
-        <input type="text" placeholder="ie: 4 years and 5 months" name="address-length" class="form-control" id="address-length" >
+        <input required type="text" placeholder="ie: 4 years and 5 months" name="address-length" class="form-control" id="address-length" >
       </div>
       <div class="row form-group">
         <label for="three-addresses">Please provide information on three previous addresses and length of time out lived there. *</label>
-        <textarea class="form-control" id="three-addresses" name="three-addresses" rows="3" placeholder="Last three addresses"></textarea>
+        <textarea required class="form-control" id="three-addresses" name="three-addresses" rows="3" placeholder="Last three addresses"></textarea>
       </div>
       <div class="row">
         <p>&nbsp;</p>
@@ -292,19 +292,19 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       </div>
       <div class="row form-group" style="max-width:40%;">
         <label for="job-name">Position applying for: *</label>
-        <select id="job-name" class="form-control">
-          <option value="job-title-1">Case Manager</option>
-          <option value="job-title-2">Clinician</option>
-          <option value="job-title-3">Front Desk</option>
+        <select required id="job-name" class="form-control" name="job-name">
+          <option value="Case Manager">Case Manager</option>
+          <option value="Clinician">Clinician</option>
+          <option value="Front Desk">Front Desk</option>
         </select>
       </div>
       <div class="row form-group" style="max-width:40%;">
         <label for="job-time">Are you looking for a: *</label>
-        <select id="job-time" class="form-control">
-          <option value="job-time-1">Full-time position</option>
-          <option value="job-timee-2">Part-time position</option>
-          <option value="job-time-3">Internship</option>
-          <option value="job-time-4">Summer hire</option>
+        <select required id="job-time" name="job-time" class="form-control">
+          <option value="Full-Time">Full-time position</option>
+          <option value="Part-Time">Part-time position</option>
+          <option value="Internship">Internship</option>
+          <option value="Summer Hire">Summer hire</option>
         </select>
       </div>
       <div class="row">
@@ -405,11 +405,11 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       </div>
       <div class="row form-group">
         <label for="employer-1">Employer 1 *</label>
-        <input type="text" placeholder="" name="employer-1-name" class="form-control" id="employer-1" >
+        <input required type="text" placeholder="" name="employer-1-name" class="form-control" id="employer-1" >
       </div>
       <div class="row form-group">
         <label for="employer-1-job">Employer 1 - Job Title *</label>
-        <input type="text" placeholder="Enter graduate or professional degree and school name" name="employer-1-job" class="form-control" id="employer-1-job" >
+        <input required type="text" placeholder="Enter graduate or professional degree and school name" name="employer-1-job" class="form-control" id="employer-1-job" >
       </div>
       <div class="row form-group">
         <p >Employer 1 - Dates of Employment *</p>
@@ -417,49 +417,49 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       <div class="row form-group">
         <div class="col-3 " style="padding-left:0; ">
           <label for="employer-1-from-date">From</label>
-          <input type="date" placeholder="mm/dd/yyyy" name="employer-1-from-date" class="form-control" id="employer-1-from-date" >
+          <input required type="date" placeholder="mm/dd/yyyy" name="employer-1-from-date" class="form-control" id="employer-1-from-date" >
         </div>
         <div class="col-3 " style="padding-left:0; ">
           <label for="employer-1-to-date">To *</label>
-          <input type="date" placeholder="mm/dd/yyyy" name="employer-1-to-date" class="form-control" id="employer-1-to-date" >
+          <input required type="date" placeholder="mm/dd/yyyy" name="employer-1-to-date" class="form-control" id="employer-1-to-date" >
         </div>
         <div class="col-6"></div>
       </div>
       <div class="row form-group">
         <label for="employer-1-address">Employer 1 - Address *</label>
-        <input type="text" placeholder="" name="employer-1-address" class="form-control" id="employer-1-address" >
+        <input required type="text" placeholder="" name="employer-1-address" class="form-control" id="employer-1-address" >
       </div>
       <div class="row form-group"  >
         <div class="col-6" style="padding-left:0;">
           <label for="employer-1-city">City *</label>
-          <input type="text" placeholder="City"  name="employer-1-city" class="form-control" id="employer-1-city" >
+          <input required type="text" placeholder="City"  name="employer-1-city" class="form-control" id="employer-1-city" >
         </div>
         <div class="col-3">
           <label for="employer-1-state">State *</label>
-          <select id="employer-1-state" name="employer-1-state" class="form-control">
+          <select required id="employer-1-state" name="employer-1-state" class="form-control">
             <option value="WY">WY- Wyoming</option>
             <option value="UT">UT - Utah</option>
           </select>
         </div>
         <div class="col-3">
           <label for="employer-1-zip">Zip Code *</label>
-          <input type="text"  placeholder="Zip code"  name="employer-1-zip" class="form-control" id="employer-1-zip" aria-describedby="client-zipHelp">
+          <input required type="text"  placeholder="Zip code"  name="employer-1-zip" class="form-control" id="employer-1-zip" aria-describedby="client-zipHelp">
           <!--  <small id="client-name-suffixHelp" class="form-text text-muted">ie: SR</small>-->
         </div>
       </div>
       <div class="row form-group">
         <div class="col-6" style="padding-left:0;">
           <label for="employer-1-phone">Employer 1 - Phone *</label>
-          <input type="text" placeholder="" name="employer-1-phone" class="form-control" id="employer-1-phone" >
+          <input required type="text" placeholder="" name="employer-1-phone" class="form-control" id="employer-1-phone" >
         </div>
         <div class="col-6" style="padding-left:0;">
           <label for="employer-1-supervisor">Employer 1 - Supervisor *</label>
-          <input type="text" placeholder="" name="employer-1-supervisor" class="form-control" id="employer-1-supervisor" >
+          <input required type="text" placeholder="" name="employer-1-supervisor" class="form-control" id="employer-1-supervisor" >
         </div>
       </div>
       <div class="row form-group">
         <label for="employer-1-reason-living">Employer 1 - Reason for leaving *</label>
-        <input type="text" placeholder="" name="employer-1-reason-leaving" class="form-control" id="employer-1-reason-leaving" >
+        <input required type="text" placeholder="" name="employer-1-reason-leaving" class="form-control" id="employer-1-reason-leaving" >
       </div>
       <div class="row">
         <p>Employer 1 - May we contact this employer? *</p>
@@ -651,7 +651,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Have you ever had a professional license(s) revoked/suspended, limited or censured? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="checkbox" value="" id="license-suspended">
+        <input class="form-check-input" type="checkbox" value="Yes" id="license-suspended">
         <label class="form-check-label" for="license-suspended-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
@@ -807,9 +807,9 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         </div>
         <div class="col-3">
           <label for="reference-1-state">Reference 1 - State *</label>
-          <select id="reference-1-state" class="form-control">
-            <option value="state-1">WY- Wyoming</option>
-            <option value="state-2">UT - Utah</option>
+          <select id="reference-1-state" name="reference-1-state" class="form-control">
+            <option value="WY">WY- Wyoming</option>
+            <option value="UT">UT - Utah</option>
           </select>
         </div>
         <div class="col-3">
@@ -854,9 +854,9 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         </div>
         <div class="col-3">
           <label for="reference-2-state">Reference 2 - State *</label>
-          <select id="reference-2-state" class="form-control">
-            <option value="state-1">WY- Wyoming</option>
-            <option value="state-2">UT - Utah</option>
+          <select id="reference-2-state" name="reference-2-state" class="form-control">
+            <option value="WY">WY- Wyoming</option>
+            <option value="UT">UT - Utah</option>
           </select>
         </div>
         <div class="col-3">
@@ -892,7 +892,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       </div>
       <div class="row form-group">
         <label for="reference-3-address">Reference 3 - Address *</label>
-        <input type="text" placeholder="" name="reference-1-address" class="form-control" id="reference-3-address" >
+        <input type="text" placeholder="" name="reference-3-address" class="form-control" id="reference-3-address" >
       </div>
       <div class="row form-group"  >
         <div class="col-6" style="padding-left:0;">
@@ -901,9 +901,9 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         </div>
         <div class="col-3">
           <label for="reference-3-state">Reference 3 - State *</label>
-          <select id="reference-3-state" class="form-control">
-            <option value="state-1">WY- Wyoming</option>
-            <option value="state-2">UT - Utah</option>
+          <select id="reference-3-state" name="reference-3-state" class="form-control">
+            <option value="WY">WY- Wyoming</option>
+            <option value="UT">UT - Utah</option>
           </select>
         </div>
         <div class="col-3">
@@ -937,12 +937,12 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Have you ever plead guilty, or no contest to, or been convicted of a felony? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="checkbox" value="" id="felony-yes">
-        <label class="form-check-label" for="felony-yes">Yes</label>
+        <input class="form-radio-input" type="radio" value="Yes" id="felony-yes" name="felony" required>
+        <label class="form-radio-label" for="felony-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
-        <input class="form-check-input" type="checkbox" value="" id="felony-no">
-        <label class="form-check-label" for="felony-no">No</label>
+        <input class="form-radio-input" type="radio" value="No" id="felony-no" name="felony">
+        <label class="form-radio-label" for="felony-no">No</label>
       </div>
       <div class="row form-group">
         <label for="felony-details">If yes, please provide the date(s) and details</label>
@@ -952,23 +952,23 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Have you been arrested for any matters for which you are out on bail or on your own recognizance pending trial? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="checkbox" value="" id="arrested-yes">
-        <label class="form-check-label" for="arrested-yes">Yes</label>
+        <input class="form-radio-input" type="radio" value="Yes" id="arrested-yes" name="arrested" required>
+        <label class="form-radio-label" for="arrested-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
-        <input class="form-check-input" type="checkbox" value="" id="arrested-no">
-        <label class="form-check-label" for="arrested-no">No</label>
+        <input class="form-radio-input" type="radio" value="No" id="arrested-no" name="arrested">
+        <label class="form-radio-label" for="arrested-no">No</label>
       </div>
       <div class="row">
         <p>Have you ever been convicted of a DUI? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="checkbox" value="" id="dui-yes">
-        <label class="form-check-label" for="dui-yes">Yes</label>
+        <input class="form-radio-input" type="radio" value="Yes" id="dui-yes" name="dui" required>
+        <label class="form-radio-label" for="dui-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
-        <input class="form-check-input" type="checkbox" value="" id="dui-no">
-        <label class="form-check-label" for="dui-no">No</label>
+        <input class="form-radio-input" type="radio" value="No" id="dui-no" name="dui">
+        <label class="form-radio-label" for="dui-no">No</label>
       </div>
       <div class="row form-group">
         <label for="dui-date">If yes, how long ago</label>
@@ -978,12 +978,12 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Have you ever been charged with child abuse of neglect? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="checkbox" value="" id="child-abuse-yes">
-        <label class="form-check-label" for="child-abuse-yes">Yes</label>
+        <input class="form-radio-input" type="radio" value="Yes" id="child-abuse-yes" name="child-abuse" required>
+        <label class="form-radio-label" for="child-abuse-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
-        <input class="form-check-input" type="checkbox" value="" id="child-abuse-no">
-        <label class="form-check-label" for="child-abuse-no">No</label>
+        <input class="form-radio-input" type="radio" value="No" id="child-abuse-no" name="child-abuse">
+        <label class="form-radio-label" for="child-abuse-no">No</label>
       </div>
       <div class="form-group" style="margin-top:10px;">
         <button type="submit" class="btn btn-primary mb-2">Submit</button>
