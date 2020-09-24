@@ -4,20 +4,143 @@
     padding: 0;
     margin: 0;
 }
+
+body{
+/*  font: 15px/1.5 Arial, Helvetica,sans-serif;*/
+font:Helvetica, Arial, sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#ffffff;
+}
+
+a{
+	color:#000;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#e68166;
+	text-decoration:none;
+	font-weight:400;
+}
+
+.orange-color{
+	color:#e68166;
+}
+
+
 /* COLORS and FONTS */
 header {
+margin-bottom: 15px !important;
+	margin-top: 15px !important;
+}
+
+nav {
+    background: #003366;
+    color: #ffffff;
+    margin-top: 25px;
+    border-bottom: #e68166 5px solid;
+	 display: -ms-flexbox;
+    display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+nav a {
+    color: #ffffff;
+    padding-top: 20px;
+    min-height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+	
+.nav-link {
+  padding: 15px 10px 10px 15px !important;
+display: block;
+	border:0;
 
 }
+
+.navbar{
+	padding:0;
+}
+
+.nav-link .active,
+.nav-item.show .nav-link {
+ background-color: #e68166 !important;
+	color:#fff;
+	text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:focus .nav-link:active {
+	background-color: #e68166 !important;
+	color:#fff;
+	text-decoration: none;
+}
+
+.nav-link {
+  border-radius: 0;
+}
+
+.nav-item:active {
+  color: #fff;
+  background-color: #e68166 !important;
+}
+
+.nav-link {
+  border-radius: 0;
+}
+
+.navbar-brand {
+    padding: 0px;
+    margin-top: -40px;
+	width:414px;
+}
+.navbar-brand > img {
+    height: 100%;
+    padding: 0;
+    width: auto;
+    background-color: #fff;
+	z-index:2000;
+}
+
+/* EXAMPLE 9 - Center with Flexbox and Text*/
+.brand-centered {
+    display: flex;
+    position: absolute;
+    /*width: 100%;*/
+    left: 50%;
+	margin-left:-207px;
+    top: 0;
+}
+
+.brand-centered .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
 main {
 
 }
 footer {
-
+padding-left: 15px;
+padding-right: 15px;
+margin-top:15px;
+margin-bottom:15px;
+	 min-height: 200px;
 }
 
 .container {
-    display: flex;
+   display: flex;
     flex-direction: column;
+	 width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media all and (min-width: 768px) {
