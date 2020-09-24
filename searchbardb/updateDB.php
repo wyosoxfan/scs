@@ -2,6 +2,7 @@
 require 'vendor/autoload.php';
 use App\SQLiteConnection;
 
+try {
 $pdo = (new SQLiteConnection())->connect();
 if ($pdo != null) {
     $pageTitle = $_GET["qPageTitle"];                               // Get the page title.
@@ -15,4 +16,7 @@ if ($pdo != null) {
     echo 'Updated database successfully!';
 } else {
     echo 'Whoops, could not connect to the SQLite database!';
+}
+} catch(Exception $e) {
+    echo 'Failed to insert data into database.';
 }
