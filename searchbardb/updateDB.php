@@ -8,7 +8,7 @@ try {
         $pageTitle = $_REQUEST["qPageTitle"];                                                    // Get the page title.
         $pageURL = $_REQUEST["qPageURL"];                                                        // Get the page URL.
         $elements = $_REQUEST["qElements"];                                                      // Get the elements on the page.
-        echo var_dump($elements);
+        echo var_dump($elements[0]);
 
         $pageStmt = $pdo->prepare("INSERT INTO page VALUES (:name, :URL)");                      // Create the insert query for the page data.
         $elementStmt = $pdo->prepare("INSERT INTO element VALUES (:id, :html, :text, :pageID)"); // Create the insert query for the element data.
