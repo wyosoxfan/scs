@@ -4,7 +4,7 @@ function updateDB() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.responseText);
-            alert("Database has been updated!"); // Send a message saying that the database has been updated.
+            alert("Database has been updated!");              // Send a message saying that the database has been updated.
 	    }
     };
 
@@ -29,7 +29,8 @@ function updateDB() {
 	    elementText = pageElements[i].innerText;              // Get the text.
         element = new Element(elementID, elementHTML, 
             elementText, pageTitle);                          // Create a new object.
-	    elements.push(element);                               // Store into the array.
+        sElement = JSON.stringify(element);                   // Stingify the element for php.
+	    elements.push(sElement);                              // Store into the array.
     }
 
     $.post("./searchbardb/updateDB.php", 
