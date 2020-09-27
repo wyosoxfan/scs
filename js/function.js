@@ -4,8 +4,24 @@
 const items = document.querySelectorAll(".accordion a");
 
 function toggleAccordion() {
+  toggleAccordion.toggledButton;
   this.classList.toggle('active');
   this.nextElementSibling.classList.toggle('active');
+	
+  if (toggleAccordion.toggledButton == null) {
+	  toggleAccordion.toggledButton = this;
+  } else {
+	  if (toggleAccordion.toggledButton != this) {
+	  // Close the accordion.
+	  toggleAccordion.toggledButton.classList.toggle('active');
+	  toggleAccordion.toggledButton.nextElementSibling.classList.toggle('active');
+	  
+	  // Set new toggle button.
+	  toggleAccordion.toggledButton = this;
+	  } else {
+		  toggleAccordion.toggledButton = null;
+	  }
+  }
 }
 
 items.forEach(item => item.addEventListener('click', toggleAccordion));
