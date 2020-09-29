@@ -3,8 +3,8 @@ function updateDB() {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
-            alert("Database has been updated!");              // Send a message saying that the database has been updated.
+            //alert(this.responseText);
+            //alert("Database has been updated!");              // Send a message saying that the database has been updated.
 	    }
     };
 
@@ -39,6 +39,6 @@ function updateDB() {
 	    qPageURL: pageURL,
 	    qElements: elements
     }, function(data,status){
-        alert("Data: " + data + "\nStatus: " + status);
+        //alert("Data: " + data + "\nStatus: " + status);
     });
 }

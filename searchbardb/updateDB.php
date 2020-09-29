@@ -20,7 +20,7 @@ try {
         $pageStmt->execute();                                                                    // Update the database.
 
         for ($i = 0; $i <= count($elements); $i++) {                                             // Loop through all of the elements and create insert queries...
-            echo "Element " . $i . "\n";
+            //echo "Element " . $i . "\n";
             $elementObject = json_decode($elements[$i]);                                         // Get the element.
             $elementID = $elementObject->id;                                                     // Get the id of the element.
             $elementHTML = $elementObject->html;                                                 // Get the html of the element.
