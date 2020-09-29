@@ -1,21 +1,23 @@
 function getData(str) {
-    var xhttp;
-    if (str == ""){
-        // Do something if there's nothing returned.
-    }
+    // Send the text to the database in a pattern form.
+    // Post...
+    $.post("./searchbardb/search.php", 
+    {
+        qText: str
+    }, function(data,status){
+        var list = [];
 
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // Update the list shown to the user.
-            //alert("Found!");
-            //alert(this.responseText);
+        for (var i = 0; i < data.length; i++) {
+            var header = data[6]; // Get the header.
+            var content = data[3]; // Get the content.
+            list.push([header, content]);
         }
-    };
-    //alert("Sending xhttp!");
-    xhttp.open("GET", "./searchbardb/index.php?q=" + str, true);
-    xhttp.send();
-    return null;
+        return list;
+    });
+}
+
+function updateCount() {
+    // Send the header to be inserted into the search table and update the count.
 }
 
 function searching() {
@@ -34,21 +36,12 @@ function searching() {
         // Get the data from the database...
         var data = getData(input.value);
 
-        // Generate the results...
-        for (var i = 0; i < data.length; i++) {
-            //header = searchResults[i].getElementsByTagName("h3")[0];
-            //headerValue = header.textContent || header.innerText;
-
-            if (headerValue.toUpperCase().indexOf(input.value.toUpperCase()) > -1){
-                searchResults[i].style.display = "";
-            } else {
-                searchResults[i].style.display = "none";
-            }
-        }
-    } else {
-        // Reset the elements visibility.
-        for (i = 0; i < searchResults.length; i++){
-            searchResults[i].style.display = "none";
+        for (var i = 0; i < data.length; i++) {                                                              // Generate the results and add to the page...
+            var header = data[i][0];                                                                         // The header of the selected data.
+            var content = data[i][1];                                                                        // The content of the selected data.
+            var liTemp = "<li class=\"list-group-item\"><h3>" + header + "</h3><p>" + content + "</p></li>"; // Create the html template to put into the search results.
+            liTemp.onclick(updateCount);
+            myUL.appendChild(liTemp);                                                                        // Add the template to the list.
         }
     }
 }
