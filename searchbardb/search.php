@@ -11,6 +11,7 @@ try {
         $pageStmt->bindParam(":text", $text);
         $pageStmt->execute();
         $result = $pageStmt->fetchAll();
+        return $result;
         echo 'Updated database successfully!';
     } else {
         echo 'Whoops, could not connect to the SQLite database!';
