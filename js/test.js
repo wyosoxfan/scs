@@ -95,7 +95,7 @@ var mapView = document.getElementById("mapView");
 var searchbarContainer = document.getElementById("searchbar-container");
 
 if (searchbarContainer != null) {
-    searchbarContainer.style.visibility = "hidden";
+    //searchbarContainer.style.visibility = "hidden";
     //searchbarContainer.style.display = "none";
 }
 if (searchBar != null) {
@@ -181,7 +181,7 @@ $.post("./searchbardb/updateDB.php",
     qPageURL: pageURL,
     qElements: elements
 }, function(data,status){
-    alert("Data: " + data + "\nStatus: " + status);
+    //alert("Data: " + data + "\nStatus: " + status);
 });
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
