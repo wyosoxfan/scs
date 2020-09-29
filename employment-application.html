@@ -310,19 +310,19 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p for="job-time"  >Indicate shifts able/willing to work: *</p>
       </div>
       <div class="form-group form-check"  >
-        <input class="form-check-input" type="checkbox" value="" id="shift-type-1" name="shift-day">
+        <input class="form-check-input" type="checkbox" value="Day" id="shift-type-1" name="shift-day">
         <label class="form-check-label" for="shift-type-1">Day</label>
       </div>
       <div class="form-check form-group"  >
-        <input class="form-check-input" type="checkbox" value="" id="shift-type-2" name="shift-eveing">
+        <input class="form-check-input" type="checkbox" value="Evening" id="shift-type-2" name="shift-eveing">
         <label class="form-check-label" for="shift-type-2">Evening</label>
       </div>
       <div class="form-check form-group " >
-        <input class="form-check-input" type="checkbox" value="" id="shift-type-3" name="shift-night">
+        <input class="form-check-input" type="checkbox" value="Night" id="shift-type-3" name="shift-night">
         <label class="form-check-label" for="shift-type-3">Night</label>
       </div>
       <div class="form-check form-group"  >
-        <input class="form-check-input" type="checkbox" value="" id="shift-type-4" name="shift-weekends">
+        <input class="form-check-input" type="checkbox" value="Weekends" id="shift-type-4" name="shift-weekends">
         <label class="form-check-label" for="shift-type-4">Weekends</label>
       </div>
 		<div class="row form-group">
@@ -544,11 +544,11 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Employer 2 - May we contact this employer? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="employer-2-contact">
+        <input class="form-check-input" type="radio" value="Yes" id="employer-2-contact" name="employer-2-contact">
         <label class="form-check-label" for="employer-2-contact-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
-        <input class="form-check-input" type="radio" value="No" id="employer-2-contact">
+        <input class="form-check-input" type="radio" value="No" id="employer-2-contact" name="employer-2-contact">
         <label class="form-check-label" for="employer-2-contact-no">No</label>
       </div>
       <div class="row form-group">
@@ -612,7 +612,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
           <input type="text" placeholder="" name="employer-3-phone" class="form-control" id="employer-3-phone" >
         </div>
         <div class="col-6" style="padding-left:0;">
-          <label for="employer-3-supervisor">Employer 1 - Supervisor *</label>
+          <label for="employer-3-supervisor">Employer 3 - Supervisor *</label>
           <input type="text" placeholder="" name="employer-3-supervisor" class="form-control" id="employer-3-supervisor" >
         </div>
       </div>
@@ -624,11 +624,11 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Employer 3 - May we contact this employer? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="" id="employer-3-contact">
+        <input class="form-check-input" type="radio" value="Yes" id="employer-3-contact" name="employer-3-contact"> 
         <label class="form-check-label" for="employer-3-contact-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
-        <input class="form-check-input" type="radio" value="" id="employer-3-contact">
+        <input class="form-check-input" type="radio" value="No" id="employer-3-contact">
         <label class="form-check-label" for="employer-3-contact-no">No</label>
       </div>
       <div class="row form-group">
@@ -695,7 +695,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Have you ever used another name? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="other-name-yes" name="other-name">
+        <input required class="form-check-input" type="radio" value="Yes" id="other-name-yes" name="other-name">
         <label class="form-check-label" for="other-name-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
@@ -706,7 +706,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Is any additional information relative to change of name, use of an assumed name, or nickname necessary to enable a check on your work and educational record? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="change-name-yes" name="change-name">
+        <input required class="form-check-input" type="radio" value="Yes" id="change-name-yes" name="change-name">
         <label class="form-check-label" for="change-name-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
@@ -721,7 +721,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>If hired, can you provide proof that you are over 21 years of age? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="over-21-yes" name="over-21">
+        <input required class="form-check-input" type="radio" value="Yes" id="over-21-yes" name="over-21">
         <label class="form-check-label" for="over-21-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
@@ -732,7 +732,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Are you capable of satisfactorily performing the essential job duties required for the position for which you are applying? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="performing-jobs-yes" name="performing-jobs">
+        <input required class="form-check-input" type="radio" value="Yes" id="performing-jobs-yes" name="performing-jobs">
         <label class="form-check-label" for="performing-jobs--yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
@@ -743,7 +743,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Do you have adequate transportation to and from work? (If applying for a position in which you must operate a company vehicle you must maintain a personal auto policy with at least State minimum limits of liability.) *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="transportation-yes" name="transportation">
+        <input required class="form-check-input" type="radio" value="Yes" id="transportation-yes" name="transportation">
         <label class="form-check-label" for="transportation-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
@@ -754,7 +754,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Have you ever been employed by Southwest Counseling Service? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="employed-swc-yes" name="employed-swc">
+        <input required class="form-check-input" type="radio" value="Yes" id="employed-swc-yes" name="employed-swc">
         <label class="form-check-label" for="employed-swc-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
@@ -769,7 +769,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <p>Do you have a relative employed by Southwest Counseling Service or a relative who is currently a Board Member of Southwest Counseling Services? *</p>
       </div>
       <div class="form-group form-check-inline">
-        <input class="form-check-input" type="radio" value="Yes" id="relative-swc-yes" name="relative-swc">
+        <input required class="form-check-input" type="radio" value="Yes" id="relative-swc-yes" name="relative-swc">
         <label class="form-check-label" for="relative-swc-yes">Yes</label>
       </div>
       <div class="form-check-inline form-group">
