@@ -15,6 +15,7 @@ function getData(str) {
     //alert("Sending xhttp!");
     xhttp.open("GET", "./searchbardb/index.php?q=" + str, true);
     xhttp.send();
+    return null;
 }
 
 function searching() {
@@ -29,15 +30,15 @@ function searching() {
 
     // OTHER SEARCH FUNCTIONALITY HERE...
     // For each possible search result in searchResults...
-    if (input.value != ""){
+    if (input.value != "") {
         // Get the data from the database...
-        getData(input.value);
+        var data = getData(input.value);
 
-        // Search the data for the input...
-        // Display the results...
-        for (i = 0; i < searchResults.length; i++){
-            header = searchResults[i].getElementsByTagName("h3")[0];
-            headerValue = header.textContent || header.innerText;
+        // Generate the results...
+        for (var i = 0; i < data.length; i++) {
+            //header = searchResults[i].getElementsByTagName("h3")[0];
+            //headerValue = header.textContent || header.innerText;
+
             if (headerValue.toUpperCase().indexOf(input.value.toUpperCase()) > -1){
                 searchResults[i].style.display = "";
             } else {
@@ -94,7 +95,7 @@ var mapView = document.getElementById("mapView");
 var searchbarContainer = document.getElementById("searchbar-container");
 
 if (searchbarContainer != null) {
-    searchbarContainer.style.visibility = "hidden";
+    //searchbarContainer.style.visibility = "hidden";
     //searchbarContainer.style.display = "none";
 }
 if (searchBar != null) {
