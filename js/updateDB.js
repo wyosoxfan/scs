@@ -31,9 +31,23 @@ function updateDB() {
     var elementSRC;
 
     for (var i = 0; i < pageElements.length; i++) {
-        id = i;
+        elementHTML = "";
+        id = pageTitle + i;
         elementID = pageElements[i].id;                                                   // Get the elementID.
-        elementHTML = $(pageElements[i]).clone().children().remove();                     // Get the html.
+        elementHTML += "<" + pageElements[i].tagName;                                     // Get the HTML.
+        if (pageElements[i].attributes.length > 0) {
+            for (var j = 0; j < pageElements[i].attributes.length; j++) {
+                if (j < pageElements[i].attributes.length - 1) {
+                    elementHTML += " " + pageElements[i].attributes[j].name + "=\"" + 
+                    pageElements[i].attributes[j].value + "\"";
+                } else {
+                    elementHTML += " " + pageElements[i].attributes[j].name + "=\"" + 
+                    pageElements[i].attributes[j].value + "\">";
+                }
+            }
+        } else {
+            elementHTML += ">";
+        }
         elementText = $(pageElements[i]).clone().children().remove().end().text();        // Get the text.
         if (pageElements[i].href != undefined) {
             elementHREF = pageElements[i].href;                                    // Get the href.
@@ -57,6 +71,6 @@ function updateDB() {
 	    qPageURL: pageURL,
 	    qElements: elements
     }, function(data,status){
-        //alert("Data: " + data + "\nStatus: " + status);
+        alert("Data: " + data + "\nStatus: " + status);
     });
 }

@@ -37,11 +37,24 @@ for (var i = 0; i < elements.length; i++) {
 }
 
 // Print all of the elements in the list.
-var elementString = "";
+var elementHTML = "";
 for (var i = 0; i < elementMap.length; i++) {
     var currentElement = elementMap[i]; // Get the element.
-    var testString = $(currentElement).clone().children().remove().end().text();
-    elementString += "Element " + i + ": " + testString + "\n";
+    elementHTML += "<" + currentElement.tagName;
+    // foreach attribute...
+    if (currentElement.attributes.length > 0) {
+        for (var j = 0; j < currentElement.attributes.length; j++) {
+            if (j < currentElement.attributes.length - 1) {
+                elementHTML += " " + currentElement.attributes[j].name + "=\"" + currentElement.attributes[j].value + "\"";
+            } else {
+                elementHTML += " " + currentElement.attributes[j].name + "=\"" + currentElement.attributes[j].value + "\">";
+            }
+        }
+    } else {
+        elementHTML += ">";
+    }
+
+    elementHTML += "\n";
 }
 
-alert(elementString);
+alert(elementHTML);
