@@ -251,41 +251,41 @@ SCS Employee Email</h5></a></div>
 		</div>
 		<p>&nbsp;</p>
 	 
-		<form>
+		<form method="post" action="suggestion.php?action=employee">
 			 <div class="row form-group">
         <label  class="bold" for="suggestion">Suggestion *</label>
-        <textarea class="form-control" id="suggestion" name="suggestion" rows="3" placeholder="Please enter your suggestion."></textarea>
+        <textarea required class="form-control" id="suggestion" name="suggestion" rows="3" placeholder="Please enter your suggestion."></textarea>
       </div>
       
          <div class="row">
         <p class="bold" for="job-time"  >I believe my idea will *</p>
       </div>
       <div class="form-group form-check"  >
-        <input class="form-check-input" type="checkbox" value="" id="improve-quality">
+        <input class="form-check-input" type="checkbox" value="Improve Quality" id="improve-quality" name="improve-quality">
         <label class="form-check-label" for="improve-quality">Improve Quality </label>
       </div>
       <div class="form-check form-group"  >
-        <input class="form-check-input" type="checkbox" value="" id="improve-service">
+        <input class="form-check-input" type="checkbox" value="Improve Service" id="improve-service" name="improve-service">
         <label class="form-check-label" for="improve-service">Improve Service</label>
       </div>
       <div class="form-check form-group " >
-        <input class="form-check-input" type="checkbox" value="" id="improve-morale">
+        <input class="form-check-input" type="checkbox" value="Improve Morale" id="improve-morale" name="improve-morale">
         <label class="form-check-label" for="improve-morale">Improve Morale</label>
       </div>
       <div class="form-check form-group"  >
-        <input class="form-check-input" type="checkbox" value="" id="increase-productivity">
+        <input class="form-check-input" type="checkbox" value="Increase Productivity" id="increase-productivity" name="increase-productivity">
         <label class="form-check-label" for="increase-productivity">Increase Productivity</label>
       </div>
 			<div class="form-check form-group"  >
-        <input class="form-check-input" type="checkbox" value="" id="reduce-costs">
+        <input class="form-check-input" type="checkbox" value="Reduce Costs" id="reduce-costs" name="reduce-costs">
         <label class="form-check-label" for="reduce-costs">Reduce Costs</label>
       </div>
       <div class="form-check form-group " >
-        <input class="form-check-input" type="checkbox" value="" id="save-time">
+        <input class="form-check-input" type="checkbox" value="Save Time" id="save-time" name="save-time">
         <label class="form-check-label" for="save-time">Save Time</label>
       </div>
       <div class="form-check form-group"  >
-        <input class="form-check-input" type="checkbox" value="" id="prevent-waste">
+        <input class="form-check-input" type="checkbox" value="Prevent Waste" id="prevent-waste" name="prevent-waste">
         <label class="form-check-label" for="prevent-waste">Prevent Waste</label>
 		 
       </div> 
@@ -296,7 +296,7 @@ SCS Employee Email</h5></a></div>
       </div>  
 		 <div class="row form-group" style="width:200px;">
            <label class="bold" for="employee-suggestion-date">Date</label>
-          <input type="date" placeholder="mm/dd/yyyy" name="employee-suggestion-date" class="form-control" id="employee-suggestion-date" >
+          <input required type="date" placeholder="mm/dd/yyyy" name="employee-suggestion-date" class="form-control" id="employee-suggestion-date" >
       </div>  
 			<div class="form-group" style="margin-top:10px;">
         <button type="submit" class="btn btn-primary mb-2">Submit</button>
