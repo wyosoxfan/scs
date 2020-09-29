@@ -15,6 +15,7 @@ function getData(str) {
     //alert("Sending xhttp!");
     xhttp.open("GET", "./searchbardb/index.php?q=" + str, true);
     xhttp.send();
+    return null;
 }
 
 function searching() {
@@ -29,15 +30,15 @@ function searching() {
 
     // OTHER SEARCH FUNCTIONALITY HERE...
     // For each possible search result in searchResults...
-    if (input.value != ""){
+    if (input.value != "") {
         // Get the data from the database...
-        getData(input.value);
+        var data = getData(input.value);
 
-        // Search the data for the input...
-        // Display the results...
-        for (i = 0; i < searchResults.length; i++){
-            header = searchResults[i].getElementsByTagName("h3")[0];
-            headerValue = header.textContent || header.innerText;
+        // Generate the results...
+        for (var i = 0; i < data.length; i++) {
+            //header = searchResults[i].getElementsByTagName("h3")[0];
+            //headerValue = header.textContent || header.innerText;
+
             if (headerValue.toUpperCase().indexOf(input.value.toUpperCase()) > -1){
                 searchResults[i].style.display = "";
             } else {
@@ -117,7 +118,7 @@ if (mapButton != null) {
 // Load the page to the database.
 //updateDB();
 
-var pageTitle = document.title;                           // Get the name of the page.
+/* var pageTitle = document.title;                           // Get the name of the page.
 var pageURL = window.location.href;                       // Get the URL of the page.
 var pageElements = document.getElementsByTagName('*');    // Get all elements on the page.
 var elements = [];                                        // List of elements to be sent to the database.
@@ -181,7 +182,7 @@ $.post("./searchbardb/updateDB.php",
     qElements: elements
 }, function(data,status){
     alert("Data: " + data + "\nStatus: " + status);
-});
+}); */
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
