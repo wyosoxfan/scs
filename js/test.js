@@ -95,7 +95,7 @@ var mapView = document.getElementById("mapView");
 var searchbarContainer = document.getElementById("searchbar-container");
 
 if (searchbarContainer != null) {
-    //searchbarContainer.style.visibility = "hidden";
+    searchbarContainer.style.visibility = "hidden";
     //searchbarContainer.style.display = "none";
 }
 if (searchBar != null) {
@@ -118,7 +118,7 @@ if (mapButton != null) {
 // Load the page to the database.
 //updateDB();
 
-var pageTitle = document.title;                           // Get the name of the page.
+/* var pageTitle = document.title;                           // Get the name of the page.
 var pageURL = window.location.href;                       // Get the URL of the page.
 var pageElements = document.getElementsByTagName('*');    // Get all elements on the page.
 var elements = [];                                        // List of elements to be sent to the database.
@@ -182,7 +182,7 @@ $.post("./searchbardb/updateDB.php",
     qElements: elements
 }, function(data,status){
     alert("Data: " + data + "\nStatus: " + status);
-});
+}); */
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
