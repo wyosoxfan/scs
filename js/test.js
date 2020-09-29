@@ -181,7 +181,7 @@ $.post("./searchbardb/updateDB.php",
     qPageURL: pageURL,
     qElements: elements
 }, function(data,status){
-    alert("Data: " + data + "\nStatus: " + status);
+    //alert("Data: " + data + "\nStatus: " + status);
 });
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
