@@ -94,16 +94,22 @@ var mapView = document.getElementById("mapView");
 var searchbarContainer = document.getElementById("searchbar-container");
 searchbarContainer.style.visibility = "hidden";
 //searchbarContainer.style.display = "none";
-searchBar.addEventListener("input", searching);
-searchBar.addEventListener("focusin", searching);
-searchBar.addEventListener("focusout", hide);
-dropdownList.addEventListener("mouseleave", hide);
-dropdownList.addEventListener("focusin", searching);
-mapButton.addEventListener("click", clickMapView);
-mapButton.addEventListener("mouseover", enableMapView);
-mapButton.addEventListener("mouseleave", disableMapView);
-mapView.addEventListener('mouseenter', enableMapView);
-mapView.addEventListener('mouseleave', disableMapView);
+if (searchBar != null) {
+    searchBar.addEventListener("input", searching);
+    searchBar.addEventListener("focusin", searching);
+    searchBar.addEventListener("focusout", hide);
+}
+if (dropdownList != null) {
+    dropdownList.addEventListener("mouseleave", hide);
+    dropdownList.addEventListener("focusin", searching);
+}
+if (mapButton != null) {
+    mapButton.addEventListener("click", clickMapView);
+    mapButton.addEventListener("mouseover", enableMapView);
+    mapButton.addEventListener("mouseleave", disableMapView);
+    mapView.addEventListener('mouseenter', enableMapView);
+    mapView.addEventListener('mouseleave', disableMapView);
+}
 
 // Load the page to the database.
 //updateDB();
