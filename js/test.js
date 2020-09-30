@@ -10,6 +10,7 @@ function updatePage(list) {
     dropdownContainer.style.display = "";
     var myUL = document.getElementById("myUL");
     var searchResults = myUL.getElementsByTagName("li");
+    myUL.innerHTML = "";
     for (var i = 0; i < list.length; i++) {                                                              // Generate the results and add to the page...
         var header = list[i][0];                                                                         // The header of the selected data.
         var content = list[i][1];                                                                        // The content of the selected data.
@@ -31,7 +32,7 @@ function loadSearchResults(str) {
         data = JSON.parse(data);
         var list = [];
 
-        for (var i = 0; i < 25; i++) {
+        for (var i = 0; i < data.length && i < 25; i++) {
             var header = data[i][6]; // Get the header.
             var content = data[i][3]; // Get the content.
             list.push([header, content]);
