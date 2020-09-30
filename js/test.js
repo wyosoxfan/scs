@@ -1,6 +1,6 @@
 function updateCount() {
     // Send the header to be inserted into the search table and update the count.
-    alert("You clicked one of the links!");
+    //alert("You clicked one of the links!");
 }
 
 function openPage() {
