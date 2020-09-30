@@ -243,7 +243,7 @@ display: block;
 		color:#fff;
 	}
 	.search-dropmenu a:hover{
-		color:#97b5d3;
+		color:#e68166;
 		background-color:transparent;
 	}
 	
@@ -252,7 +252,7 @@ display: block;
 	}
 	
 	.dropdown-item-hover:hover{
-		color:#97b5d3;
+		color:#e68166;
 	}
 
 .dropdown-header {
