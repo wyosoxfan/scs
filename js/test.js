@@ -27,7 +27,7 @@ function updatePage(list) {
         var elementID = list[i][2];
         var pageURL = list[i][3];
         var liTemp = "<li class=\"list-group-item\"><a href=\"" + pageURL + "#" + 
-        elementID + "\"><h5>" + header + "</h5><p>" + content + "</p></a></li>"; // Create the html template to put into the search results.
+        elementID + "\" style=\"color:black\"><h5>" + header + "</h5><p>" + content + "</p></a></li>"; // Create the html template to put into the search results.
         myUL.innerHTML += liTemp;
         //liTemp.onclick(updateCount);
         //myUL.appendChild(liTemp);                                                                       // Add the template to the list.
