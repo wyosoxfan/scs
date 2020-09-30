@@ -157,13 +157,13 @@ function openWindows() {
     alert(openWindows.isOpen);
 }
 
-var path = window.location.href;
+//var path = window.location.href;
 
-if (path == 'http://www.swcounseling.org/test/') {
+/*if (path == 'http://www.swcounseling.org/test/') {
     openWindows();
-}
+}*/
 
-var pageTitle = document.title;                           // Get the name of the page.
+/* var pageTitle = document.title;                           // Get the name of the page.
 var pageURL = window.location.href;                       // Get the URL of the page.
 var pageElements = document.getElementsByTagName('*');    // Get all elements on the page.
 var elements = [];                                        // List of elements to be sent to the database.
@@ -228,7 +228,7 @@ $.post("./searchbardb/updateDB.php",
 }, function(data,status){
     //alert("Data: " + data + "\nStatus: " + status);
     window.close();
-});
+}); */
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
