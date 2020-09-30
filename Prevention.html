@@ -578,7 +578,7 @@ is a necessity to educate about the dangers of e-cigarettes.
     <div class="row no-gutters"  >
       <div class="col d-flex survey-box" >
         <div class="col-7" style="padding:0;"> <img alt="" class="img-fluid survey-image" style=" " src="images/alcohol-survey.jpg"  data-holder-rendered="true"> </div>
-        <div class="col-5 align-self-center">
+        <div id="survey-alcoholism-text" class="col-5 align-self-center">
           <p class="text-center" style="font-size: 17px;">Has your drinking 
             become a problem?</p>
           <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey" role="button">Find Out</a> </p>
@@ -586,9 +586,61 @@ is a necessity to educate about the dangers of e-cigarettes.
       </div>
       <div class="col d-flex survey-box" >
         <div class="col-7" style="padding:0;"> <img alt="" class="img-fluid survey-image" style=" " src="images/depression-quiz.jpg"  data-holder-rendered="true"> </div>
-        <div class="col-5 align-self-center" >
+        <div id="survey-depression-text" class="col-5 align-self-center" >
           <p class="text-center" style="font-size: 17px;">Is your sadness normal?</p>
           <p class="text-center"><a class="btn button-white" href="#"  id="openSurvey-depression" role="button">Find Out</a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="myModal" class="modal">
+  <div >
+    <div class="modal-content" > <span class="close">&times;</span>
+      <div class="container" >
+        <div class="row justify-content-center align-items-center">
+          <div class="col-1 "> <a class="link-button" href="#" >
+            <div id="back-link"  alt="Previous"></div>
+            </a> </div>
+          <div class="col survey-question-box">
+            <h5 id="questionText">HOW OFTEN DO YOU FEEL HOPELESS?</h5>
+            <p>
+              <label id="depression-question1_0-txt">
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_0">
+                Never</label>
+              <br>
+              <label id="depression-question1_1-txt">
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_1">
+                Rarely</label>
+              <br>
+              <label id="depression-question1_2-txt">
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_2">
+                Sometimes</label>
+              <br>
+              <label id="depression-question1_3-txt">
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_3">
+                Often</label>
+              <br>
+              <label id="depression-question1_4-txt">
+                <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_4">
+                Always</label>
+              <br>
+            </p>
+          </div>
+          <div class="col-1 "> <a class="link-button align-middle" href="#"  >
+            <div id="next-link"  alt="Next Page"></div>
+            </a> </div>
+        </div>
+        <div class="row justify-content-around" style="margin:20px 0px 0px 0px;">
+          <div class="col-4 text-center ">
+            <input id="back" class="btn btn-primary" type="button" value="BACK">
+          </div>
+          <div class="col-4 text-center ">
+            <input id="next" class="btn btn-primary" type="button" value="NEXT">
+          </div>
+        </div>
+        <div class="row justify-content-end" style="margin:30px 50px 0px 0px;">
+          <p id="question-number">Question 1 of 10</p>
         </div>
       </div>
     </div>
