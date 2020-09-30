@@ -5,12 +5,16 @@ use App\SQLiteConnection;
 try {
     $pdo = (new SQLiteConnection())->connect();
     if ($pdo != null) {
-        $text = $_REQUEST["qText"];
+        $text = $_REQUEST["text"];
+        $text = "%".$text."%";
+        //echo $text;
 
-        $pageStmt = $pdo->prepare("SELECT * FROM element WHERE element.text LIKE \"%:text%\";");
+        $pageStmt = $pdo->prepare("SELECT * FROM element WHERE element.text LIKE :text");
         $pageStmt->bindParam(":text", $text);
+        //echo var_dump($pageStmt);
         $pageStmt->execute();
         $result = $pageStmt->fetchAll();
+        //echo var_dump($result);
         echo json_encode($result);
     } else {
         echo 'Whoops, could not connect to the SQLite database!';

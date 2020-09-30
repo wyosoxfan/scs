@@ -1,48 +1,54 @@
-function getData(str) {
-    // Send the text to the database in a pattern form.
-    // Post...
-    $.post("./searchbardb/search.php", 
-    {
-        qText: str
-    }, function(data,status){
-        var list = [];
-
-        for (var i = 0; i < data.length; i++) {
-            var header = data[6]; // Get the header.
-            var content = data[3]; // Get the content.
-            list.push([header, content]);
-        }
-        return list;
-    });
-}
-
 function updateCount() {
     // Send the header to be inserted into the search table and update the count.
 }
 
-function searching() {
-	var dropdown = document.getElementById("dropdownList");
+function updatePage(list) {
+    var dropdown = document.getElementById("dropdownList");
 	var dropdownContainer = document.getElementById("dropdown-container");
 	dropdown.style.visibility = "visible";
 	dropdown.style.display = "";
-	dropdownContainer.style.display = "";
-    var input = document.getElementById("text_box");
-	var myUL = document.getElementById("myUL");
+    dropdownContainer.style.display = "";
+    var myUL = document.getElementById("myUL");
     var searchResults = myUL.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {                                                              // Generate the results and add to the page...
+        var header = list[i][0];                                                                         // The header of the selected data.
+        var content = list[i][1];                                                                        // The content of the selected data.
+        var liTemp = "<li class=\"list-group-item\" clickon=\"updateCount\"><h3>" + header + "</h3><p>" + content + "</p></li>"; // Create the html template to put into the search results.
+        myUL.innerHTML += liTemp;
+        //liTemp.onclick(updateCount);
+        //myUL.appendChild(liTemp);                                                                        // Add the template to the list.
+    }
+}
+
+function loadSearchResults(str) {
+    // Send the text to the database in a pattern form.
+    // Post...
+    $.post("./searchbardb/search.php",
+    {
+        text: str
+    }, function(data,status) {
+        //alert(data);
+        data = JSON.parse(data);
+        var list = [];
+
+        for (var i = 0; i < 25; i++) {
+            var header = data[i][6]; // Get the header.
+            var content = data[i][3]; // Get the content.
+            list.push([header, content]);
+        }
+
+        updatePage(list);
+    });
+}
+
+function searching() {
+    var input = document.getElementById("text_box");
 
     // OTHER SEARCH FUNCTIONALITY HERE...
     // For each possible search result in searchResults...
     if (input.value != "") {
         // Get the data from the database...
-        var data = getData(input.value);
-
-        for (var i = 0; i < data.length; i++) {                                                              // Generate the results and add to the page...
-            var header = data[i][0];                                                                         // The header of the selected data.
-            var content = data[i][1];                                                                        // The content of the selected data.
-            var liTemp = "<li class=\"list-group-item\"><h3>" + header + "</h3><p>" + content + "</p></li>"; // Create the html template to put into the search results.
-            liTemp.onclick(updateCount);
-            myUL.appendChild(liTemp);                                                                        // Add the template to the list.
-        }
+        loadSearchResults(input.value);
     }
 }
 
