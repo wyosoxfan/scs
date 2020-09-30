@@ -1,24 +1,33 @@
 function updateCount() {
     // Send the header to be inserted into the search table and update the count.
+    alert("You clicked one of the links!");
+}
+
+function makeActive() {
+    // Change the class of the element.
+    this.classList.add("active");
+}
+
+function removeActive() {
+    this.classList.remove("active");
 }
 
 function updatePage(list) {
-    var dropdown = document.getElementById("dropdownList");
-	var dropdownContainer = document.getElementById("dropdown-container");
-	dropdown.style.visibility = "visible";
-	dropdown.style.display = "";
-    dropdownContainer.style.display = "";
     var myUL = document.getElementById("myUL");
     var searchResults = myUL.getElementsByTagName("li");
     myUL.innerHTML = "";
     for (var i = 0; i < list.length; i++) {                                                              // Generate the results and add to the page...
         var header = list[i][0];                                                                         // The header of the selected data.
         var content = list[i][1];                                                                        // The content of the selected data.
-        var liTemp = "<li class=\"list-group-item\" clickon=\"updateCount\"><h3>" + header + "</h3><p>" + content + "</p></li>"; // Create the html template to put into the search results.
+        var liTemp = "<li class=\"list-group-item\"><h5>" + header + "</h5><p>" + content + "</p></li>"; // Create the html template to put into the search results.
         myUL.innerHTML += liTemp;
         //liTemp.onclick(updateCount);
-        //myUL.appendChild(liTemp);                                                                        // Add the template to the list.
+        //myUL.appendChild(liTemp);                                                                       // Add the template to the list.
     }
+
+    myUL.childNodes.forEach(item => item.addEventListener("click", updateCount));                         // Add event listeners.
+    myUL.childNodes.forEach(item => item.addEventListener("mouseover", makeActive));
+    myUL.childNodes.forEach(item => item.addEventListener("mouseout", removeActive));
 }
 
 function loadSearchResults(str) {
@@ -47,10 +56,18 @@ function searching() {
 
     // OTHER SEARCH FUNCTIONALITY HERE...
     // For each possible search result in searchResults...
-    if (input.value != "") {
+    var dropdown = document.getElementById("dropdownList");
+    var dropdownContainer = document.getElementById("dropdown-container");
+    if (input.value.length > 1) {
+        dropdown.style.visibility = "visible";
+        dropdown.style.display = "";
+        dropdownContainer.style.display = "";
         // Get the data from the database...
         loadSearchResults(input.value);
     } else {
+        dropdown.style.visibility = "visible";
+        dropdown.style.display = "";
+        dropdownContainer.style.display = "";
         var myUL = document.getElementById("myUL");
         myUL.innerHTML = "";
     }
