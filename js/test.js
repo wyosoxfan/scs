@@ -153,7 +153,7 @@ var searchbarContainer = document.getElementById("searchbar-container");
 
 if (searchbarContainer != null) {
     searchbarContainer.style.visibility = "hidden";
-    searchbarContainer.style.display = "none";
+    //searchbarContainer.style.display = "none";
 }
 if (searchBar != null) {
     searchBar.addEventListener("input", searching);
