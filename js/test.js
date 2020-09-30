@@ -50,6 +50,9 @@ function searching() {
     if (input.value != "") {
         // Get the data from the database...
         loadSearchResults(input.value);
+    } else {
+        var myUL = document.getElementById("myUL");
+        myUL.innerHTML = "";
     }
 }
 
@@ -117,6 +120,48 @@ if (mapButton != null) {
 
 // Load the page to the database.
 //updateDB();
+function openWindows() {
+    if (typeof openWindows.isOpen == 'undefined') {
+        openWindows.isOpen = false;
+    }
+    alert(openWindows.isOpen);
+    if (openWindows.isOpen == false) {
+        window.open("articles.html", "_blank");
+        window.open("case-management.html", "_blank");
+        window.open("child-adolescents.html", "_blank");
+        window.open("child-calendar.html", "_blank");
+        window.open("consent-to-treat.html", "_blank");
+        window.open("contact-us.html", "_blank");
+        window.open("employee-center.html"), "_blank";
+        window.open("employment.html", "_blank");
+        window.open("get-started.html", "_blank");
+        window.open("help-family.html", "_blank");
+        window.open("help-friend.html", "_blank");
+        window.open("help-myself.html", "_blank");
+        window.open("medical-services.html", "_blank");
+        window.open("mental-health-calendar.html", "_blank");
+        window.open("mental-health.html", "_blank");
+        window.open("payment-info.html", "_blank");
+        window.open("Prevention.html", "_blank");
+        window.open("psychiatric-services.html", "_blank");
+        window.open("psychological-evaluations.html", "_blank");
+        window.open("psychosocial-calendar.html", "_blank");
+        window.open("psychosocial.html", "_blank");
+        window.open("resources.html", "_blank");
+        window.open("substance-abuse-calendar.html", "_blank");
+        window.open("substance-abuse.html", "_blank");
+        window.open("suicide-prevention.html", "_blank");
+    }
+
+    openWindows.isOpen = true;
+    alert(openWindows.isOpen);
+}
+
+var path = window.location.href;
+
+if (path == 'http://www.swcounseling.org/test/') {
+    openWindows();
+}
 
 var pageTitle = document.title;                           // Get the name of the page.
 var pageURL = window.location.href;                       // Get the URL of the page.
@@ -182,6 +227,7 @@ $.post("./searchbardb/updateDB.php",
     qElements: elements
 }, function(data,status){
     //alert("Data: " + data + "\nStatus: " + status);
+    window.close();
 });
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
