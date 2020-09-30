@@ -3,6 +3,11 @@ function updateCount() {
     alert("You clicked one of the links!");
 }
 
+function openPage() {
+    updateCount(); // Send the header to be inserted into the search table and update the count.
+    // Open the link in the current window.
+}
+
 function makeActive() {
     // Change the class of the element.
     this.classList.add("active");
@@ -19,13 +24,16 @@ function updatePage(list) {
     for (var i = 0; i < list.length; i++) {                                                              // Generate the results and add to the page...
         var header = list[i][0];                                                                         // The header of the selected data.
         var content = list[i][1];                                                                        // The content of the selected data.
-        var liTemp = "<li class=\"list-group-item\"><h5>" + header + "</h5><p>" + content + "</p></li>"; // Create the html template to put into the search results.
+        var elementID = list[i][2];
+        var pageURL = list[i][3];
+        var liTemp = "<li class=\"list-group-item\"><a href=\"" + pageURL + "#" + 
+        elementID + "\"><h5>" + header + "</h5><p>" + content + "</p></a></li>"; // Create the html template to put into the search results.
         myUL.innerHTML += liTemp;
         //liTemp.onclick(updateCount);
         //myUL.appendChild(liTemp);                                                                       // Add the template to the list.
     }
 
-    myUL.childNodes.forEach(item => item.addEventListener("click", updateCount));                         // Add event listeners.
+    myUL.childNodes.forEach(item => item.addEventListener("click", openPage));                            // Add event listeners.
     myUL.childNodes.forEach(item => item.addEventListener("mouseover", makeActive));
     myUL.childNodes.forEach(item => item.addEventListener("mouseout", removeActive));
 }
@@ -44,7 +52,9 @@ function loadSearchResults(str) {
         for (var i = 0; i < data.length && i < 25; i++) {
             var header = data[i][6]; // Get the header.
             var content = data[i][3]; // Get the content.
-            list.push([header, content]);
+            var elementID = data[i][1]; // Get the element ID.
+            var pageURL = data[i][8]; // Get the page URL.
+            list.push([header, content, elementID, pageURL]);
         }
 
         updatePage(list);

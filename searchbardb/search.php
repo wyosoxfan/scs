@@ -10,7 +10,9 @@ try {
         //echo $text;
 
         //$pageStmt = $pdo->prepare("SELECT * FROM element WHERE element.text LIKE :text AND element.elementID IS NOT NULL");
-        $pageStmt = $pdo->prepare("SELECT * FROM element WHERE element.text LIKE :text AND element.elementID != '';");
+        //$pageStmt = $pdo->prepare("SELECT * FROM element WHERE element.text LIKE :text AND element.elementID != '';");
+        $pageStmt = $pdo->prepare("SELECT * FROM element INNER JOIN page ON element.pageID = page.name WHERE element.elementID IN 
+        (SELECT elementID FROM element WHERE element.text LIKE :text AND element.elementID != '');");
         $pageStmt->bindParam(":text", $text);
         //echo var_dump($pageStmt);
         $pageStmt->execute();
