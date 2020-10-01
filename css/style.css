@@ -819,6 +819,16 @@ input{margin:0; padding: 10px 10px; line-height: 28px; border:0;}
 		background-color:#fff;
 	}
 
+.faq-read{
+	color:#003366; 
+	font-weight:bold;
+}
+
+.faq-read:hover{
+	color:#fff; 
+	font-weight:bold;
+}
+
 .faq-b a:hover{
 		color:#e68166 !important;
 	}
