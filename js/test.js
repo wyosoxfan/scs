@@ -3,14 +3,16 @@ function updateCount() {
     //alert("You clicked one of the links!");
 }
 
-function openPage(pageURL, elementID) {
+function openPage(pageURL, elementID, content) {
     updateCount(); // Send the header to be inserted into the search table and update the count.
     window.open(pageURL + "#" + elementID, "_self"); // Open the link in the current window.
+    
     // Reset myUL.
     var myUL = document.getElementById("myUL");
+    myUL.innerHTML = "";
 }
 
-function makeActive() {
+function makeActive(pageURL, elementID, content) {
     // Change the class of the element.
     this.classList.add("active");
 }
@@ -28,41 +30,19 @@ function updatePage(list) {
         var content = list[i][1];                                                                        // The content of the selected data.
         var elementID = list[i][2];
         var pageURL = list[i][3];
-        //var liTemp = "<li class='list-group-item'><a href='" + pageURL + "#" + elementID + "' style='z-index: 1200; color: black;'><div><h5>" + header.split("-", 1) + "</h5><p>" + content + "</p></div></a></li>"; // Create the html template to put into the search results.
-        //var liTemp = "<li class='list-group-item'><h5>" + header.split("-", 1) + "</h5><p>" + content + "</p></li>"; // Create the html template to put into the search results.
         var liTemp2 = document.createElement("li");
-        //var aTemp = document.createElement("a");
         var headerTemp = document.createElement("h5");
         var pTemp = document.createElement("p");
         liTemp2.classList.add("list-group-item");
-        //liTemp2.setAttribute("class", "list-group-item");
-        //aTemp.href = pageURL + "#" + elementID;
-        //aTemp.setAttribute("style", "color: black;");
-        //aTemp.setAttribute("href", pageURL + "#" + elementID);
-        //aTemp.href = pageURL;
-        //aTemp.style.color = "black";
         headerTemp.innerText = header.split("-", 1);
         pTemp.innerText = content;
-        //$(aTemp).append(headerTemp);
-        //$(aTemp).append(pTemp);
-        //$(liTemp2).append(aTemp);
-        //aTemp.appendChild(headerTemp);
-        //aTemp.appendChild(pTemp);
-        //liTemp2.appendChild(aTemp);
         liTemp2.appendChild(headerTemp);
         liTemp2.appendChild(pTemp);
-        //myUL.innerHTML += liTemp;
-        //myUL.children[0].addEventListener("click", openPage);
-        //liTemp.onclick(updateCount);
-        //liTemp2.addEventListener("click", function(){ openPage(pageURL, elementID) });
+        liTemp2.addEventListener("click", openPage.bind(null, pageURL, elementID, content));
+        liTemp2.addEventListener("mouseover", makeActive);
+        liTemp2.addEventListener("mouseout", removeActive);
         myUL.appendChild(liTemp2);                                                                       // Add the template to the list.
-        myUL.children[i].addEventListener("click", function(){ openPage(new String(pageURL), new String(elementID)) });
-        //$(myUL).append(liTemp2);
     }
-
-    //myUL.childNodes.forEach(item => item.addEventListener("click", openPage));                            // Add event listeners.
-    myUL.childNodes.forEach(item => item.addEventListener("mouseover", makeActive));
-    myUL.childNodes.forEach(item => item.addEventListener("mouseout", removeActive));
 }
 
 function loadSearchResults(str) {
