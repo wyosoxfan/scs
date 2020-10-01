@@ -11,8 +11,14 @@ try {
 
         //$pageStmt = $pdo->prepare("SELECT * FROM element WHERE element.text LIKE :text AND element.elementID IS NOT NULL");
         //$pageStmt = $pdo->prepare("SELECT * FROM element WHERE element.text LIKE :text AND element.elementID != '';");
-        $pageStmt = $pdo->prepare("SELECT * FROM element INNER JOIN page ON element.pageID = page.name WHERE element.elementID IN 
-        (SELECT elementID FROM element WHERE element.text LIKE :text AND element.elementID != '');");
+        //$pageStmt = $pdo->prepare("SELECT * FROM element INNER JOIN page ON element.pageID = page.name WHERE element.elementID IN 
+        //(SELECT elementID FROM element WHERE element.text LIKE :text AND element.elementID != '');");
+        $pageStmt = $pdo->prepare("SELECT * FROM element INNER JOIN page ON element.pageID = page.name WHERE element.elementID IN
+        (SELECT elementID FROM element WHERE (element.elementID LIKE '%-link') AND (element.text LIKE :text) AND (element.text != '' AND element.text != ' ') AND element.html LIKE '<a%') OR element.elementID IN
+        (SELECT elementID FROM element WHERE (element.elementID LIKE '%-header') AND (element.text LIKE :text) AND (element.text != '' AND element.text != ' ') AND (element.html LIKE '<h%' OR element.html LIKE '<p%')) OR element.elementID IN
+        (SELECT elementID FROM element WHERE (element.elementID LIKE '%-text') AND (element.text LIKE :text) AND (element.text != '' AND element.text != ' ') AND (element.html LIKE '<h%' OR element.html LIKE '<p%')) OR element.id IN
+        (SELECT id FROM element WHERE (element.text LIKE :text) AND (element.text != '' AND element.text != ' ') AND (element.html LIKE '<h%' OR element.html LIKE '<p%'))
+        ORDER BY html ASC, elementID DESC, text ASC;");
         $pageStmt->bindParam(":text", $text);
         //echo var_dump($pageStmt);
         $pageStmt->execute();
