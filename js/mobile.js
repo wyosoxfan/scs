@@ -1,4 +1,4 @@
-var trending = document.getElementById("trending-bar");
+var trending = document.getElementById("trendingArea");
 var logo = document.getElementById("southwest-counseling-logo");
 var hamburgerMenu = document.getElementById("hamburgerMenu");
 var gettingStartedImg1 = document.getElementById("gettingStartedImg");
