@@ -1,5 +1,7 @@
 function updateCount() {
     // Send the header to be inserted into the search table and update the count.
+    // Try to insert into the table.
+    // Update the count.
     //alert("You clicked one of the links!");
 }
 
@@ -70,6 +72,26 @@ function loadSearchResults(str) {
 
 function searching() {
     var input = document.getElementById("text_box");
+
+    // Load data for the trending...
+    // Get data from the search table in order of hits...
+    var trendingList = []; // Update the view...
+
+    $.post("./searchbardb/search.php",
+    {
+        text: str
+    }, function(data,status) {
+        //alert(data);
+        data = JSON.parse(data);
+        trendingList = [];
+
+        for (var i = 0; i < data.length && i < 5; i++) {
+            var header = data[i]; // Get the header.
+            trendingList.push(header);
+        }
+
+        // Update the trending view...
+    });
 
     // OTHER SEARCH FUNCTIONALITY HERE...
     // For each possible search result in searchResults...
