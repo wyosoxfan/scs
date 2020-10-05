@@ -6,16 +6,16 @@ function updateCount() {
 }
 
 function openPage(pageURL, elementID, content) {
-    updateCount(); // Send the header to be inserted into the search table and update the count.
-    window.open(pageURL + "#" + elementID, "_self"); // Open the link in the current window.
+    updateCount();                                                                                     // Send the header to be inserted into the search table and update the count.
+    window.open(pageURL + "#" + elementID, "_self");                                                   // Open the link in the current window.
     
-    // Reset myUL.
+                                                                                                       // Reset myUL.
     var myUL = document.getElementById("myUL");
     myUL.innerHTML = "";
 }
 
 function makeActive(pageURL, elementID, content) {
-    // Change the class of the element.
+                                                                                                        // Change the class of the element.
     this.classList.add("active");
 }
 
@@ -43,7 +43,7 @@ function updatePage(list) {
         liTemp2.addEventListener("click", openPage.bind(null, pageURL, elementID, content));
         liTemp2.addEventListener("mouseover", makeActive);
         liTemp2.addEventListener("mouseout", removeActive);
-        myUL.appendChild(liTemp2);                                                                       // Add the template to the list.
+        myUL.appendChild(liTemp2);                                                                        // Add the template to the list.
     }
 }
 
@@ -77,20 +77,25 @@ function searching() {
     // Get data from the search table in order of hits...
     var trendingList = []; // Update the view...
 
-    $.post("./searchbardb/search.php",
+    $.post("./searchbardb/trending.php",
     {
         text: str
     }, function(data,status) {
         //alert(data);
         data = JSON.parse(data);
-        trendingList = [];
+        var trendingItems = doucment.getElementById("trendingItems"); // Get the trending items.
 
-        for (var i = 0; i < data.length && i < 5; i++) {
-            var header = data[i]; // Get the header.
-            trendingList.push(header);
+        for (var i = 0; i < data.length && i < 5; i++) {              // Loop through all items in the list...
+            var header = data[i][0];                                  // Get the header.
+            var link = data[i][1];                                    // Get the page link.
+                                                                      // Add to the trending list.
+            var aTag = document.createElement("a");                   // Create an a tag.
+            aTag.href = link;                                         // Add the link to the a tag.
+            var pTag = document.createElement("p");                   // Create a p tag.
+            pTag.innerText = header;                                  // Place content in the p tag.
+            aTag.appendChild(pTag);                                   // Combine the two tags.
+            trendingItems.appendChild(aTag);                          // Add to the trending items list.
         }
-
-        // Update the trending view...
     });
 
     // OTHER SEARCH FUNCTIONALITY HERE...
