@@ -193,8 +193,10 @@ function openWindows() {
         window.open("child-calendar.html", "_blank");
         window.open("consent-to-treat.html", "_blank");
         window.open("contact-us.html", "_blank");
+        window.open("domestic-violence.html", "_blank");
         window.open("employee-center.html"), "_blank";
         window.open("employment.html", "_blank");
+        window.open("evaluation.html", "_blank");
         window.open("get-started.html", "_blank");
         window.open("help-family.html", "_blank");
         window.open("help-friend.html", "_blank");
@@ -209,6 +211,7 @@ function openWindows() {
         window.open("psychosocial-calendar.html", "_blank");
         window.open("psychosocial.html", "_blank");
         window.open("resources.html", "_blank");
+        window.open("sex-offenders.html", "_blank");
         window.open("substance-abuse-calendar.html", "_blank");
         window.open("substance-abuse.html", "_blank");
         window.open("suicide-prevention.html", "_blank");
@@ -218,13 +221,13 @@ function openWindows() {
     alert(openWindows.isOpen);
 }
 
-//var path = window.location.href;
+var path = window.location.href;
 
-/*if (path == 'http://www.swcounseling.org/test/') {
+if (path == 'http://www.swcounseling.org/test/') {
     openWindows();
-}*/
+}
 
-/* var pageTitle = document.title;                           // Get the name of the page.
+var pageTitle = document.title;                           // Get the name of the page.
 var pageURL = window.location.href;                       // Get the URL of the page.
 var pageElements = document.getElementsByTagName('*');    // Get all elements on the page.
 var elements = [];                                        // List of elements to be sent to the database.
@@ -264,7 +267,7 @@ for (var i = 0; i < pageElements.length; i++) {
     } else {
         elementHTML += ">";
     }
-    elementText = $(pageElements[i]).clone().children().remove().end().text();        // Get the text.
+    elementText = $(pageElements[i]).clone().children().remove().end().text(); // Get the text.
     if (pageElements[i].href != undefined) {
         elementHREF = pageElements[i].href;                                    // Get the href.
     } else {
@@ -289,7 +292,7 @@ $.post("./searchbardb/updateDB.php",
 }, function(data,status){
     //alert("Data: " + data + "\nStatus: " + status);
     window.close();
-}); */
+});
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).
