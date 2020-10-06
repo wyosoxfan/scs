@@ -79,15 +79,22 @@ function searching() {
 
     $.post("./searchbardb/trending.php",
     {
-        text: str
-    }, function(data,status) {
+    }, function(data, status) {
         //alert(data);
         data = JSON.parse(data);
-        var trendingItems = doucment.getElementById("trendingItems"); // Get the trending items.
+        var trendingItems = document.getElementById("trendingItems"); // Get the trending items.
+        var aTags = trendingItems.getElementsByTagName("a");          // Remove the a tags in the list.
+        if (aTags.length > 0) {
+            var aTagCount = aTags.length;
+            for (var i = aTags.length - 1; i >= 0; i--) {
+                aTags[i].remove();
+            }
+        }
 
         for (var i = 0; i < data.length && i < 5; i++) {              // Loop through all items in the list...
             var header = data[i][0];                                  // Get the header.
-            var link = data[i][1];                                    // Get the page link.
+            header = header.split("-", 1);                            // Trim the page title to make it a header.
+            var link = data[i][4];                                    // Get the page link.
                                                                       // Add to the trending list.
             var aTag = document.createElement("a");                   // Create an a tag.
             aTag.href = link;                                         // Add the link to the a tag.
@@ -222,14 +229,11 @@ function openWindows() {
 }
 
 // Get the IP address.
-$.post("./searchbardb/updateDB.php", 
+/* $.post("./searchbardb/getIP.php", 
 {
 }, function(data,status){
-    alert("Data: " + data + "\nStatus: " + status);
+    //alert("Data: " + data + "\nStatus: " + status);
 });
-
-var testIP = Request.UserHostAddress;
-alert(testIP);
 
 var path = window.location.href;
 
@@ -302,7 +306,7 @@ $.post("./searchbardb/updateDB.php",
 }, function(data,status){
     //alert("Data: " + data + "\nStatus: " + status);
     window.close();
-});
+}); */
 
 // NOTE: We need to make it so the search bar results disappear when the user clicks
 // outside of the column (anything that's not the search bar or results box).

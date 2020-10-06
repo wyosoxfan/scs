@@ -5,9 +5,8 @@ use App\SQLiteConnection;
 try {
     $pdo = (new SQLiteConnection())->connect();
     if ($pdo != null) {
-        $text = $_REQUEST["text"];
-        $pageStmt = $pdo->prepare("SELECT * FROM element INNER JOIN page ON element.pageID = page.name WHERE element.elementID IN");
-        $pageStmt->bindParam(":text", $normalText);
+        //$text = $_REQUEST["text"];
+        $pageStmt = $pdo->prepare("SELECT * FROM search INNER JOIN page ON search.id = page.name ORDER BY hits DESC");
         $pageStmt->execute();
         $result = $pageStmt->fetchAll();
         echo json_encode($result);

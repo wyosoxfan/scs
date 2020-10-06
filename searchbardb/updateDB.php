@@ -40,9 +40,9 @@ try {
                                                                                                                           // Set the id parameter (page name).
         $hitCount = 0;                                                                                                    // Set the hit count (0).
         $searchText = $pageTitle;                                                                                         // Set the text parameter.
-        $searchStmt->bindParam('id', $pageTitle);                                                                         // Bind id parameter to the search statement.
-        $searchStmt->bindParam('hits', $hitCount);                                                                        // Bind the hits parameter to the search statement.
-        $searchStmt->bindParam('text', $pageTitle);                                                                       // Bind the text parameter to the search statement.
+        $searchStmt->bindParam(':id', $pageTitle);                                                                        // Bind id parameter to the search statement.
+        $searchStmt->bindParam(':hits', $hitCount);                                                                       // Bind the hits parameter to the search statement.
+        $searchStmt->bindParam(':text', $pageTitle);                                                                      // Bind the text parameter to the search statement.
         $searchStmt->execute();                                                                                           // Execute the search insert.
         echo 'Updated database successfully!';
     } else {
