@@ -3,7 +3,7 @@ function openPage(pageURL, elementID, content, header) {
     {
         text: header
     }, function(data,status) {
-        alert(data);
+        //alert(data);
         window.open(pageURL + "#" + elementID, "_self");                                                // Open the link in the current window.
     
         // Reset myUL.
