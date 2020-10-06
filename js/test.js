@@ -1,17 +1,16 @@
-function updateCount() {
-    // Send the header to be inserted into the search table and update the count.
-    // Try to insert into the table.
-    // Update the count.
-    //alert("You clicked one of the links!");
-}
-
-function openPage(pageURL, elementID, content) {
-    updateCount();                                                                                     // Send the header to be inserted into the search table and update the count.
-    window.open(pageURL + "#" + elementID, "_self");                                                   // Open the link in the current window.
+function openPage(pageURL, elementID, content, header) {
+    $.post("./searchbardb/updateHits.php",
+    {
+        text: header
+    }, function(data,status) {
+        alert(data);
+        window.open(pageURL + "#" + elementID, "_self");                                                // Open the link in the current window.
     
-                                                                                                       // Reset myUL.
-    var myUL = document.getElementById("myUL");
-    myUL.innerHTML = "";
+        // Reset myUL.
+        var myUL = document.getElementById("myUL");
+        myUL.innerHTML = "";
+    });
+    //updateCount();                                                                                    // Send the header to be inserted into the search table and update the count.
 }
 
 function makeActive(pageURL, elementID, content) {
@@ -40,7 +39,7 @@ function updatePage(list) {
         pTemp.innerText = content;
         liTemp2.appendChild(headerTemp);
         liTemp2.appendChild(pTemp);
-        liTemp2.addEventListener("click", openPage.bind(null, pageURL, elementID, content));
+        liTemp2.addEventListener("click", openPage.bind(null, pageURL, elementID, content, header));
         liTemp2.addEventListener("mouseover", makeActive);
         liTemp2.addEventListener("mouseout", removeActive);
         myUL.appendChild(liTemp2);                                                                        // Add the template to the list.
