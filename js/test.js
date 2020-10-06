@@ -221,9 +221,19 @@ function openWindows() {
     alert(openWindows.isOpen);
 }
 
+// Get the IP address.
+$.post("./searchbardb/updateDB.php", 
+{
+}, function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+});
+
+var testIP = Request.UserHostAddress;
+alert(testIP);
+
 var path = window.location.href;
 
-if (path == 'http://www.swcounseling.org/test/') {
+if (path == 'http://www.swcounseling.org/test2/') {
     openWindows();
 }
 
