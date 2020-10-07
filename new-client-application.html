@@ -105,8 +105,8 @@ margin-left: auto;
 margin-right: auto; display: none; position: absolute;  background-color: #fff; border: #003366 solid 2px; box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.2);  z-index: 1000; "  >
         <div class="container-fluid">
           <div class="row" style="">
-            <div class="col-4 text-center search-dropmenu" >
-              <div>
+            <div id="trendingArea" class="col-4 text-center search-dropmenu" >
+              <div id="trendingItems">
                 <h6 style="color: #e68166;">TRENDING</h6>
                 <hr style="background-color:#fff; margin:0 0 10px 0;">
                 <a href="#">
