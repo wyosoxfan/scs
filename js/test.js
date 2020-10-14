@@ -228,7 +228,7 @@ function openWindows() {
 }
 
 // Get the IP address.
-/* $.post("./searchbardb/getIP.php", 
+/*$.post("./searchbardb/getIP.php", 
 {
 }, function(data,status){
     //alert("Data: " + data + "\nStatus: " + status);
