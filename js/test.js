@@ -71,6 +71,9 @@ function loadSearchResults(str) {
 
 function searching() {
     var input = document.getElementById("text_box");
+    if (searching.previousSearch == null) {
+        searching.previousSearch = "";
+    }
 
     // Load data for the trending...
     // Get data from the search table in order of hits...
@@ -108,17 +111,21 @@ function searching() {
     // For each possible search result in searchResults...
     var dropdown = document.getElementById("dropdownList");
     var dropdownContainer = document.getElementById("dropdown-container");
+    var myUL = document.getElementById("myUL");
     if (input.value.length > 1) {
+        //alert("Searching for " + input.value);
         dropdown.style.visibility = "visible";
         dropdown.style.display = "";
         dropdownContainer.style.display = "";
         // Get the data from the database...
+        myUL.innerHTML = "";
+        myUL.style.visibility = "visible";
         loadSearchResults(input.value);
     } else {
         dropdown.style.visibility = "visible";
         dropdown.style.display = "";
         dropdownContainer.style.display = "";
-        var myUL = document.getElementById("myUL");
+        myUL.style.visibility = "hidden";
         myUL.innerHTML = "";
     }
 }
@@ -165,17 +172,17 @@ var mapView = document.getElementById("mapView");
 var searchbarContainer = document.getElementById("searchbar-container");
 
 if (searchbarContainer != null) {
-    searchbarContainer.style.visibility = "hidden";
+    //searchbarContainer.style.visibility = "hidden";
     //searchbarContainer.style.display = "none";
 }
 if (searchBar != null) {
-    searchBar.addEventListener("input", searching);
-    searchBar.addEventListener("focusin", searching);
+    searchBar.addEventListener("input", function(){setTimeout(searching, 500);});
+    searchBar.addEventListener("focusin", function(){setTimeout(searching, 500);});
     searchBar.addEventListener("focusout", hide);
 }
 if (dropdownList != null) {
     dropdownList.addEventListener("mouseleave", hide);
-    dropdownList.addEventListener("focusin", searching);
+    dropdownList.addEventListener("focusin", function(){setTimeout(searching, 500);});
 }
 if (mapButton != null) {
     mapButton.addEventListener("click", clickMapView);
