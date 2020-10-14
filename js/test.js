@@ -243,7 +243,7 @@ function openWindows() {
 
 /*var path = window.location.href;
 
-if (path == 'http://www.swcounseling.org/test2/') {
+if (path == 'http://www.swcounseling.org/test/') {
     openWindows();
 }
 
