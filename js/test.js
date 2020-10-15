@@ -131,10 +131,11 @@ function searching() {
 }
 
 function hide() {
-    if (document.getElementById("text_box").value == "") {
+    var searchBarText = document.getElementById("text_box");
+    if (searchBarText.value == "") {
         document.getElementById("dropdownList").style.visibility = "hidden"; // Hide the search box results.
         document.getElementById("dropdown-container").style.display = "none";
-        document.getElementById("text_box").blur();
+        searchBarText.blur();
     }
 }
 
@@ -170,6 +171,7 @@ var dropdownList = document.getElementById("dropdownList");
 var mapButton = document.getElementById("map-square");
 var mapView = document.getElementById("mapView");
 var searchbarContainer = document.getElementById("searchbar-container");
+var trendingArea = document.getElementById("trendingArea");
 
 if (searchbarContainer != null) {
     //searchbarContainer.style.visibility = "hidden";
@@ -178,7 +180,7 @@ if (searchbarContainer != null) {
 if (searchBar != null) {
     searchBar.addEventListener("input", function(){setTimeout(searching, 500);});
     searchBar.addEventListener("focusin", function(){setTimeout(searching, 500);});
-    searchBar.addEventListener("focusout", hide);
+    //searchBar.addEventListener("focusout", hide);
 }
 if (dropdownList != null) {
     dropdownList.addEventListener("mouseleave", hide);
