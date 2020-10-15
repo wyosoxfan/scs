@@ -22,7 +22,7 @@ function removeActive() {
     this.classList.remove("active");
 }
 
-function updatePage(list) {
+function updatePage(list, str) {
     var myUL = document.getElementById("myUL");
     var searchResults = myUL.getElementsByTagName("li");
     myUL.innerHTML = "";
@@ -36,7 +36,19 @@ function updatePage(list) {
         var pTemp = document.createElement("p");
         liTemp2.classList.add("list-group-item");
         headerTemp.innerText = header.split("-", 1);
-        pTemp.innerText = content;
+        var textIdx = content.toLowerCase().indexOf(str.toLowerCase()); // Find the text in the content...
+        if (textIdx > -1) {// If the index exists (greater than -1)...
+            // Create a new string based on the index of the word.
+            // FORMAT: TEXT + <span style="font-weight:bold; background-color:yellow;"> + word + str.slice(index+word.length, str.length)...
+            var formattedString;
+            if (textIdx > 0) formattedString = content.slice(0, textIdx) + 
+            "<span style='font-weight:bold; background-color:yellow;'>" + content.slice(textIdx, textIdx + str.length) + "</span>" + 
+            content.slice(textIdx + str.length, content.length);
+            else formattedString = "<span style='font-weight:bold; background-color:yellow;'>" + content.slice(textIdx, textIdx + str.length) + "</span>" +
+            content.slice(textIdx + str.length, content.length);
+        }
+
+        pTemp.innerHTML = formattedString;
         liTemp2.appendChild(headerTemp);
         liTemp2.appendChild(pTemp);
         liTemp2.addEventListener("click", openPage.bind(null, pageURL, elementID, content, header));
@@ -65,7 +77,7 @@ function loadSearchResults(str) {
             list.push([header, content, elementID, pageURL]);
         }
 
-        updatePage(list);
+        updatePage(list, str);
     });
 }
 
