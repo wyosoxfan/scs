@@ -299,6 +299,8 @@ backQuestionBtn.style.visibility = "hidden";
 // Disable the next button.
 nextQuestionBtn.disabled = true;
 
+// Window loaded event.
+
 nextQuestionBtn.onclick = function(event) {
   // Show the previous button.
   backQuestionBtn.style.visibility = "";
@@ -361,7 +363,7 @@ nextQuestionBtn.onclick = function(event) {
     }
   } else {
     // END OF SURVEY FUNCTIONALITY
-    alert("END OF SURVEY!");
+    //alert("END OF SURVEY!");
     var totalPoints = 0;
     for (var i = 0; i < survey.questionSelections.length; i++) {               // Count up the points.
       totalPoints += survey.questionPoints[i];
@@ -369,21 +371,26 @@ nextQuestionBtn.onclick = function(event) {
     if (survey.questionSelections[survey.currentQuestion-1] == "Yes" ||
     survey.questionSelections[survey.currentQuestion-1] == "No") {             // Send the user to the correct results page.
       var newWindow = window.open("http://www.swcounseling.org/test/survey-results-substance-abuse.html"); // Open the page.
-      var scoreHTML = newWindow.document.getElementById("survey-result");      // Update the score in the html.
-      var contentHTML = newWindow.document.getElementById("survey-text");
 
-      if (totalPoints <= 1) {                                                  // If <= 1...
-        scoreHTML.innerText = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
-        contentHTML.innerText = "If your total score is 2 or more, this alcohol screening test suggests that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
-      }
-      else if (totalPoints == 2 || totalPoints == 3) {                         // If is 2 or 3...
-        scoreHTML.innerText = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
-        contentHTML.innerText = "Your answers to this alcohol screening test suggest that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
-      }
-      else {                                                                   // If 4...
-        scoreHTML.innerText = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
-        contentHTML.innerText = "Your answers to this alcohol screening test suggest that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
-      }
+      newWindow.onload = function() {
+        var scoreHTML = newWindow.document.getElementById("survey-result");        // Update the score in the html.
+        var contentHTML = newWindow.document.getElementById("survey-text");
+      
+        if (totalPoints <= 1) {                                                  // If <= 1...
+          scoreHTML.innerHTML = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
+          contentHTML.innerText = "If your total score is 2 or more, this alcohol screening test suggests that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
+        }
+        else if (totalPoints == 2 || totalPoints == 3) {                         // If is 2 or 3...
+          scoreHTML.innerHTML = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
+          contentHTML.innerText = "Your answers to this alcohol screening test suggest that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
+        }
+        else {                                                                   // If 4...
+          scoreHTML.innerHTML = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
+          contentHTML.innerText = "Your answers to this alcohol screening test suggest that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
+        }
+      };
+
+      modal.style.display = "none";
     }
     else if (survey.questionSelections[survey.currentQuestion-1] == "Never" ||
     survey.questionSelections[survey.currentQuestion-1] == "Rarely" ||
@@ -391,16 +398,22 @@ nextQuestionBtn.onclick = function(event) {
     survey.questionSelections[survey.currentQuestion-1] == "Often" ||
     survey.questionSelections[survey.currentQuestion-1] == "Always") {
       var newWindow = window.open("http://www.swcounseling.org/test/survey-results-mental-health.html"); // Open the page.
-      var scoreHTML = newWindow.document.getElementById("survey-result");      // Update the score in the html.
-      var contentHTML = newWindow.document.getElementById("survey-text");
-      if (totalPoints <= 30) { // If <= 30...
-        scoreHTML.innerText = "Low Depression"; // Update the content in the html.
-        contentHTML.innerText = "Your results indicate that you have none, or very few symptoms of Depression. If you notice that your symptoms aren't improving, you may want to bring them up with someone you trust. This screen is not meant to be a diagnosis. If you feel that you need someone to talk to, call our trained crisis workers at 307-352-6680.";
-      }
-      else if (totalPoints > 30) { // If > 30...
-        scoreHTML.innerText = "High/Severe Depression"; // Update the content in the html.
-        contentHTML.innerText = "Your results indicate that you are experiencing symptoms of severe Depression. Based on your answers, these symptoms could be greatly interfering with your relationships and the tasks of everyday life. It may be helpful to speak to a psychologist, or psychiatrist and explore further treatment options. This screen is not meant to be a diagnosis. If you feel that you need someone to talk to, our trained crisis workers are available 307-352-6680.";
-      }
+
+      newWindow.onload = function() {
+        var scoreHTML = newWindow.document.getElementById("survey-result");        // Update the score in the html.
+        var contentHTML = newWindow.document.getElementById("survey-text");
+    
+        if (totalPoints <= 30) { // If <= 30...
+          scoreHTML.innerText = "Low Depression"; // Update the content in the html.
+          contentHTML.innerText = "Your results indicate that you have none, or very few symptoms of Depression. If you notice that your symptoms aren't improving, you may want to bring them up with someone you trust. This screen is not meant to be a diagnosis. If you feel that you need someone to talk to, call our trained crisis workers at 307-352-6680.";
+        }
+        else if (totalPoints > 30) { // If > 30...
+          scoreHTML.innerText = "High/Severe Depression"; // Update the content in the html.
+          contentHTML.innerText = "Your results indicate that you are experiencing symptoms of severe Depression. Based on your answers, these symptoms could be greatly interfering with your relationships and the tasks of everyday life. It may be helpful to speak to a psychologist, or psychiatrist and explore further treatment options. This screen is not meant to be a diagnosis. If you feel that you need someone to talk to, our trained crisis workers are available 307-352-6680.";
+        }
+      };
+
+      modal.style.display = "none";
     }
   }
 }
