@@ -78,6 +78,7 @@ var alcoholismQuestions = [
 var survey = {
   questions: [],
   questionSelections: [],
+  questionPoints: [],
   currentQuestion: 0,
 };
 
@@ -86,6 +87,7 @@ btn.onclick = function() {
   // Make sure everything is emptied.
   survey.questions = [];
   survey.questionSelections = [];
+  survey.questionPoints = [];
   survey.currentQuestion = 0;
 
   // Initialize the survey object.
@@ -94,6 +96,7 @@ btn.onclick = function() {
   // Create the question selections array.
   for (i = 0; i < survey.questions.length; i++) {
     survey.questionSelections.push(null);
+    survey.questionPoints.push(0);
   }
 
   // Display the modal.
@@ -123,6 +126,7 @@ btn.onclick = function() {
   depressionQuestion1.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "Yes";
+    survey.questionPoints[survey.currentQuestion] = 1;
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = true;
@@ -137,6 +141,7 @@ btn.onclick = function() {
   depressionQuestion2.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "No";
+    survey.questionPoints[survey.currentQuestion] = 0;
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
@@ -154,6 +159,7 @@ btn2.onclick = function() {
   // Make sure everything is emptied.
   survey.questions = [];
   survey.questionSelections = [];
+  survey.questionPoints = [];
   survey.currentQuestion = 0;
 
   // Initialize the survey object.
@@ -162,6 +168,7 @@ btn2.onclick = function() {
   // Create the question selections array.
   for (i = 0; i < survey.questions.length; i++) {
     survey.questionSelections.push(null);
+    survey.questionPoints.push(0);
   }
 
   // Display the modal.
@@ -197,6 +204,7 @@ btn2.onclick = function() {
   depressionQuestion1.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "Never";
+    survey.questionPoints[survey.currentQuestion] = 0;
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = true;
@@ -211,6 +219,7 @@ btn2.onclick = function() {
   depressionQuestion2.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "Rarely";
+    survey.questionPoints[survey.currentQuestion] = 1;
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
@@ -225,6 +234,7 @@ btn2.onclick = function() {
   depressionQuestion3.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "Sometimes";
+    survey.questionPoints[survey.currentQuestion] = 2;
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
@@ -239,6 +249,7 @@ btn2.onclick = function() {
   depressionQuestion4.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "Often";
+    survey.questionPoints[survey.currentQuestion] = 3;
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
@@ -253,6 +264,7 @@ btn2.onclick = function() {
   depressionQuestion5.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "Always";
+    survey.questionPoints[survey.currentQuestion] = 4;
   
     // Unselect all other checkboxes.
     depressionQuestion1.checked = false;
@@ -349,6 +361,47 @@ nextQuestionBtn.onclick = function(event) {
     }
   } else {
     // END OF SURVEY FUNCTIONALITY
+    alert("END OF SURVEY!");
+    var totalPoints = 0;
+    for (var i = 0; i < survey.questionSelections.length; i++) {               // Count up the points.
+      totalPoints += survey.questionPoints[i];
+    }
+    if (survey.questionSelections[survey.currentQuestion-1] == "Yes" ||
+    survey.questionSelections[survey.currentQuestion-1] == "No") {             // Send the user to the correct results page.
+      var newWindow = window.open("http://www.swcounseling.org/test/survey-results-substance-abuse.html"); // Open the page.
+      var scoreHTML = newWindow.document.getElementById("survey-result");      // Update the score in the html.
+      var contentHTML = newWindow.document.getElementById("survey-text");
+
+      if (totalPoints <= 1) {                                                  // If <= 1...
+        scoreHTML.innerText = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
+        contentHTML.innerText = "If your total score is 2 or more, this alcohol screening test suggests that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
+      }
+      else if (totalPoints == 2 || totalPoints == 3) {                         // If is 2 or 3...
+        scoreHTML.innerText = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
+        contentHTML.innerText = "Your answers to this alcohol screening test suggest that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
+      }
+      else {                                                                   // If 4...
+        scoreHTML.innerText = "Total score of: " + totalPoints + "<br>(2 or More, Clinically Significant)"; // Update the content in the html.
+        contentHTML.innerText = "Your answers to this alcohol screening test suggest that you are at risk of problem drinking or alcoholism. The authors of this test would recommend that you contact your doctor about your drinking.";
+      }
+    }
+    else if (survey.questionSelections[survey.currentQuestion-1] == "Never" ||
+    survey.questionSelections[survey.currentQuestion-1] == "Rarely" ||
+    survey.questionSelections[survey.currentQuestion-1] == "Sometimes" ||
+    survey.questionSelections[survey.currentQuestion-1] == "Often" ||
+    survey.questionSelections[survey.currentQuestion-1] == "Always") {
+      var newWindow = window.open("http://www.swcounseling.org/test/survey-results-mental-health.html"); // Open the page.
+      var scoreHTML = newWindow.document.getElementById("survey-result");      // Update the score in the html.
+      var contentHTML = newWindow.document.getElementById("survey-text");
+      if (totalPoints <= 30) { // If <= 30...
+        scoreHTML.innerText = "Low Depression"; // Update the content in the html.
+        contentHTML.innerText = "Your results indicate that you have none, or very few symptoms of Depression. If you notice that your symptoms aren't improving, you may want to bring them up with someone you trust. This screen is not meant to be a diagnosis. If you feel that you need someone to talk to, call our trained crisis workers at 307-352-6680.";
+      }
+      else if (totalPoints > 30) { // If > 30...
+        scoreHTML.innerText = "High/Severe Depression"; // Update the content in the html.
+        contentHTML.innerText = "Your results indicate that you are experiencing symptoms of severe Depression. Based on your answers, these symptoms could be greatly interfering with your relationships and the tasks of everyday life. It may be helpful to speak to a psychologist, or psychiatrist and explore further treatment options. This screen is not meant to be a diagnosis. If you feel that you need someone to talk to, our trained crisis workers are available 307-352-6680.";
+      }
+    }
   }
 }
 
