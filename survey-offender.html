@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to Southwest Counseling Service | Rock Springs Wyoming</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+	<style>
+		/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #ffff;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width:650px
+  /* max-width: 60%; Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+		
+.survey-question-box{
+			border: black solid 3px; 
+			padding:15px 10px 10px 30px;
+		}
+		
+		#back-link{
+		background: url("images/arrow-left-black.png") center center no-repeat;
+		margin:0;
+		padding:0;
+		height:25px;
+	}
+	
+	#back-link:hover{
+		background: url("images/arrow-left-orange.png") center center no-repeat;
+		margin:0;
+		padding:0;
+		height:25px;
+	}
+		
+	#next-link{
+		background: url("images/arrow-right-black.png") center center no-repeat;
+		margin:0;
+		padding:0;
+		height:25px;
+	}
+	
+	#next-link:hover{
+		background: url("images/arrow-right-orange.png") center center no-repeat;
+		margin:0;
+		padding:0;
+		height:25px;
+	}
+		
+.link-button {height:25px; width:25px; padding:0; margin:0;}
+		
+	</style>
+</head>
+
+<body>
+	<div class="container">
+	<!-- Trigger/Open The Modal -->
+<button id="openSurvey">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content" style="max-width:650px; min-width:300px;">
+    <span class="close">&times;</span>
+    <div class="container" >
+		<div class="row justify-content-center align-items-center">
+	  <div class="col-1 ">
+		 <a class="link-button" href="#" ><div id="back-link"  alt="Previous"></div></a>
+		</div>
+		 <div class="col survey-question-box">
+		  <h5>Most men who commit sexual offenses do not know their victim.</h5>
+		   <p>
+		     <label>
+		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_0">
+		       &nbsp; True</label>
+		     <br>
+		     <label>
+		       <input type="checkbox" name="depression-question1" value="checkbox" id="depression-question1_1">
+		      &nbsp; False</label>
+		     <br>
+		     <br>
+	        </p>
+			<h6 id="depression-answer1"><strong>False.</strong></h6>  <p  id="depression-answer-text1">90% of child victims know their offender, with almost half of the offenders being a family member. Of sexual assaults against people age 12 and up, approximately 80% of the victims know the offender.</p>
+         </div>
+		 <div class="col-1 ">
+		   <a class="link-button align-middle" href="#"><div id="next-link"  alt="Next Page"></div></a>
+		</div>
+	  </div>
+		
+		<div class="row justify-content-around" style="margin:20px 0px 0px 0px;">
+			<div class="col-4 text-center "><input class="btn btn-primary" type="button" value="BACK"></div>
+			<div class="col-4 text-center "><input class="btn btn-primary" type="button" value="NEXT"></div>
+		</div>
+		<div class="row justify-content-end" style="margin:30px 50px 0px 0px;">
+			<p id="question-number">Question 1 of 10</p>
+			</div>
+		
+	  </div>
+  </div>
+</div>
+	</div>
+
+<script src="js/jquery-3.4.1.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/popper.min.js"></script> 
+<script src="js/bootstrap-4.4.1.js"></script> 
+<script type="text/javascript" src="js/test.js"></script> 
+<script src="js/function.js"></script> 
+<script src="js/test.js"></script>
+</body>
+</html>
