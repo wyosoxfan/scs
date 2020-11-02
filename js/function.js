@@ -38,6 +38,7 @@ var modal = document.getElementById("myModal");
 // Get the button that opens the modal
 var btn = document.getElementById("openSurvey");
 var btn2 = document.getElementById("openSurvey-depression");
+var btn3 = document.getElementById("openSurvey-sexOffenders");
 var nextQuestionBtn = document.getElementById("next");
 var backQuestionBtn = document.getElementById("back");
 var depressionQuestion1 = document.getElementById("depression-question1_0");
@@ -50,6 +51,8 @@ var depressionQuestion2Lbl = document.getElementById("depression-question1_1-txt
 var depressionQuestion3Lbl = document.getElementById("depression-question1_2-txt");
 var depressionQuestion4Lbl = document.getElementById("depression-question1_3-txt");
 var depressionQuestion5Lbl = document.getElementById("depression-question1_4-txt");
+var offenderAnswer = document.getElementById("depression-answer1");
+var offenderAnswerText = document.getElementById("depression-answer-text1");
 
 // Get the question number.
 var questionNumber = document.getElementById("question-number");
@@ -75,6 +78,63 @@ var alcoholismQuestions = [
   'HAVE YOU EVER FELT GUILTY ABOUT YOUR DRINKING?',
   'HAVE YOU EVER HAD A DRINK FIRST THING IN THE MORNING (EYE OPENER)?'
 ];
+var sexOffenderQuestions = [
+  'Most men who commit sexual offenses do not know their victim.',
+  'Most sexual assults are committed by someone of the same race as the victim.',
+  'Most child sexual abusers use physical force or threat to gain compliance from their victims.',
+  'Most child sexual abusers find their victims by frequenting such places as schoolyards and playgrounds.',
+  'Only men commit sexual assult.',
+  'Child sexual abusers are only attracted to children and are not capable of appropriate sexual relationships.',
+  'Victims of sexual assault are harmed only when offenders use force.',
+  'If a child does not tell anyone about the abuse, it is because he or she must have consented to it.',
+  'It is common for both child and adult victims of sexual assault to wait some time before telling someone about the abuse.',
+  'If someone sexually assaults an adult, he will not target children as victims, and if someone sexually assaults a child, he will not target adults.',
+  'It helps the victim to talk about the abuse.',
+  'Sexual gratification is often not a primary motivation for a rape offender.',
+  'Offenders could stop their sexually violent behavior on their own if they wanted to.',
+  'Men who rape do so because they cannot find a consenting sexual partner.',
+  'Drugs and alcohol cause sexual offenses to occur.',
+  'Victims of sexual assault often share some blame for the assault.',
+  'If a victim does not say "no" or does not "fight back," it is not sexual assault.'
+];
+var sexOffenderAnswers = [
+  'False.',
+  'True.',
+  'False.',
+  'False.',
+  'False.',
+  'False.',
+  'False.',
+  'False.',
+  'True.',
+  'False.',
+  'True.',
+  'True.',
+  'False.',
+  'False.',
+  'False.',
+  'False.',
+  'False.'
+];
+var sexOffenderText = [
+  '90% of child victims know their offender, with almost half of the offenders being a family member. Of sexual assaults against people age 12 and up, approximately 80% of the victims know the offender.',
+  'Most sexual assaults are committed by someone of the same race as the victim. An exception to this is that people who commit sexual assault against Native Americans are usually not Native American (American Indians and Crime, 1999).',
+  'In the majority of cases, abusers gain access to their victims through deception and enticement, seldom using force. Abuse typically occurs within a long-term, ongoing relationship between the offender and victim and escalates over time.',
+  'Most child sexual abusers offend against children whom they know and with whom they have established a relationship. Many sexual assaults of adult women are considered "confidence rapes," in that the offender knows the victim and has used that familiarity to gain access to her.',
+  'While most sex offenders are male, sometimes sex offenses are committed by female offenders.',
+  'While there is a small subset of child sexual abusers who are exclusively attracted to children, the majority of the individuals who sexually abuse children are (or have previously been) attracted to adults.',
+  'More than any physical injuries the victim sustains, the violation of trust that accompanies most sexual assaults has been shown to dramatically increase the level of trauma the victim suffers. Emotional and psychological injuries cause harm that can last much longer than physical wounds.',
+  'Children often do not tell for a variety of reasons including the offender\'s threats to hurt or kill someone the victim loves, as well as shame, embarrassment, wanting to protect the offender, feelings for the offender, fear of being held responsible or being punished, fear of being disbelieved, and fear of losing the offender who may be very important to the child or the child\'s family.',
+  'It is common for victims of sexual assault to wait some time before telling someone. When the person was assaulted as a child, he or she may wait years or decades. The reasons for this are numerous: victims may want to deny the fact that someone they trusted could do this to them; they may want to just put it behind them; they may believe the myth that they caused the assault by their behavior; or they may fear how other people will react to the truth.',
+  'Research and anecdotal evidence indicate that while some sex offenders choose only one type of victim (e.g., prepubescent girls, post-pubescent boys, adult women, etc.), others prey on different types of victims. Therefore, no assumptions should be made about an offender\'s victim preference and precautions should be taken regardless of his crime of conviction.',
+  'The victim\'s recovery will be enhanced if she or he feels believed, supported, protected, and receives counseling following the disclosure that s/he was assaulted. However, sexual assault victims should always have the choice about when, with whom, and under what conditions they wish to discuss their experiences.',
+  'While some offenders do seek sexual gratification from the act, sexual gratification is often not a primary motivation for a rape offender. Power, control, and anger are more likely to be the primary motivators.',
+  'Wanting to change is usually not enough to be able to change the patterns that lead to sexual offenses. To create the motivation to change, some offenders need a variety of treatment and corrective interventions, and for others learning how to make the change in their own behavioral cycle of abuse is more effective.',
+  'Studies suggest that most rape offenders are married or in consenting relationships.',
+  'While drugs and alcohol are often involved in sexual assaults, drugs and alcohol do not cause sexual offenses to occur. Rather, drug and alcohol use may be a disinhibitor for the offender, while being under the influence may increase a potential victim\'s vulnerability.',
+  'Adult and child victims of sexual abuse are never to blame for the assault, regardless of their behavior. Because of the age difference, children are unable to legally consent to sexual acts. They are often made to feel like willing participants, which further contributes to their shame and guilt.',
+  'Sexual assault victims may not say "no" or not fight back for a variety of reasons including fear and confusion. Rape victims often report being "frozen" by fear during the assault, making them unable to fight back; other victims may not actively resist for fear of angering the assailant and causing him to use more force in the assault. Pressure to be liked and not be talked about negatively by a peer will sometimes cause adolescents or children to avoid fighting back or actively resisting.'
+];
 var survey = {
   questions: [],
   questionSelections: [],
@@ -98,6 +158,10 @@ btn.onclick = function() {
     survey.questionSelections.push(null);
     survey.questionPoints.push(0);
   }
+
+  // Hide the answers.
+  offenderAnswer.style.display = "none";
+  offenderAnswerText.style.display = "none";
 
   // Display the modal.
   modal.style.display = "block";
@@ -123,6 +187,9 @@ btn.onclick = function() {
   depressionQuestion2Lbl.innerHTML = "<input type=\"checkbox\" name=\"depression-question2\" value=\"checkbox\" id=\"depression-question1_1\">No";
   depressionQuestion1 = document.getElementById("depression-question1_0");
   depressionQuestion2 = document.getElementById("depression-question1_1");
+  depressionQuestion3 = document.getElementById("depression-question1_2");
+  depressionQuestion4 = document.getElementById("depression-question1_3");
+  depressionQuestion5 = document.getElementById("depression-question1_4");
   depressionQuestion1.onclick = function(event) {
     // Set the selected option.
     survey.questionSelections[survey.currentQuestion] = "Yes";
@@ -170,6 +237,10 @@ btn2.onclick = function() {
     survey.questionSelections.push(null);
     survey.questionPoints.push(0);
   }
+
+  // Hide the offender answers.
+  offenderAnswer.style.display = "none";
+  offenderAnswerText.style.display = "none";
 
   // Display the modal.
   modal.style.display = "block";
@@ -278,6 +349,97 @@ btn2.onclick = function() {
   };
 }
 
+btn3.onclick = function () {
+  // Make sure everything is emptied.
+  survey.questions = [];
+  survey.questionSelections = [];
+  survey.questionPoints = [];
+  survey.currentQuestion = 0;
+
+  // Initialize the survey object.
+  survey.questions = sexOffenderQuestions;
+
+  // Create the question selections array.
+  for (i = 0; i < survey.questions.length; i++) {
+    survey.questionSelections.push(null);
+    survey.questionPoints.push(0);
+  }
+
+  // Hide the answers.
+  offenderAnswer.style.display = "none";
+  offenderAnswerText.style.display = "none";
+
+  // Set the answers.
+  offenderAnswer.innerText = sexOffenderAnswers[survey.currentQuestion];
+  offenderAnswerText.innerText = sexOffenderText[survey.currentQuestion];
+
+  // Display the modal.
+  modal.style.display = "block";
+
+  // Set the first question.
+  questionText.innerHTML = survey.questions[0];
+
+  // Update the question number.
+  questionNumber.innerText = "Question " + (survey.currentQuestion + 1) + " of " + (survey.questions.length);
+
+  // Set the checkboxes and text.
+  depressionQuestion1.style.display = "";
+  depressionQuestion2.style.display = "";
+  depressionQuestion3.style.display = "none";
+  depressionQuestion4.style.display = "none";
+  depressionQuestion5.style.display = "none";
+  depressionQuestion1Lbl.style.display = "";
+  depressionQuestion2Lbl.style.display = "";
+  depressionQuestion3Lbl.style.display = "none";
+  depressionQuestion4Lbl.style.display = "none";
+  depressionQuestion5Lbl.style.display = "none";
+  depressionQuestion1Lbl.innerHTML = "<input type=\"checkbox\" name=\"depression-question1\" value=\"checkbox\" id=\"depression-question1_0\">True";
+  depressionQuestion2Lbl.innerHTML = "<input type=\"checkbox\" name=\"depression-question2\" value=\"checkbox\" id=\"depression-question1_1\">False";
+  depressionQuestion1 = document.getElementById("depression-question1_0");
+  depressionQuestion2 = document.getElementById("depression-question1_1");
+  depressionQuestion3 = document.getElementById("depression-question1_2");
+  depressionQuestion4 = document.getElementById("depression-question1_3");
+  depressionQuestion5 = document.getElementById("depression-question1_4");
+  depressionQuestion1.onclick = function(event) {
+    // Set the selected option.
+    survey.questionSelections[survey.currentQuestion] = "True";
+    survey.questionPoints[survey.currentQuestion] = 1;
+  
+    // Unselect all other checkboxes.
+    depressionQuestion1.checked = true;
+    depressionQuestion2.checked = false;
+    depressionQuestion3.checked = false;
+    depressionQuestion4.checked = false;
+    depressionQuestion5.checked = false;
+
+    // Show the answer.
+    offenderAnswer.style.display = "";
+    offenderAnswerText.style.display = "";
+  
+    // Enable the next button.
+    nextQuestionBtn.disabled = false;
+  };
+  depressionQuestion2.onclick = function(event) {
+    // Set the selected option.
+    survey.questionSelections[survey.currentQuestion] = "False";
+    survey.questionPoints[survey.currentQuestion] = 0;
+  
+    // Unselect all other checkboxes.
+    depressionQuestion1.checked = false;
+    depressionQuestion2.checked = true;
+    depressionQuestion3.checked = false;
+    depressionQuestion4.checked = false;
+    depressionQuestion5.checked = false;
+
+    // Show the answer.
+    offenderAnswer.style.display = "";
+    offenderAnswerText.style.display = "";
+  
+    // Enable the next button.
+    nextQuestionBtn.disabled = false;
+  };
+}
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
@@ -332,6 +494,14 @@ nextQuestionBtn.onclick = function(event) {
     // Update the question.
     questionText.innerText = survey.questions[survey.currentQuestion];
 
+    // Hide the answers.
+    offenderAnswer.style.display = "none";
+    offenderAnswerText.style.display = "none";
+
+    // Update the answers.
+    offenderAnswer.innerText = sexOffenderAnswers[survey.currentQuestion];
+    offenderAnswerText.innerText = sexOffenderText[survey.currentQuestion];
+
     // Update the question number.
     questionNumber.innerText = "Question " + (survey.currentQuestion + 1) + " of " + (survey.questions.length);
 
@@ -345,10 +515,12 @@ nextQuestionBtn.onclick = function(event) {
     if (survey.questionSelections[survey.currentQuestion] != null){
       // Restore the selected checkbox if possible.
       if (survey.questionSelections[survey.currentQuestion] == "Never" ||
-      survey.questionSelections[survey.currentQuestion] == "Yes"){
+      survey.questionSelections[survey.currentQuestion] == "Yes" ||
+      survey.questionSelections[survey.currentQuestion] == "True") {
         depressionQuestion1.checked = true;
       } else if (survey.questionSelections[survey.currentQuestion] == "Rarely" ||
-      survey.questionSelections[survey.currentQuestion] == "No"){
+      survey.questionSelections[survey.currentQuestion] == "No" ||
+      survey.questionSelections[survey.currentQuestion] == "False") {
         depressionQuestion2.checked = true;
       } else if (survey.questionSelections[survey.currentQuestion] == "Sometimes"){
         depressionQuestion3.checked = true;
@@ -415,6 +587,12 @@ nextQuestionBtn.onclick = function(event) {
 
       modal.style.display = "none";
     }
+    else if (survey.questionSelections[survey.currentQuestion-1] == "True" ||
+    survey.questionSelections[survey.currentQuestion-1] == "False") {
+      // Open the page.
+      // Update the score in the html.
+      // Update the content in the html.
+    }
   }
 }
 
@@ -452,10 +630,12 @@ backQuestionBtn.onclick = function(event) {
     if (survey.questionSelections[survey.currentQuestion] != null){
       // Restore the selected checkbox if possible.
       if (survey.questionSelections[survey.currentQuestion] == "Never" ||
-      survey.questionSelections[survey.currentQuestion] == "Yes"){
+      survey.questionSelections[survey.currentQuestion] == "Yes" ||
+      survey.questionSelections[survey.currentQuestion] == "True") {
         depressionQuestion1.checked = true;
       } else if (survey.questionSelections[survey.currentQuestion] == "Rarely" ||
-      survey.questionSelections[survey.currentQuestion] == "No"){
+      survey.questionSelections[survey.currentQuestion] == "No" ||
+      survey.questionSelections[survey.currentQuestion] == "False") {
         depressionQuestion2.checked = true;
       } else if (survey.questionSelections[survey.currentQuestion] == "Sometimes"){
         depressionQuestion3.checked = true;
