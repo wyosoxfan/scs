@@ -229,8 +229,56 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <div class="col-3">
           <label for="client-state">State *</label>
           <select required id="client-state" name="client-state" class="form-control">
-            <option value="WY">WY- Wyoming</option>
-            <option value="UT">UT - Utah</option>
+			  <option value="AL">AL - Alabama</option>
+			  <option value="AK">AK - Alaska</option>
+			  <option value="AZ">AZ - Arizona</option>
+			  <option value="AR">AR - Arkansas</option>
+			  <option value="CA">CA - California</option>
+			  <option value="CO">CO - Colorado</option>
+			  <option value="CT">CT - Connecticut</option>
+			  <option value="DE">DE - Delaware</option>
+			  <option value="FL">FL - Florida</option>
+			  <option value="GA">GA - Georgia</option>
+			  <option value="HI">HI - Hawaii</option>
+			  <option value="ID">ID - Idaho</option>
+			  <option value="IL">IL - Illinois</option>
+			  <option value="IN">IN - Indiana</option>
+			  <option value="IA">IA - Iowa</option>
+			  <option value="KS">KS - Kansas</option>
+			  <option value="KY">KY - Kentucky</option>
+			  <option value="LA">LA - Louisiana</option>
+			  <option value="ME">ME - Maine</option>
+			  <option value="MD">MD - Maryland</option>
+			  <option value="MA">MA - Massachusetts</option>
+			  <option value="MI">MI - Michigan</option>
+			  <option value="MN">MN - Minnesota</option>
+			  <option value="MS">MS - Mississippi</option>
+			  <option value="MO">MO - Missouri</option>
+			  <option value="MT">MT - Montana</option>
+			  <option value="NE">NE - Nebraska</option>
+			  <option value="NV">NV - Nevada</option>
+			  <option value="NH">NH - New Hampshire</option>
+			  <option value="NJ">NJ - New Jersy</option>
+			  <option value="NM">NM - New Mexico</option>
+			  <option value="NY">NY - New York</option>
+			  <option value="NC">NC - North Carolina</option>
+			  <option value="ND">ND - North Dakota</option>
+			  <option value="OH">OH - Ohio</option>
+			  <option value="OK">OK - Oklahoma</option>
+			  <option value="OR">OR - Oregon</option>
+			  <option value="PA">PA - Pennsylvania</option>
+			  <option value="RI">RI - Rhode Island</option>
+			  <option value="SC">SC - South Carolina</option>
+			  <option value="SD">SD - South Dakota</option>
+			  <option value="TN">TN - Tennessee</option>
+			  <option value="TX">TX - Texas</option>
+			  <option value="UT">UT - Utah</option>
+			  <option value="VT">VT - Vermont</option>
+			  <option value="VA">VA - Virginia</option>
+			  <option value="WA">WA - Washington</option>
+			  <option value="WV">WV - West Virginia</option>
+			  <option value="WI">WI - Wisconsin</option>
+			  <option value="WY">WY - Wyoming</option>
           </select>
         </div>
         <div class="col-3">
@@ -260,8 +308,10 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       <div class="row form-group" style="max-width:40%;">
         <label for="job-name">Position applying for: *</label>
         <select required id="job-name" class="form-control" name="job-name">
-          <option value="Treatment Support Staff" <?= $_GET["jobtype"] == "treatmentsupportstaff" ? ' selected="selected"' : ''; ?>>Treatment Support Staff</option>
-          <option value="Mental Health Therapist" <?= $_GET["jobtype"] == "mentalhealththerapist" ? ' selected="selected"' : ''; ?>>Mental Health Therapist</option>
+          <option value="Case Manager" <?= $_GET["jobtype"] == "casemanager" ? ' selected="selected"' : ''; ?>>Case Manager</option> 
+          <option value="Mental Health Therapist" <?= $_GET["jobtype"] == "mentalhealththerapist" ? ' selected="selected"' : ''; ?>>Mental Health Therapist</option> 
+		  <option value="Office Clerk" <?= $_GET["jobtype"] == "officeclerk" ? ' selected="selected"' : ''; ?>>Office Clerk</option>
+		  <option value="Treatment Support Staff" <?= $_GET["jobtype"] == "treatmentsupportstaff" ? ' selected="selected"' : ''; ?>>Treatment Support Staff</option>
         </select>
       </div>
       <div class="row form-group" style="max-width:40%;">
@@ -403,8 +453,56 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <div class="col-3">
           <label for="employer-1-state">State *</label>
           <select required id="employer-1-state" name="employer-1-state" class="form-control">
-            <option value="WY">WY- Wyoming</option>
-            <option value="UT">UT - Utah</option>
+			  <option value="AL">AL - Alabama</option>
+			  <option value="AK">AK - Alaska</option>
+			  <option value="AZ">AZ - Arizona</option>
+			  <option value="AR">AR - Arkansas</option>
+			  <option value="CA">CA - California</option>
+			  <option value="CO">CO - Colorado</option>
+			  <option value="CT">CT - Connecticut</option>
+			  <option value="DE">DE - Delaware</option>
+			  <option value="FL">FL - Florida</option>
+			  <option value="GA">GA - Georgia</option>
+			  <option value="HI">HI - Hawaii</option>
+			  <option value="ID">ID - Idaho</option>
+			  <option value="IL">IL - Illinois</option>
+			  <option value="IN">IN - Indiana</option>
+			  <option value="IA">IA - Iowa</option>
+			  <option value="KS">KS - Kansas</option>
+			  <option value="KY">KY - Kentucky</option>
+			  <option value="LA">LA - Louisiana</option>
+			  <option value="ME">ME - Maine</option>
+			  <option value="MD">MD - Maryland</option>
+			  <option value="MA">MA - Massachusetts</option>
+			  <option value="MI">MI - Michigan</option>
+			  <option value="MN">MN - Minnesota</option>
+			  <option value="MS">MS - Mississippi</option>
+			  <option value="MO">MO - Missouri</option>
+			  <option value="MT">MT - Montana</option>
+			  <option value="NE">NE - Nebraska</option>
+			  <option value="NV">NV - Nevada</option>
+			  <option value="NH">NH - New Hampshire</option>
+			  <option value="NJ">NJ - New Jersy</option>
+			  <option value="NM">NM - New Mexico</option>
+			  <option value="NY">NY - New York</option>
+			  <option value="NC">NC - North Carolina</option>
+			  <option value="ND">ND - North Dakota</option>
+			  <option value="OH">OH - Ohio</option>
+			  <option value="OK">OK - Oklahoma</option>
+			  <option value="OR">OR - Oregon</option>
+			  <option value="PA">PA - Pennsylvania</option>
+			  <option value="RI">RI - Rhode Island</option>
+			  <option value="SC">SC - South Carolina</option>
+			  <option value="SD">SD - South Dakota</option>
+			  <option value="TN">TN - Tennessee</option>
+			  <option value="TX">TX - Texas</option>
+			  <option value="UT">UT - Utah</option>
+			  <option value="VT">VT - Vermont</option>
+			  <option value="VA">VA - Virginia</option>
+			  <option value="WA">WA - Washington</option>
+			  <option value="WV">WV - West Virginia</option>
+			  <option value="WI">WI - Wisconsin</option>
+			  <option value="WY">WY - Wyoming</option>
           </select>
         </div>
         <div class="col-3">
@@ -483,8 +581,56 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <div class="col-3">
           <label for="employer-2-state">State *</label>
           <select id="employer-2-state" name="employer-2-state" class="form-control">
-            <option value="WY">WY- Wyoming</option>
-            <option value="UT">UT - Utah</option>
+			  <option value="AL">AL - Alabama</option>
+			  <option value="AK">AK - Alaska</option>
+			  <option value="AZ">AZ - Arizona</option>
+			  <option value="AR">AR - Arkansas</option>
+			  <option value="CA">CA - California</option>
+			  <option value="CO">CO - Colorado</option>
+			  <option value="CT">CT - Connecticut</option>
+			  <option value="DE">DE - Delaware</option>
+			  <option value="FL">FL - Florida</option>
+			  <option value="GA">GA - Georgia</option>
+			  <option value="HI">HI - Hawaii</option>
+			  <option value="ID">ID - Idaho</option>
+			  <option value="IL">IL - Illinois</option>
+			  <option value="IN">IN - Indiana</option>
+			  <option value="IA">IA - Iowa</option>
+			  <option value="KS">KS - Kansas</option>
+			  <option value="KY">KY - Kentucky</option>
+			  <option value="LA">LA - Louisiana</option>
+			  <option value="ME">ME - Maine</option>
+			  <option value="MD">MD - Maryland</option>
+			  <option value="MA">MA - Massachusetts</option>
+			  <option value="MI">MI - Michigan</option>
+			  <option value="MN">MN - Minnesota</option>
+			  <option value="MS">MS - Mississippi</option>
+			  <option value="MO">MO - Missouri</option>
+			  <option value="MT">MT - Montana</option>
+			  <option value="NE">NE - Nebraska</option>
+			  <option value="NV">NV - Nevada</option>
+			  <option value="NH">NH - New Hampshire</option>
+			  <option value="NJ">NJ - New Jersy</option>
+			  <option value="NM">NM - New Mexico</option>
+			  <option value="NY">NY - New York</option>
+			  <option value="NC">NC - North Carolina</option>
+			  <option value="ND">ND - North Dakota</option>
+			  <option value="OH">OH - Ohio</option>
+			  <option value="OK">OK - Oklahoma</option>
+			  <option value="OR">OR - Oregon</option>
+			  <option value="PA">PA - Pennsylvania</option>
+			  <option value="RI">RI - Rhode Island</option>
+			  <option value="SC">SC - South Carolina</option>
+			  <option value="SD">SD - South Dakota</option>
+			  <option value="TN">TN - Tennessee</option>
+			  <option value="TX">TX - Texas</option>
+			  <option value="UT">UT - Utah</option>
+			  <option value="VT">VT - Vermont</option>
+			  <option value="VA">VA - Virginia</option>
+			  <option value="WA">WA - Washington</option>
+			  <option value="WV">WV - West Virginia</option>
+			  <option value="WI">WI - Wisconsin</option>
+			  <option value="WY">WY - Wyoming</option>
           </select>
         </div>
         <div class="col-3">
@@ -563,8 +709,56 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <div class="col-3">
           <label for="employer-3-state">State *</label>
           <select id="employer-3-state" name="employer-3-state" class="form-control">
-            <option value="WY">WY- Wyoming</option>
-            <option value="UT">UT - Utah</option>
+			  <option value="AL">AL - Alabama</option>
+			  <option value="AK">AK - Alaska</option>
+			  <option value="AZ">AZ - Arizona</option>
+			  <option value="AR">AR - Arkansas</option>
+			  <option value="CA">CA - California</option>
+			  <option value="CO">CO - Colorado</option>
+			  <option value="CT">CT - Connecticut</option>
+			  <option value="DE">DE - Delaware</option>
+			  <option value="FL">FL - Florida</option>
+			  <option value="GA">GA - Georgia</option>
+			  <option value="HI">HI - Hawaii</option>
+			  <option value="ID">ID - Idaho</option>
+			  <option value="IL">IL - Illinois</option>
+			  <option value="IN">IN - Indiana</option>
+			  <option value="IA">IA - Iowa</option>
+			  <option value="KS">KS - Kansas</option>
+			  <option value="KY">KY - Kentucky</option>
+			  <option value="LA">LA - Louisiana</option>
+			  <option value="ME">ME - Maine</option>
+			  <option value="MD">MD - Maryland</option>
+			  <option value="MA">MA - Massachusetts</option>
+			  <option value="MI">MI - Michigan</option>
+			  <option value="MN">MN - Minnesota</option>
+			  <option value="MS">MS - Mississippi</option>
+			  <option value="MO">MO - Missouri</option>
+			  <option value="MT">MT - Montana</option>
+			  <option value="NE">NE - Nebraska</option>
+			  <option value="NV">NV - Nevada</option>
+			  <option value="NH">NH - New Hampshire</option>
+			  <option value="NJ">NJ - New Jersy</option>
+			  <option value="NM">NM - New Mexico</option>
+			  <option value="NY">NY - New York</option>
+			  <option value="NC">NC - North Carolina</option>
+			  <option value="ND">ND - North Dakota</option>
+			  <option value="OH">OH - Ohio</option>
+			  <option value="OK">OK - Oklahoma</option>
+			  <option value="OR">OR - Oregon</option>
+			  <option value="PA">PA - Pennsylvania</option>
+			  <option value="RI">RI - Rhode Island</option>
+			  <option value="SC">SC - South Carolina</option>
+			  <option value="SD">SD - South Dakota</option>
+			  <option value="TN">TN - Tennessee</option>
+			  <option value="TX">TX - Texas</option>
+			  <option value="UT">UT - Utah</option>
+			  <option value="VT">VT - Vermont</option>
+			  <option value="VA">VA - Virginia</option>
+			  <option value="WA">WA - Washington</option>
+			  <option value="WV">WV - West Virginia</option>
+			  <option value="WI">WI - Wisconsin</option>
+			  <option value="WY">WY - Wyoming</option>
           </select>
         </div>
         <div class="col-3">
@@ -685,7 +879,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <textarea class="form-control" id="change-name-reason" name="change-name-reason" rows="3" placeholder=""></textarea>
       </div>
       <div class="row">
-        <p>If hired, can you provide proof that you are over 21 years of age? *</p>
+        <p>If hired, can you provide proof that you are at least 21 years of age? *</p>
       </div>
       <div class="form-group form-check-inline">
         <input required class="form-check-input" type="radio" value="Yes" id="over-21-yes" name="over-21">
@@ -770,8 +964,56 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <div class="col-3">
           <label for="reference-1-state">Reference 1 - State *</label>
           <select id="reference-1-state" name="reference-1-state" class="form-control">
-            <option value="WY">WY- Wyoming</option>
-            <option value="UT">UT - Utah</option>
+			  <option value="AL">AL - Alabama</option>
+			  <option value="AK">AK - Alaska</option>
+			  <option value="AZ">AZ - Arizona</option>
+			  <option value="AR">AR - Arkansas</option>
+			  <option value="CA">CA - California</option>
+			  <option value="CO">CO - Colorado</option>
+			  <option value="CT">CT - Connecticut</option>
+			  <option value="DE">DE - Delaware</option>
+			  <option value="FL">FL - Florida</option>
+			  <option value="GA">GA - Georgia</option>
+			  <option value="HI">HI - Hawaii</option>
+			  <option value="ID">ID - Idaho</option>
+			  <option value="IL">IL - Illinois</option>
+			  <option value="IN">IN - Indiana</option>
+			  <option value="IA">IA - Iowa</option>
+			  <option value="KS">KS - Kansas</option>
+			  <option value="KY">KY - Kentucky</option>
+			  <option value="LA">LA - Louisiana</option>
+			  <option value="ME">ME - Maine</option>
+			  <option value="MD">MD - Maryland</option>
+			  <option value="MA">MA - Massachusetts</option>
+			  <option value="MI">MI - Michigan</option>
+			  <option value="MN">MN - Minnesota</option>
+			  <option value="MS">MS - Mississippi</option>
+			  <option value="MO">MO - Missouri</option>
+			  <option value="MT">MT - Montana</option>
+			  <option value="NE">NE - Nebraska</option>
+			  <option value="NV">NV - Nevada</option>
+			  <option value="NH">NH - New Hampshire</option>
+			  <option value="NJ">NJ - New Jersy</option>
+			  <option value="NM">NM - New Mexico</option>
+			  <option value="NY">NY - New York</option>
+			  <option value="NC">NC - North Carolina</option>
+			  <option value="ND">ND - North Dakota</option>
+			  <option value="OH">OH - Ohio</option>
+			  <option value="OK">OK - Oklahoma</option>
+			  <option value="OR">OR - Oregon</option>
+			  <option value="PA">PA - Pennsylvania</option>
+			  <option value="RI">RI - Rhode Island</option>
+			  <option value="SC">SC - South Carolina</option>
+			  <option value="SD">SD - South Dakota</option>
+			  <option value="TN">TN - Tennessee</option>
+			  <option value="TX">TX - Texas</option>
+			  <option value="UT">UT - Utah</option>
+			  <option value="VT">VT - Vermont</option>
+			  <option value="VA">VA - Virginia</option>
+			  <option value="WA">WA - Washington</option>
+			  <option value="WV">WV - West Virginia</option>
+			  <option value="WI">WI - Wisconsin</option>
+			  <option value="WY">WY - Wyoming</option>
           </select>
         </div>
         <div class="col-3">
@@ -817,8 +1059,56 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <div class="col-3">
           <label for="reference-2-state">Reference 2 - State *</label>
           <select id="reference-2-state" name="reference-2-state" class="form-control">
-            <option value="WY">WY- Wyoming</option>
-            <option value="UT">UT - Utah</option>
+              <option value="AL">AL - Alabama</option>
+			  <option value="AK">AK - Alaska</option>
+			  <option value="AZ">AZ - Arizona</option>
+			  <option value="AR">AR - Arkansas</option>
+			  <option value="CA">CA - California</option>
+			  <option value="CO">CO - Colorado</option>
+			  <option value="CT">CT - Connecticut</option>
+			  <option value="DE">DE - Delaware</option>
+			  <option value="FL">FL - Florida</option>
+			  <option value="GA">GA - Georgia</option>
+			  <option value="HI">HI - Hawaii</option>
+			  <option value="ID">ID - Idaho</option>
+			  <option value="IL">IL - Illinois</option>
+			  <option value="IN">IN - Indiana</option>
+			  <option value="IA">IA - Iowa</option>
+			  <option value="KS">KS - Kansas</option>
+			  <option value="KY">KY - Kentucky</option>
+			  <option value="LA">LA - Louisiana</option>
+			  <option value="ME">ME - Maine</option>
+			  <option value="MD">MD - Maryland</option>
+			  <option value="MA">MA - Massachusetts</option>
+			  <option value="MI">MI - Michigan</option>
+			  <option value="MN">MN - Minnesota</option>
+			  <option value="MS">MS - Mississippi</option>
+			  <option value="MO">MO - Missouri</option>
+			  <option value="MT">MT - Montana</option>
+			  <option value="NE">NE - Nebraska</option>
+			  <option value="NV">NV - Nevada</option>
+			  <option value="NH">NH - New Hampshire</option>
+			  <option value="NJ">NJ - New Jersy</option>
+			  <option value="NM">NM - New Mexico</option>
+			  <option value="NY">NY - New York</option>
+			  <option value="NC">NC - North Carolina</option>
+			  <option value="ND">ND - North Dakota</option>
+			  <option value="OH">OH - Ohio</option>
+			  <option value="OK">OK - Oklahoma</option>
+			  <option value="OR">OR - Oregon</option>
+			  <option value="PA">PA - Pennsylvania</option>
+			  <option value="RI">RI - Rhode Island</option>
+			  <option value="SC">SC - South Carolina</option>
+			  <option value="SD">SD - South Dakota</option>
+			  <option value="TN">TN - Tennessee</option>
+			  <option value="TX">TX - Texas</option>
+			  <option value="UT">UT - Utah</option>
+			  <option value="VT">VT - Vermont</option>
+			  <option value="VA">VA - Virginia</option>
+			  <option value="WA">WA - Washington</option>
+			  <option value="WV">WV - West Virginia</option>
+			  <option value="WI">WI - Wisconsin</option>
+			  <option value="WY">WY - Wyoming</option>
           </select>
         </div>
         <div class="col-3">
@@ -864,8 +1154,56 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <div class="col-3">
           <label for="reference-3-state">Reference 3 - State *</label>
           <select id="reference-3-state" name="reference-3-state" class="form-control">
-            <option value="WY">WY- Wyoming</option>
-            <option value="UT">UT - Utah</option>
+              <option value="AL">AL - Alabama</option>
+			  <option value="AK">AK - Alaska</option>
+			  <option value="AZ">AZ - Arizona</option>
+			  <option value="AR">AR - Arkansas</option>
+			  <option value="CA">CA - California</option>
+			  <option value="CO">CO - Colorado</option>
+			  <option value="CT">CT - Connecticut</option>
+			  <option value="DE">DE - Delaware</option>
+			  <option value="FL">FL - Florida</option>
+			  <option value="GA">GA - Georgia</option>
+			  <option value="HI">HI - Hawaii</option>
+			  <option value="ID">ID - Idaho</option>
+			  <option value="IL">IL - Illinois</option>
+			  <option value="IN">IN - Indiana</option>
+			  <option value="IA">IA - Iowa</option>
+			  <option value="KS">KS - Kansas</option>
+			  <option value="KY">KY - Kentucky</option>
+			  <option value="LA">LA - Louisiana</option>
+			  <option value="ME">ME - Maine</option>
+			  <option value="MD">MD - Maryland</option>
+			  <option value="MA">MA - Massachusetts</option>
+			  <option value="MI">MI - Michigan</option>
+			  <option value="MN">MN - Minnesota</option>
+			  <option value="MS">MS - Mississippi</option>
+			  <option value="MO">MO - Missouri</option>
+			  <option value="MT">MT - Montana</option>
+			  <option value="NE">NE - Nebraska</option>
+			  <option value="NV">NV - Nevada</option>
+			  <option value="NH">NH - New Hampshire</option>
+			  <option value="NJ">NJ - New Jersy</option>
+			  <option value="NM">NM - New Mexico</option>
+			  <option value="NY">NY - New York</option>
+			  <option value="NC">NC - North Carolina</option>
+			  <option value="ND">ND - North Dakota</option>
+			  <option value="OH">OH - Ohio</option>
+			  <option value="OK">OK - Oklahoma</option>
+			  <option value="OR">OR - Oregon</option>
+			  <option value="PA">PA - Pennsylvania</option>
+			  <option value="RI">RI - Rhode Island</option>
+			  <option value="SC">SC - South Carolina</option>
+			  <option value="SD">SD - South Dakota</option>
+			  <option value="TN">TN - Tennessee</option>
+			  <option value="TX">TX - Texas</option>
+			  <option value="UT">UT - Utah</option>
+			  <option value="VT">VT - Vermont</option>
+			  <option value="VA">VA - Virginia</option>
+			  <option value="WA">WA - Washington</option>
+			  <option value="WV">WV - West Virginia</option>
+			  <option value="WI">WI - Wisconsin</option>
+			  <option value="WY">WY - Wyoming</option>
           </select>
         </div>
         <div class="col-3">
@@ -937,7 +1275,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <input type="text" placeholder="" name="dui-date" class="form-control" id="dui-date" >
       </div>
       <div class="row">
-        <p>Have you ever been charged with child abuse of neglect? *</p>
+        <p>Have you ever been charged with child/adult abuse or neglect? *</p>
       </div>
       <div class="form-group form-check-inline">
         <input class="form-radio-input" type="radio" value="Yes" id="child-abuse-yes" name="child-abuse" required>
