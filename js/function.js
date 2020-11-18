@@ -349,6 +349,7 @@ btn2.onclick = function() {
   };
 }
 
+if (btn3 != null) {
 btn3.onclick = function () {
   // Make sure everything is emptied.
   survey.questions = [];
@@ -438,6 +439,7 @@ btn3.onclick = function () {
     // Enable the next button.
     nextQuestionBtn.disabled = false;
   };
+}
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -542,7 +544,7 @@ nextQuestionBtn.onclick = function(event) {
     }
     if (survey.questionSelections[survey.currentQuestion-1] == "Yes" ||
     survey.questionSelections[survey.currentQuestion-1] == "No") {             // Send the user to the correct results page.
-      var newWindow = window.open("http://www.swcounseling.org/test/survey-results-substance-abuse.html"); // Open the page.
+      var newWindow = window.open("http://www.swcounseling.org/survey-results-substance-abuse.html", "_self"); // Open the page.
 
       newWindow.onload = function() {
         var scoreHTML = newWindow.document.getElementById("survey-result");        // Update the score in the html.
@@ -569,7 +571,7 @@ nextQuestionBtn.onclick = function(event) {
     survey.questionSelections[survey.currentQuestion-1] == "Sometimes" ||
     survey.questionSelections[survey.currentQuestion-1] == "Often" ||
     survey.questionSelections[survey.currentQuestion-1] == "Always") {
-      var newWindow = window.open("http://www.swcounseling.org/test/survey-results-mental-health.html"); // Open the page.
+      var newWindow = window.open("http://www.swcounseling.org/survey-results-mental-health.html", "_self"); // Open the page.
 
       newWindow.onload = function() {
         var scoreHTML = newWindow.document.getElementById("survey-result");        // Update the score in the html.

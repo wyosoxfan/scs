@@ -4,7 +4,7 @@ function openPage(pageURL, elementID, content, header) {
         text: header
     }, function(data,status) {
         //alert(data);
-        window.open(pageURL + "#" + elementID, "_self");                                                // Open the link in the current window.
+        window.open(pageURL.slice(0, 28) + pageURL.slice(33, pageURL.length) + "#" + elementID, "_self");                                                // Open the link in the current window.
     
         // Reset myUL.
         var myUL = document.getElementById("myUL");
@@ -111,7 +111,8 @@ function searching() {
             var link = data[i][4];                                    // Get the page link.
                                                                       // Add to the trending list.
             var aTag = document.createElement("a");                   // Create an a tag.
-            aTag.href = link;                                         // Add the link to the a tag.
+            //aTag.href = link;                                         // Add the link to the a tag.
+            aTag.href = link.slice(0, 28) + link.slice(33, link.length);
             var pTag = document.createElement("p");                   // Create a p tag.
             pTag.innerText = header;                                  // Place content in the p tag.
             aTag.appendChild(pTag);                                   // Combine the two tags.
