@@ -118,6 +118,7 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "GET" && isset( $_GET[ "action" ] ) && in_a
       //Check to make sure uri is valid
       if ( $doc->_attachments ) {
         //Get the file from the uri
+
         $resume = file_get_contents( $attachmentUri );
 
         //Set the correct content type
@@ -534,8 +535,20 @@ function save_application() {
   //Save the resume if it exists
   if ( $_FILES[ 'resume-upload' ][ 'tmp_name' ] != '' ) {
 
-    $resume = file_get_contents( $_FILES[ 'resume-upload' ][ 'tmp_name' ] );
-    $result = $client->storeAsAttachment( $doc, $resume, 'resume.pdf', 'application/pdf' );
+    //$resume = file_get_contents( $_FILES[ 'resume-upload' ][ 'tmp_name' ] );
+	$target_dir = "uploads/" . $_POST["client-last-name"] . "_";
+    $target_file = $target_dir . basename($_FILES["resume-upload"]["name"]);
+    move_uploaded_file($_FILES["resume-upload"]["tmp_name"], $target_file);
+	  
+    //$content_type = '';
+	//$arrayString=  explode(".", $_FILES['resume-upload']['name'] );
+	//if($arrayString[1] == "pdf")
+		//$content_type = 'application/pdf';
+	//else if($arrayString[1] == "doc")
+		//$content_type = 'application/msword';
+	//else if($arrayString[1] == "docx")
+		//$content_type = 'application/msword';
+    //$result = $client->storeAsAttachment( $doc, $resume, "resume", $content_type );
   }
 	
   //Redirect
