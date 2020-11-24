@@ -180,7 +180,7 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
     <div class="row">
       <p>&nbsp;</p>
     </div>
-    <form action="apply.php?action=apply" method="post" enctype="multipart/form-data">
+    <form id="frm1" action="apply.php?action=apply" method="post" enctype="multipart/form-data">
       <!--<p>Please enter all the information below.<br><br></p>-->
       <div class="row form-group ">
         <div class="col-4" style="padding-left:0;">
@@ -1287,12 +1287,12 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
         <label class="form-radio-label" for="child-abuse-no">No</label>
       </div>
       <div class="form-group" style="margin-top:10px;">
-        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        <button id="submitButton" type="submit" class="btn btn-primary mb-2">Submit</button>
+		<div style="font-weight: bold">Do not press submit multiple times.  You will be taken to a new page once submission is complete.</div>
       </div>
     </form>
   </div>
 </section>
-
 
 <footer class="text-center">
   <div class="jumbotron footerSection">
@@ -1450,5 +1450,6 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
 <!--<script src="js/function.js"></script>-->
 <script src="js/function.js"></script>
 <script src="js/test.js"></script>
+
 </body>
 </html>

@@ -95,8 +95,8 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "GET" && isset( $_GET[ "action" ] ) && in_a
 
       //Get all resumes from the database
       //_id,application-date, client-last-name,client-first-name,job-name
-      $selector = [ '_id' => [ '$gt' => NULL ] ];
-      $result = $client->fields( [ '_id', 'application-date', 'client-last-name', 'client-first-name', 'job-name' ] )->find( $selector );
+      $selector = [ '_id' => [ '$gt' => NULL ]];
+      $result = $client->limit(200)->fields( [ '_id', 'application-date', 'client-last-name', 'client-first-name', 'job-name' ] )->find($selector);
 
       //Set the header return type
       header( 'Content-Type: application/json' );
