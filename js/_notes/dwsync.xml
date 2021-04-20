@@ -25,4 +25,10 @@
 <file name="vue.js" server="//aphinium/WebSites/southwestcounseling/test/" local="132453874360000000" remote="132453874360000000" Dst="2" />
 <file name="vue_template.js" server="//aphinium/WebSites/southwestcounseling/test/" local="132453874360000000" remote="132453874360000000" Dst="2" />
 <file name="jsgrid.min.js" server="//aphinium/WebSites/southwestcounseling/test/" local="132453874360000000" remote="132453874360000000" Dst="2" />
+<file name="jquery-3.4.1.min.js" server="//aphinium/WebSites/southwestcounseling/" local="132501863551656422" remote="132501863550000000" Dst="1" />
+<file name="popper.min.js" server="//aphinium/WebSites/southwestcounseling/" local="132501863551666395" remote="132501863550000000" Dst="1" />
+<file name="bootstrap-4.4.1.js" server="//aphinium/WebSites/southwestcounseling/" local="132501863551616529" remote="132501863550000000" Dst="1" />
+<file name="mobile.js" server="//aphinium/WebSites/southwestcounseling/" local="132501863551666395" remote="132501863550000000" Dst="1" />
+<file name="function.js" server="//aphinium/WebSites/southwestcounseling/" local="132506256226619095" remote="132506256220000000" Dst="1" />
+<file name="test.js" server="//aphinium/WebSites/southwestcounseling/" local="132506256226619095" remote="132506256220000000" Dst="1" />
 </dwsync>

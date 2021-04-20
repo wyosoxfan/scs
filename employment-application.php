@@ -308,11 +308,9 @@ margin-right: auto; display: none; position: absolute;  background-color: #fff; 
       <div class="row form-group" style="max-width:40%;">
         <label for="job-name">Position applying for: *</label>
         <select required id="job-name" class="form-control" name="job-name">
-          <option value="Case Manager" <?= $_GET["jobtype"] == "casemanager" ? ' selected="selected"' : ''; ?>>Case Manager</option> 
-		  <option value="Custodian" <?= $_GET["jobtype"] == "custodian" ? ' selected="selected"' : ''; ?>>Custodian</option> 
           <option value="Mental Health Therapist" <?= $_GET["jobtype"] == "mentalhealththerapist" ? ' selected="selected"' : ''; ?>>Mental Health Therapist</option> 
-		  <option value="Office Clerk" <?= $_GET["jobtype"] == "officeclerk" ? ' selected="selected"' : ''; ?>>Office Clerk</option>
 		  <option value="Treatment Support Staff" <?= $_GET["jobtype"] == "treatmentsupportstaff" ? ' selected="selected"' : ''; ?>>Treatment Support Staff</option>
+	      <option value="Other (Not listed)" <?= $_GET["jobtype"] == "alljobs" ? ' selected="selected"' : ''; ?>>Other (Not listed)</option>
         </select>
       </div>
       <div class="row form-group" style="max-width:40%;">
