@@ -31,4 +31,10 @@
 <file name="mobile.js" server="//aphinium/WebSites/southwestcounseling/" local="132501863551666395" remote="132501863550000000" Dst="1" />
 <file name="function.js" server="//aphinium/WebSites/southwestcounseling/" local="132506256226619095" remote="132506256220000000" Dst="1" />
 <file name="test.js" server="//aphinium/WebSites/southwestcounseling/" local="132506256226619095" remote="132506256220000000" Dst="1" />
+<file name="jquery-3.4.1.min.js" server="//Aphinium/WebSites/southwestcounseling/" local="132676477673328603" remote="132676477670000000" Dst="2" />
+<file name="popper.min.js" server="//Aphinium/WebSites/southwestcounseling/" local="132676477673338576" remote="132676477670000000" Dst="2" />
+<file name="bootstrap-4.4.1.js" server="//Aphinium/WebSites/southwestcounseling/" local="132676477673298683" remote="132676477670000000" Dst="2" />
+<file name="mobile.js" server="//Aphinium/WebSites/southwestcounseling/" local="132676477673338576" remote="132676477670000000" Dst="2" />
+<file name="function.js" server="//Aphinium/WebSites/southwestcounseling/" local="132676477673308656" remote="132676477670000000" Dst="2" />
+<file name="test.js" server="//Aphinium/WebSites/southwestcounseling/" local="132676477673338576" remote="132676477670000000" Dst="2" />
 </dwsync>
